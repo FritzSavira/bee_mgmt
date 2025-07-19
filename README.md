@@ -1,3 +1,106 @@
+# BeeManagement - Digital Beekeeping Management
+
+BeeManagement is a web application for managing bee colonies. The application enables beekeepers to digitally record and manage their hives, queens, inspections, treatments, and much more.
+
+## Features
+
+- **Hive management**: Record and monitor all your hives with detailed information on location, hive type, and colony strength
+- **Queen management**: Document queens with information on origin, date of birth, and characteristics
+- **Inspection log**: Keep records of regular checks on your colonies
+- **Treatment management**: Log treatments for diseases and parasites
+- **Feeding management**: Document the feeding of your bee colonies
+- **Honey harvest management**: Record the harvest quantity and quality of your honey production
+- **Varroa control**: Monitor and log Varroa treatments
+- **Colony formation**: Document the reproduction of your bee colonies
+- **Automatic reminders**: Receive notifications about overdue inspections and treatments
+
+## Technology stack
+
+- **Backend**: Python with Flask framework
+- **Data storage**: JSON files for easy data management without a database server
+- **Deployment**: Docker & Docker Compose for easy installation and operation
+- **Web server**: Gunicorn for robust production deployment
+
+## Installation
+
+### Prerequisites
+- Docker and Docker Compose installed
+- Git (optional, for source code download)
+
+### Local installation with Docker
+
+1. Clone repository (or download as ZIP):
+```
+git clone https://github.com/FritzSavira/bee_mgmt.git
+cd bee_mgmt
+```
+
+2. Start Docker container:
+```
+docker-compose up -d
+```
+
+3. The application is now accessible at [http://localhost:5000](http://localhost:5000).
+
+### Manual installation (without Docker)
+
+1. Clone the repository:
+```
+  git clone https://github.com/FritzSavira/bee_mgmt.git
+  cd bee_mgmt
+  ```
+
+2. Create and activate virtual environment:
+```
+  python -m venv venv
+  # On Windows:
+  venv\Scripts\activate
+  # On Linux/Mac:
+  source venv/bin/activate
+  ```
+
+3. Install dependencies:
+```
+  pip install -r requirements.txt
+  ```
+
+4. Start the Flask application:
+   ```
+   python -m flask run
+   ```
+
+5. The application is now accessible at [http://localhost:5000](http://localhost:5000).
+
+## Data structure
+
+The application stores data in JSON files in the `/data` directory:
+- `hives.json`: Beehive information
+- `queens.json`: Queen information
+- `inspections.json`: Inspection logs
+- `treatments.json`: Treatment records
+- `feeding.json`: Feeding records
+- `harvests.json`: harvest records
+- `varroa_controls.json`: varroa control records
+- `splits.json`: split records
+
+## Contributing to the project
+
+Contributions to the project are welcome! Please fork the project, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the MIT license. For more information, see the `LICENSE` file.
+
+## Contact
+
+If you have any questions or suggestions, please create an issue on GitHub or contact the project maintainer directly.
+
+Translated with DeepL.com (free version)
+
+
+
+
+
 # BeeManagement - Digitale Imkerei-Verwaltung
 
 BeeManagement ist eine Webanwendung zur Verwaltung von Bienenbeständen. Die Anwendung ermöglicht Imkern, ihre Bienenstöcke, Königinnen, Inspektionen, Behandlungen und vieles mehr digital zu erfassen und zu verwalten.

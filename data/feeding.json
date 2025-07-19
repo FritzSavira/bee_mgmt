@@ -30,5 +30,13 @@
         "food_type": "Honigwasser",
         "amount": "5",
         "concentration": "20%"
+    },
+    {
+        "id": "db4191ef-b863-4f13-a6a8-ae4cf68fb625",
+        "hive_id": "44ab9ab9-bb62-4c68-bf29-5236be67f252",
+        "feeding_date": "2025-08-05",
+        "food_type": "Zuckerwasser",
+        "amount": "3 kg Zucker / 5l",
+        "concentration": ""
     }
 ]

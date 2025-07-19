@@ -30,5 +30,13 @@
         "mite_count": "3",
         "method": "Auf Windel gezählt",
         "infestation_level": "5"
+    },
+    {
+        "id": "00167cb9-ccfe-4d81-b6fe-b77775686778",
+        "hive_id": "44ab9ab9-bb62-4c68-bf29-5236be67f252",
+        "control_date": "2025-07-17",
+        "mite_count": "0",
+        "method": "Auf Windel gezählt",
+        "infestation_level": ""
     }
 ]

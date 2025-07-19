@@ -45,11 +45,15 @@ splits_instance = SplitsController()
 
 @splits_bp.route('/hives/<hive_id>/splits')
 def splits_list(hive_id):
+    hive = splits_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     hive_splits = splits_instance.get_all_splits(hive_id=hive_id)
-    return render_template('splits_list.html', hive_id=hive_id, splits=hive_splits)
+    return render_template('splits_list.html', hive=hive, splits=hive_splits) # Pass hive object
 
 @splits_bp.route('/hives/<hive_id>/splits/new', methods=['GET', 'POST'])
 def new_split(hive_id):
+    hive = splits_instance.hives_controller.get_hive_by_id(hive_id)
     if request.method == 'POST':
         split_data = {
             'split_date': request.form['split_date'],
@@ -58,10 +62,6 @@ def new_split(hive_id):
         }
         splits_instance.create_split(hive_id, split_data)
         return redirect(url_for('main.splits_controller.splits_list', hive_id=hive_id))
-    hive = splits_instance.hives_controller.get_hive_by_id(hive_id)
-    if request.method == 'POST':
-        # ... (existing POST logic)
-        pass # Placeholder for existing POST logic
     return render_template('new_split.html', hive=hive)
 
 @splits_bp.route('/hives/<hive_id>/splits/<split_id>/edit', methods=['GET', 'POST'])

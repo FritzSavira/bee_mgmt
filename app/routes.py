@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+from datetime import datetime
 from .utils.data_manager import DataManager
 from .controllers.hives_controller import HivesController
 from .controllers.queens_controller import QueensController, queens_bp
@@ -77,19 +78,87 @@ def hive_detail(hive_id):
     hive = hives_controller.get_hive_by_id(hive_id)
     if not hive:
         return "Hive not found", 404
+
+    # The queen is needed for the header, but not part of the timeline
     queens = queens_instance.get_all_queens(hive_id=hive_id)
+
+    # Get all event types
     inspections = inspections_instance.get_all_inspections(hive_id=hive_id)
     treatments = treatments_instance.get_all_treatments(hive_id=hive_id)
     feedings = feeding_instance.get_all_feedings(hive_id=hive_id)
+    harvests = harvests_instance.get_all_harvests(hive_id=hive_id)
     varroa_controls = varroa_controls_instance.get_all_varroa_controls(hive_id=hive_id)
     splits = splits_instance.get_all_splits(hive_id=hive_id)
-    return render_template('hive_detail.html', hive=hive, queens=queens, inspections=inspections, treatments=treatments, feedings=feedings, varroa_controls=varroa_controls, splits=splits)
 
+    timeline_events = []
 
+    # Add a 'type' and a proper 'date' object to each event for sorting and rendering
+    # This assumes date strings are in 'YYYY-MM-DD' format.
+    for event in inspections:
+        try:
+            event.type = 'Inspektion'
+            event.date = datetime.strptime(event.inspection_date, '%Y-%m-%d')
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue # Skip events with invalid date formats
 
+    for event in treatments:
+        try:
+            event.type = 'Behandlung'
+            event.date = datetime.strptime(event.treatment_date, '%Y-%m-%d')
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue
 
+    for event in feedings:
+        try:
+            event.type = 'Fütterung'
+            event.date = datetime.strptime(event.feeding_date, '%Y-%m-%d')
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue
+        
+    for event in harvests:
+        try:
+            event.type = 'Ernte'
+            event.date = datetime.strptime(event.harvest_date, '%Y-%m-%d')
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue
 
+    for event in varroa_controls:
+        try:
+            event.type = 'Varroakontrolle'
+            event.date = datetime.strptime(event.control_date, '%Y-%m-%d')
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue
 
+    for event in splits:
+        try:
+            event.type = 'Ableger'
+            event.date = datetime.strptime(event.split_date, '%Y-%m-%d')
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue
+
+    for event in queens:
+        try:
+            event.type = 'Königin'
+            if event.introduction_date:
+                event.date = datetime.strptime(event.introduction_date, '%Y-%m-%d')
+            elif event.birth_date:
+                event.date = datetime.strptime(event.birth_date, '%Y-%m-%d')
+            else:
+                continue # Skip if neither date is available
+            timeline_events.append(event)
+        except (ValueError, TypeError):
+            continue
+
+    # Sort all events by date, newest first
+    timeline_events.sort(key=lambda x: x.date, reverse=True)
+
+    return render_template('hive_detail.html', hive=hive, queens=queens, timeline_events=timeline_events)
 
 @bp.route('/reports/harvests')
 def harvests_report():

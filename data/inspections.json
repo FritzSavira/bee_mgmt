@@ -60,8 +60,8 @@
         "inspection_date": "2025-07-19",
         "brood_status": "gut",
         "queen_sighted": true,
-        "swarm_cells": "5",
-        "food_supply": "nein",
+        "swarm_cells": "4",
+        "food_supply": "gut",
         "measures_taken": "keine",
         "observations": "keine"
     },
@@ -75,16 +75,5 @@
         "food_supply": "ja",
         "measures_taken": "keine",
         "observations": "keine"
-    },
-    {
-        "id": "337b50d8-5dd7-4fad-9e45-9d7c86e7b196",
-        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
-        "inspection_date": "2025-07-19",
-        "brood_status": "schlecht",
-        "queen_sighted": false,
-        "swarm_cells": "5",
-        "food_supply": "kein",
-        "measures_taken": "keine",
-        "observations": "keine\r\n"
     }
 ]

@@ -48,5 +48,25 @@
         "dosage": "3 kg",
         "duration": "5 Tage",
         "efficacy_observation": "ganz gut"
+    },
+    {
+        "id": "88392cf4-760a-468c-a5fe-fce440747c9a",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "treatment_date": "2025-07-19",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "ganz gut"
+    },
+    {
+        "id": "0c2250aa-21db-4104-ba71-8a80c9e06106",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "treatment_date": "2025-07-19",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "gut"
     }
 ]

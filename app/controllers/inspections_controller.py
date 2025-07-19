@@ -1,10 +1,12 @@
 from flask import render_template, request, redirect, url_for, Blueprint
 from app.models.inspection import Inspection
 from app.utils.data_manager import DataManager
+from app.controllers.hives_controller import HivesController # Import HivesController
 
 class InspectionsController:
     def __init__(self):
         self.data_manager = DataManager('inspections')
+        self.hives_controller = HivesController() # Instantiate HivesController
 
     def get_all_inspections(self, hive_id=None):
         inspections = self.data_manager.load_all()
@@ -51,11 +53,18 @@ inspections_instance = InspectionsController()
 
 @inspections_bp.route('/hives/<hive_id>/inspections')
 def inspections_list(hive_id):
+    hive = inspections_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     hive_inspections = inspections_instance.get_all_inspections(hive_id=hive_id)
-    return render_template('inspections_list.html', hive_id=hive_id, inspections=hive_inspections)
+    return render_template('inspections_list.html', hive=hive, inspections=hive_inspections)
 
 @inspections_bp.route('/hives/<hive_id>/inspections/new', methods=['GET', 'POST'])
 def new_inspection(hive_id):
+    hive = inspections_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
+
     if request.method == 'POST':
         inspection_date = request.form['inspection_date']
         brood_status = request.form['brood_status']
@@ -76,10 +85,14 @@ def new_inspection(hive_id):
         }
         inspections_instance.create_inspection(hive_id, inspection_data)
         return redirect(url_for('main.inspections_controller.inspections_list', hive_id=hive_id))
-    return render_template('new_inspection.html', hive_id=hive_id)
+    return render_template('new_inspection.html', hive=hive) # Pass hive object
 
 @inspections_bp.route('/hives/<hive_id>/inspections/<inspection_id>/edit', methods=['GET', 'POST'])
 def edit_inspection(hive_id, inspection_id):
+    hive = inspections_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
+
     inspection = inspections_instance.get_inspection_by_id(inspection_id)
     if request.method == 'POST':
         updated_data = {
@@ -93,7 +106,7 @@ def edit_inspection(hive_id, inspection_id):
         }
         inspections_instance.update_inspection(inspection_id, updated_data)
         return redirect(url_for('main.inspections_controller.inspections_list', hive_id=hive_id))
-    return render_template('edit_inspection.html', hive_id=hive_id, inspection=inspection)
+    return render_template('edit_inspection.html', hive=hive, inspection=inspection) # Pass hive object
 
 @inspections_bp.route('/hives/<hive_id>/inspections/<inspection_id>/delete', methods=['POST'])
 def delete_inspection(hive_id, inspection_id):

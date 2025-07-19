@@ -51,8 +51,11 @@ treatments_instance = TreatmentsController()
 
 @treatments_bp.route('/hives/<hive_id>/treatments')
 def treatments_list(hive_id):
+    hive = treatments_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     hive_treatments = treatments_instance.get_all_treatments(hive_id=hive_id)
-    return render_template('treatments_list.html', hive_id=hive_id, treatments=hive_treatments)
+    return render_template('treatments_list.html', hive=hive, treatments=hive_treatments) # Pass hive object
 
 @treatments_bp.route('/hives/<hive_id>/treatments/new', methods=['GET', 'POST'])
 def new_treatment(hive_id):

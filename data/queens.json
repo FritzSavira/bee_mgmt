@@ -9,5 +9,27 @@
         "introduction_date": "2025-07-19",
         "marked": true,
         "clipped": true
+    },
+    {
+        "id": "148a0a8c-4cfa-4aea-852a-e2c0bb9e31b9",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "origin": "Nordsee",
+        "birth_date": "2025-07-01",
+        "color_mark": "blau",
+        "breed": "F1",
+        "introduction_date": "2025-07-18",
+        "marked": true,
+        "clipped": false
+    },
+    {
+        "id": "f42cbf69-f046-4d53-9237-8e0b73c72011",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "origin": "Alpen",
+        "birth_date": "2025-07-19",
+        "color_mark": "blau",
+        "breed": "F1",
+        "introduction_date": "2025-07-20",
+        "marked": false,
+        "clipped": false
     }
 ]

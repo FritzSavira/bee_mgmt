@@ -1,47 +1,68 @@
 {% extends "base.html" %}
 
+{% block title %}Inspektionen für Bienenstock {{ hive.stocknummer }}{% endblock %}
+
 {% block content %}
-    <h1>Inspections for Hive {{ hive_id }}</h1>
-    <a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive_id) }}" class="btn btn-primary">Add New Inspection</a>
-    <table class="table table-striped mt-3">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Brood Status</th>
-                <th>Queen Sighted</th>
-                <th>Swarm Cells</th>
-                <th>Food Supply</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for inspection in inspections %}
-            <tr>
-                <td>{{ inspection.inspection_date }}</td>
-                <td>{{ inspection.brood_status }}</td>
-                <td>{{ "Yes" if inspection.queen_sighted else "No" }}</td>
-                <td>{{ inspection.swarm_cells }}</td>
-                <td>
-                    {% if inspection.food_supply == 'gering' %}
-                        <span style="color: red;">{{ inspection.food_supply }}</span>
-                    {% elif inspection.food_supply == 'ausreichend' %}
-                        <span style="color: orange;">{{ inspection.food_supply }}</span>
-                    {% elif inspection.food_supply == 'gut' %}
-                        <span style="color: green;">{{ inspection.food_supply }}</span>
-                    {% else %}
-                        {{ inspection.food_supply }}
-                    {% endif %}
-                </td>
-                <td>
-                    <a href="{{ url_for('main.inspections_controller.edit_inspection', hive_id=hive_id, inspection_id=inspection.id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ url_for('main.inspections_controller.delete_inspection', hive_id=hive_id, inspection_id=inspection.id) }}" method="post" style="display:inline;">
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this inspection?');">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="{{ url_for('main.hive_detail', hive_id=hive_id) }}">Zurück zum Bienenstock</a>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Inspektionen für Bienenstock {{ hive.stocknummer }}</h1>
+        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">Zurück zum Bienenstock</a>
+    </div>
+
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>Alle Inspektionen</span>
+            <a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive.id) }}" class="btn btn-primary">+ Neue Inspektion</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Brutstatus</th>
+                            <th>Königin gesehen</th>
+                            <th>Schwarmzellen</th>
+                            <th>Futtervorrat</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for inspection in inspections %}
+                        <tr>
+                            <td>{{ inspection.inspection_date }}</td>
+                            <td>{{ inspection.brood_status }}</td>
+                            <td>{{ "Ja" if inspection.queen_sighted else "Nein" }}</td>
+                            <td>{{ inspection.swarm_cells }}</td>
+                            <td>
+                                {% if inspection.food_supply == 'gering' %}
+                                    <span class="badge bg-danger">{{ inspection.food_supply }}</span>
+                                {% elif inspection.food_supply == 'ausreichend' %}
+                                    <span class="badge bg-warning text-dark">{{ inspection.food_supply }}</span>
+                                {% elif inspection.food_supply == 'gut' %}
+                                    <span class="badge bg-success">{{ inspection.food_supply }}</span>
+                                {% else %}
+                                    {{ inspection.food_supply }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{{ url_for('main.inspections_controller.edit_inspection', hive_id=hive.id, inspection_id=inspection.id) }}" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form action="{{ url_for('main.inspections_controller.delete_inspection', hive_id=hive.id, inspection_id=inspection.id) }}" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Sind Sie sicher, dass Sie diese Inspektion löschen möchten?');">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="text-center">Noch keine Inspektionen für diesen Bienenstock vorhanden.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}

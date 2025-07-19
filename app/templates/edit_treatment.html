@@ -1,34 +1,45 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behandlung bearbeiten für Bienenstock {{ hive.stocknummer }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Behandlung bearbeiten für Bienenstock {{ hive.stocknummer }}{% endblock %}
+
+{% block content %}
     <h1>Behandlung bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
-    <form method="POST">
-        <label for="treatment_date">Datum der Behandlung:</label><br>
-        <input type="date" id="treatment_date" name="treatment_date" value="{{ treatment.treatment_date }}" required><br><br>
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="treatment_date" class="form-label">Datum der Behandlung:</label>
+                    <input type="date" id="treatment_date" name="treatment_date" class="form-control" value="{{ treatment.treatment_date }}" required>
+                </div>
 
-        <label for="treatment_type">Art der Behandlung:</label><br>
-        <input type="text" id="treatment_type" name="treatment_type" value="{{ treatment.treatment_type }}" required><br><br>
+                <div class="mb-3">
+                    <label for="treatment_type" class="form-label">Art der Behandlung:</label>
+                    <input type="text" id="treatment_type" name="treatment_type" class="form-control" value="{{ treatment.treatment_type }}" required>
+                </div>
 
-        <label for="used_agent">Verwendetes Mittel:</label><br>
-        <input type="text" id="used_agent" name="used_agent" value="{{ treatment.used_agent or '' }}"><br><br>
+                <div class="mb-3">
+                    <label for="used_agent" class="form-label">Verwendetes Mittel:</label>
+                    <input type="text" id="used_agent" name="used_agent" class="form-control" value="{{ treatment.used_agent or '' }}">
+                </div>
 
-        <label for="dosage">Dosierung:</label><br>
-        <input type="text" id="dosage" name="dosage" value="{{ treatment.dosage or '' }}"><br><br>
+                <div class="mb-3">
+                    <label for="dosage" class="form-label">Dosierung:</label>
+                    <input type="text" id="dosage" name="dosage" class="form-control" value="{{ treatment.dosage or '' }}">
+                </div>
 
-        <label for="duration">Behandlungsdauer:</label><br>
-        <input type="text" id="duration" name="duration" value="{{ treatment.duration or '' }}"><br><br>
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Behandlungsdauer:</label>
+                    <input type="text" id="duration" name="duration" class="form-control" value="{{ treatment.duration or '' }}">
+                </div>
 
-        <label for="efficacy_observation">Wirksamkeitsbeobachtung:</label><br>
-        <textarea id="efficacy_observation" name="efficacy_observation">{{ treatment.efficacy_observation or '' }}</textarea><br><br>
+                <div class="mb-3">
+                    <label for="efficacy_observation" class="form-label">Wirksamkeitsbeobachtung:</label>
+                    <textarea id="efficacy_observation" name="efficacy_observation" class="form-control">{{ treatment.efficacy_observation or '' }}</textarea>
+                </div>
 
-        <input type="submit" value="Speichern">
-    </form>
-    <br>
-    <a href="{{ url_for('main.treatments_controller.treatments_list', hive_id=hive.id) }}">Zurück zur Behandlungsliste</a>
-</body>
-</html>
+                <button type="submit" class="btn btn-primary">Speichern</button>
+                <a href="{{ url_for('main.treatments_controller.treatments_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

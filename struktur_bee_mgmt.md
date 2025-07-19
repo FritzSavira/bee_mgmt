@@ -40,6 +40,71 @@
   - Formulare: Zur Dateneingabe und -bearbeitung
   - Berichtseiten: Zur Anzeige von Auswertungen und Listen
 
+### 4.1 UX/UI-Design: Adaption der traditionellen Stockkarte
+
+#### Analyse des traditionellen Layouts
+
+Die physische Stockkarte ist das zentrale, über Jahrzehnte optimierte Werkzeug des Imkers. Ihre digitale Adaption muss den etablierten, mentalen Workflow respektieren, um eine hohe Akzeptanz zu gewährleisten. Gängige Stockkarten kombinieren zwei Elemente:
+
+1.  **Kopfbereich (Stammdaten):** Statische Informationen zum Bienenvolk.
+    *   **Identifikation:** Stock-Nummer, Name, Standort.
+    *   **Königin:** Alter, Farbe, Herkunft.
+    *   **Beute:** Typ des Bienenstocks (z.B. Dadant, Zander).
+
+2.  **Chronik (Logbuch):** Eine Tabelle, in der jede Zeile eine Kontrolle darstellt.
+    *   **Spalten:** Datum, Wetter, Volksstärke, Brutbild, Sanftmut, Futtervorrat, Krankheitszeichen, durchgeführte Maßnahmen.
+
+#### Konzept für die WebApp
+
+Das Design der WebApp überführt diese bewährte Struktur in ein modernes, interaktives Interface. Das Ziel ist nicht, die Stockkarte zu ersetzen, sondern sie zu verbessern: schnellere Dateneingabe, bessere Lesbarkeit und automatisierte Auswertungen.
+
+-   **Dashboard-Ansicht (`index.html`):**
+    -   Stellt eine Übersicht aller Bienenstöcke dar, ähnlich einer Kartei-Box.
+    -   Jeder Bienenstock wird als "Karteikarte" (Card-Element) visualisiert.
+    -   Die Karte zeigt die wichtigsten Stammdaten (Stock-Nummer, Name, Status der Königin) und eine "Ampel" für den Zustand (z.B. Grün = alles ok, Gelb = Kontrolle empfohlen, Rot = Problem erkannt).
+    -   Ein prominenter Button "Neuer Bienenstock" ist jederzeit sichtbar.
+
+-   **Detailansicht (`hive_detail.html`): Die digitale Stockkarte**
+    -   **Header:** Der Kopfbereich der traditionellen Stockkarte wird prominent und klar strukturiert dargestellt. Ein "Bearbeiten"-Button ermöglicht die Änderung der Stammdaten.
+    -   **Aktionsleiste:** Eine Button-Leiste für die häufigsten Aktionen ersetzt das manuelle Eintragen in eine "Maßnahmen"-Spalte. Jeder Button führt direkt zu einem dedizierten Formular:
+        -   `+ Kontrolle`
+        -   `+ Fütterung`
+        -   `+ Behandlung`
+        -   `+ Ernte`
+        -   `+ Varroakontrolle`
+        -   `+ Ableger`
+    -   **Chronik-Feed:** Anstelle einer starren Tabelle werden alle Ereignisse (Kontrollen, Fütterungen, Behandlungen etc.) in einer einheitlichen, chronologischen Liste (ähnlich einem Social-Media-Feed) angezeigt.
+        -   Jeder Eintrag ist eine "Karte" mit einem Icon, das den Typ des Eintrags visualisiert (z.B. ein Auge für Kontrolle, eine Spritze für Behandlung).
+        -   Dies verbessert die Lesbarkeit und erlaubt, schnell durch die Historie zu scrollen.
+        -   Filter-Optionen (z.B. "Zeige nur Behandlungen") ermöglichen eine schnelle Analyse.
+
+-   **Formulare (`new_*.html`, `edit_*.html`): Intelligente Dateneingabe**
+    -   **Reduktion von Tipparbeit:** Wo immer möglich, werden Freitextfelder durch schnell klickbare Optionen ersetzt.
+        -   **Bewertungen (Völkerstärke, Sanftmut):** Verwendung von Sterne-Ratings oder Schiebereglern anstelle von Text.
+        -   **Beobachtungen (Brutbild, Königin):** Verwendung von Tags oder Checkboxen (z.B. `[x] stifftet`, `[ ] weiselrichtig`, `[x] Königin gesehen`).
+    -   **Kontextbezogene Eingaben:** Das Datum ist immer mit dem heutigen Tag vorausgefüllt.
+    -   **Klare Handlungsaufforderungen:** Jeder Formular-Submit-Button ist klar beschriftet (z.B. "Kontrolle speichern", "Behandlung hinzufügen").
+
+#### Guideline zur Standardisierung des Frontends
+
+Um eine hohe Code-Qualität, Konsistenz und Wartbarkeit zu gewährleisten, sind die folgenden Jinja2-Praktiken verbindlich für die Entwicklung:
+
+1.  **Template-Vererbung (`base.html`):**
+    *   Alle Templates MÜSSEN von einer zentralen `base.html` erben.
+    *   Die `base.html` definiert das Grundlayout, die Navigation, den Footer und inkludiert die globalen CSS- und (falls zukünftig vorhanden) JS-Dateien.
+    *   Inhaltsspezifische Seiten füllen ausschließlich vordefinierte Blöcke (z.B. `{% block content %}`).
+
+2.  **Makros für wiederverwendbare Komponenten:**
+    *   Für alle sich wiederholenden, logischen UI-Elemente MÜSSEN Makros erstellt werden.
+    *   Dies gilt insbesondere für:
+        -   Die "Bienenstock-Karte" auf der Übersichtsseite.
+        -   Einen einzelnen Eintrag im "Chronik-Feed" der Detailseite.
+        -   Standardisierte Formularfelder (Label, Input, Fehlermeldung).
+    *   Makros sind in einer separaten Datei zu organisieren (z.B. `_macros.html`) und bei Bedarf zu importieren.
+
+3.  **Includes für statische Sektionen:**
+    *   Komplexe, aber statische HTML-Abschnitte, die auf mehreren Seiten wiederverwendet werden (z.B. eine Aktionsleiste), SOLLTEN in separate Partial-Dateien (z.B. `_action_bar.html`) ausgelagert und mit `{% include %}` eingebunden werden.
+
 ### 5. API-Endpunkte
 - **Bienenstock-Management**:
   - `GET /`: Startseite mit Übersicht

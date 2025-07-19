@@ -47,8 +47,11 @@ feeding_instance = FeedingController()
 
 @feeding_bp.route('/hives/<hive_id>/feeding')
 def feeding_list(hive_id):
+    hive = feeding_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     hive_feedings = feeding_instance.get_all_feedings(hive_id=hive_id)
-    return render_template('feeding_list.html', hive_id=hive_id, feedings=hive_feedings)
+    return render_template('feeding_list.html', hive=hive, feedings=hive_feedings) # Pass hive object
 
 @feeding_bp.route('/hives/<hive_id>/feeding/new', methods=['GET', 'POST'])
 def new_feeding(hive_id):

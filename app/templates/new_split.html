@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neuen Ableger hinzufügen</title>
-</head>
-<body>
-    <h1>Neuen Ableger für Bienenstock {{ hive.stocknummer }} hinzufügen</h1>
-    <form method="POST">
-        <label for="split_date">Datum des Ablegers:</label><br>
-        <input type="date" id="split_date" name="split_date" required><br><br>
+{% extends 'base.html' %}
 
-        <label for="method">Methode:</label><br>
-        <input type="text" id="method" name="method" required><br><br>
+{% block title %}Neuen Ableger hinzufügen für Bienenstock {{ hive.stocknummer }}{% endblock %}
 
-        <label for="new_hive_id">ID des neuen Bienenstocks (optional):</label><br>
-        <input type="text" id="new_hive_id" name="new_hive_id"><br><br>
+{% block content %}
+    <h1>Neuen Ableger für Bienenstock: {{ hive.stocknummer }}</h1>
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="split_date" class="form-label">Datum des Ablegers:</label>
+                    <input type="date" id="split_date" name="split_date" class="form-control" required>
+                </div>
 
-        <input type="submit" value="Hinzufügen">
-    </form>
-    <br>
-    <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}">Zurück zum Bienenstock</a>
-</body>
-</html>
+                <div class="mb-3">
+                    <label for="method" class="form-label">Methode:</label>
+                    <input type="text" id="method" name="method" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="new_hive_id" class="form-label">ID des neuen Bienenstocks (optional):</label>
+                    <input type="text" id="new_hive_id" name="new_hive_id" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Hinzufügen</button>
+                <a href="{{ url_for('main.splits_controller.splits_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

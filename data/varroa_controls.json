@@ -22,5 +22,13 @@
         "mite_count": "3",
         "method": "Michsäure",
         "infestation_level": "2"
+    },
+    {
+        "id": "0ef68a1f-5271-41a4-a457-0ee166ba8189",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "control_date": "2025-07-19",
+        "mite_count": "3",
+        "method": "Auf Windel gezählt",
+        "infestation_level": "5"
     }
 ]

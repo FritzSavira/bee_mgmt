@@ -1,10 +1,12 @@
 from flask import render_template, request, redirect, url_for, Blueprint
 from app.models.varroa_control import VarroaControl
 from app.utils.data_manager import DataManager
+from app.controllers.hives_controller import HivesController # Import HivesController
 
 class VarroaControlsController:
     def __init__(self):
         self.data_manager = DataManager('varroa_controls')
+        self.hives_controller = HivesController() # Instantiate HivesController
 
     def get_all_varroa_controls(self, hive_id=None):
         varroa_controls = self.data_manager.load_all()
@@ -45,11 +47,17 @@ varroa_controls_instance = VarroaControlsController()
 
 @varroa_controls_bp.route('/hives/<hive_id>/varroa_controls')
 def varroa_controls_list(hive_id):
+    hive = varroa_controls_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     hive_varroa_controls = varroa_controls_instance.get_all_varroa_controls(hive_id=hive_id)
-    return render_template('varroa_controls_list.html', hive_id=hive_id, varroa_controls=hive_varroa_controls)
+    return render_template('varroa_controls_list.html', hive=hive, varroa_controls=hive_varroa_controls) # Pass hive object
 
 @varroa_controls_bp.route('/hives/<hive_id>/varroa_controls/new', methods=['GET', 'POST'])
 def new_varroa_control(hive_id):
+    hive = varroa_controls_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     if request.method == 'POST':
         varroa_control_data = {
             'control_date': request.form['control_date'],
@@ -59,10 +67,13 @@ def new_varroa_control(hive_id):
         }
         varroa_controls_instance.create_varroa_control(hive_id, varroa_control_data)
         return redirect(url_for('main.varroa_controls_controller.varroa_controls_list', hive_id=hive_id))
-    return render_template('new_varroa_control.html', hive_id=hive_id)
+    return render_template('new_varroa_control.html', hive=hive) # Pass hive object
 
 @varroa_controls_bp.route('/hives/<hive_id>/varroa_controls/<varroa_control_id>/edit', methods=['GET', 'POST'])
 def edit_varroa_control(hive_id, varroa_control_id):
+    hive = varroa_controls_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     varroa_control = varroa_controls_instance.get_varroa_control_by_id(varroa_control_id)
     if request.method == 'POST':
         updated_data = {
@@ -73,7 +84,7 @@ def edit_varroa_control(hive_id, varroa_control_id):
         }
         varroa_controls_instance.update_varroa_control(varroa_control_id, updated_data)
         return redirect(url_for('main.varroa_controls_controller.varroa_controls_list', hive_id=hive_id))
-    return render_template('edit_varroa_control.html', hive_id=hive_id, varroa_control=varroa_control)
+    return render_template('edit_varroa_control.html', hive=hive, varroa_control=varroa_control) # Pass hive object
 
 @varroa_controls_bp.route('/hives/<hive_id>/varroa_controls/<varroa_control_id>/delete', methods=['POST'])
 def delete_varroa_control(hive_id, varroa_control_id):

@@ -1,28 +1,40 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title %}Honigernte bearbeiten für Bienenstock {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Edit Harvest Record for Hive {{ hive.stocknummer }}</h1>
-    <form method="POST">
-        <div class="form-group">
-            <label for="harvest_date">Harvest Date:</label>
-            <input type="date" class="form-control" id="harvest_date" name="harvest_date" value="{{ harvest.harvest_date }}" required>
+    <h1>Honigernte bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="harvest_date" class="form-label">Erntedatum:</label>
+                    <input type="date" id="harvest_date" name="harvest_date" class="form-control" value="{{ harvest.harvest_date }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="amount_kg" class="form-label">Menge (kg):</label>
+                    <input type="number" step="0.01" id="amount_kg" name="amount_kg" class="form-control" value="{{ harvest.amount_kg }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="honey_type" class="form-label">Honigsorte:</label>
+                    <input type="text" id="honey_type" name="honey_type" class="form-control" value="{{ harvest.honey_type }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="water_content" class="form-label">Wassergehalt (%):</label>
+                    <input type="number" step="0.1" id="water_content" name="water_content" class="form-control" value="{{ harvest.water_content }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notizen:</label>
+                    <textarea id="notes" name="notes" class="form-control">{{ harvest.notes }}</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Speichern</button>
+                <a href="{{ url_for('main.harvests_controller.harvests_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="amount_kg">Amount (kg):</label>
-            <input type="number" step="0.01" class="form-control" id="amount_kg" name="amount_kg" value="{{ harvest.amount_kg }}" required>
-        </div>
-        <div class="form-group">
-            <label for="honey_type">Honey Type:</label>
-            <input type="text" class="form-control" id="honey_type" name="honey_type" value="{{ harvest.honey_type }}">
-        </div>
-        <div class="form-group">
-            <label for="water_content">Water Content (%):</label>
-            <input type="number" step="0.1" class="form-control" id="water_content" name="water_content" value="{{ harvest.water_content }}">
-        </div>
-        <div class="form-group">
-            <label for="notes">Notes:</label>
-            <textarea class="form-control" id="notes" name="notes">{{ harvest.notes }}</textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Update Harvest Record</button>
-    </form>
+    </div>
 {% endblock %}

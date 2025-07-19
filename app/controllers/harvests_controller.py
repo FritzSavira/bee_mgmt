@@ -54,8 +54,11 @@ harvests_instance = HarvestsController()
 
 @harvests_bp.route('/hives/<hive_id>/harvests')
 def harvests_list(hive_id):
+    hive = harvests_instance.hives_controller.get_hive_by_id(hive_id) # Get hive object
+    if not hive:
+        return "Hive not found", 404 # Handle case where hive is not found
     hive_harvests = harvests_instance.get_all_harvests(hive_id=hive_id)
-    return render_template('harvests_list.html', hive_id=hive_id, harvests=hive_harvests)
+    return render_template('harvests_list.html', hive=hive, harvests=hive_harvests) # Pass hive object
 
 @harvests_bp.route('/hives/<hive_id>/harvests/new', methods=['GET', 'POST'])
 def new_harvest(hive_id):
@@ -86,9 +89,10 @@ def edit_harvest(hive_id, harvest_id):
         }
         harvests_instance.update_harvest(harvest_id, updated_data)
         return redirect(url_for('main.harvests_controller.harvests_list', hive_id=hive_id))
-    return render_template('edit_harvest.html', hive_id=hive_id, harvest=harvest, hive=hive)
+    return render_template('edit_harvest.html', hive=hive, harvest=harvest)
 
 @harvests_bp.route('/hives/<hive_id>/harvests/<harvest_id>/delete', methods=['POST'])
 def delete_harvest(hive_id, harvest_id):
     harvests_instance.delete_harvest(harvest_id)
     return redirect(url_for('main.harvests_controller.harvests_list', hive_id=hive_id))
+

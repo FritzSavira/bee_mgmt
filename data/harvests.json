@@ -16,5 +16,50 @@
         "honey_type": "Linde",
         "water_content": "15",
         "notes": "guter Honig"
+    },
+    {
+        "id": "b7faf018-ea70-4864-8915-b12cb667289b",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "harvest_date": "2025-07-19",
+        "amount_kg": "10",
+        "honey_type": "",
+        "water_content": "",
+        "notes": ""
+    },
+    {
+        "id": "cb7a9359-d88f-408a-92d9-7f28bf61402b",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "harvest_date": "2025-07-19",
+        "amount_kg": "0.03",
+        "honey_type": "Löwenzahn",
+        "water_content": "15",
+        "notes": "ganz gut"
+    },
+    {
+        "id": "ae6225db-0427-4a9b-aff2-336e9ea285fa",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "harvest_date": "2025-07-19",
+        "amount_kg": "15",
+        "honey_type": "Linde",
+        "water_content": "10",
+        "notes": "alles gut"
+    },
+    {
+        "id": "65a316e2-fc1c-4aca-8c72-ad034e5aef13",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "harvest_date": "2025-07-21",
+        "amount_kg": "11",
+        "honey_type": "Tanne",
+        "water_content": "12",
+        "notes": "schmeckt gut\r\n"
+    },
+    {
+        "id": "d810027b-19f1-44e5-9004-f429e8146f4d",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "harvest_date": "2025-07-31",
+        "amount_kg": "5",
+        "honey_type": "Löwenzahn",
+        "water_content": "20",
+        "notes": "gute Ernte\r\n"
     }
 ]

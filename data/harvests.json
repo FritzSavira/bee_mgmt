@@ -1,0 +1,20 @@
+[
+    {
+        "id": "995ebbde-cdb7-4c3b-9320-dacf9e318fda",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "harvest_date": "2025-07-19",
+        "amount_kg": "10.97",
+        "honey_type": "Löwenzahn",
+        "water_content": "12",
+        "notes": "Na ja"
+    },
+    {
+        "id": "2b297c86-7687-4cd0-aeba-21cd72b41e48",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "harvest_date": "2025-07-18",
+        "amount_kg": "5",
+        "honey_type": "Linde",
+        "water_content": "15",
+        "notes": "guter Honig"
+    }
+]

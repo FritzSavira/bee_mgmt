@@ -1,0 +1,90 @@
+[
+    {
+        "id": "ebbb2166-0182-4501-8953-130ae732411a",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "inspection_date": "2025-07-17",
+        "brood_status": "gut",
+        "queen_sighted": false,
+        "swarm_cells": "keine",
+        "food_supply": "kein",
+        "measures_taken": "",
+        "observations": "gut"
+    },
+    {
+        "id": "c1425f0b-5b63-4f62-a732-c43a80f10701",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "inspection_date": "2025-07-17",
+        "brood_status": "gut",
+        "queen_sighted": false,
+        "swarm_cells": "keine",
+        "food_supply": "kein",
+        "measures_taken": "keine\r\n",
+        "observations": "keine"
+    },
+    {
+        "id": "51ddec33-4f2e-4cfd-857b-3df4fe87adca",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "inspection_date": "2025-07-20",
+        "brood_status": "gut",
+        "queen_sighted": false,
+        "swarm_cells": "5",
+        "food_supply": "nein",
+        "measures_taken": "vergessen",
+        "observations": "ruhige Bienen"
+    },
+    {
+        "id": "2253cde9-eb56-44d5-9751-e3c695b382bb",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "inspection_date": "2025-07-21",
+        "brood_status": "schlecht",
+        "queen_sighted": true,
+        "swarm_cells": "20",
+        "food_supply": "ja",
+        "measures_taken": "nein",
+        "observations": "Bienen sind aufgeregt"
+    },
+    {
+        "id": "6865d9e4-2e54-4214-879c-7c926c470363",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "inspection_date": "2025-07-22",
+        "brood_status": "so lala",
+        "queen_sighted": true,
+        "swarm_cells": "1",
+        "food_supply": "nein",
+        "measures_taken": "keine",
+        "observations": "viel Honig"
+    },
+    {
+        "id": "fabf0265-ab3d-4f4b-9592-8c5d487ce8ef",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "inspection_date": "2025-07-19",
+        "brood_status": "gut",
+        "queen_sighted": true,
+        "swarm_cells": "5",
+        "food_supply": "nein",
+        "measures_taken": "keine",
+        "observations": "keine"
+    },
+    {
+        "id": "345e541c-1f5a-4fb7-b016-b9f79fa057c1",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "inspection_date": "2025-07-22",
+        "brood_status": "schlecht",
+        "queen_sighted": true,
+        "swarm_cells": "20",
+        "food_supply": "ja",
+        "measures_taken": "keine",
+        "observations": "keine"
+    },
+    {
+        "id": "337b50d8-5dd7-4fad-9e45-9d7c86e7b196",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "inspection_date": "2025-07-19",
+        "brood_status": "schlecht",
+        "queen_sighted": false,
+        "swarm_cells": "5",
+        "food_supply": "kein",
+        "measures_taken": "keine",
+        "observations": "keine\r\n"
+    }
+]

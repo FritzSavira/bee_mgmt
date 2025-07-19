@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ableger bearbeiten</title>
+</head>
+<body>
+    <h1>Ableger bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
+    <form method="POST">
+        <label for="split_date">Datum des Ablegers:</label><br>
+        <input type="date" id="split_date" name="split_date" value="{{ split.split_date }}" required><br><br>
+
+        <label for="method">Methode:</label><br>
+        <input type="text" id="method" name="method" value="{{ split.method }}" required><br><br>
+
+        <label for="new_hive_id">ID des neuen Bienenstocks (optional):</label><br>
+        <input type="text" id="new_hive_id" name="new_hive_id" value="{{ split.new_hive_id or '' }}"><br><br>
+
+        <input type="submit" value="Speichern">
+    </form>
+    <br>
+    <a href="{{ url_for('main.splits_controller.splits_list', hive_id=hive.id) }}">Zurück zur Ablegerliste</a>
+</body>
+</html>

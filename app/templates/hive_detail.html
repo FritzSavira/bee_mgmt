@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienenstock Details</title>
+</head>
+<body>
+    <h1>Details für Bienenstock: {{ hive.stocknummer }}</h1>
+    <p><strong>ID:</strong> {{ hive.id }}</p>
+    <p><strong>Standort:</strong> {{ hive.standort }}</p>
+    <p><strong>Beutentyp:</strong> {{ hive.beutentyp }}</p>
+    <p><strong>Anzahl Zargen:</strong> {{ hive.zargen_anzahl }}</p>
+
+    <a href="{{ url_for('main.edit_hive', hive_id=hive.id) }}">Bearbeiten</a>
+    <form action="{{ url_for('main.delete_hive', hive_id=hive.id) }}" method="post" style="display:inline;">
+        <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diesen Bienenstock löschen möchten?');">
+    </form>
+    <br>
+    <h2>Königinnen</h2>
+    <ul>
+        {% for queen in queens %}
+            <li>
+                Herkunft: {{ queen.origin }}, Geburtsdatum: {{ queen.birth_date }} (Alter: {{ queen.get_age() }} Jahre)
+                (<a href="{{ url_for('main.queens_controller.edit_queen', hive_id=hive.id, queen_id=queen.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.queens_controller.delete_queen', hive_id=hive.id, queen_id=queen.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diese Königin löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Königinnen für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.queens_controller.new_queen', hive_id=hive.id) }}">Neue Königin hinzufügen</a></p>
+    <br>
+    <h2>Inspektionen (<a href="{{ url_for('main.inspections_controller.inspections_list', hive_id=hive.id) }}">Alle Inspektionen anzeigen</a>)</h2>
+    <ul>
+        {% for inspection in inspections %}
+            <li>
+                Datum: {{ inspection.inspection_date }}, Brutstatus: {{ inspection.brood_status }}, Futtervorrat: 
+                {% if inspection.food_supply == 'gering' %}
+                    <span style="color: red;">{{ inspection.food_supply }}</span>
+                {% elif inspection.food_supply == 'ausreichend' %}
+                    <span style="color: orange;">{{ inspection.food_supply }}</span>
+                {% elif inspection.food_supply == 'gut' %}
+                    <span style="color: green;">{{ inspection.food_supply }}</span>
+                {% else %}
+                    {{ inspection.food_supply }}
+                {% endif %}
+                (<a href="{{ url_for('main.inspections_controller.edit_inspection', hive_id=hive.id, inspection_id=inspection.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.inspections_controller.delete_inspection', hive_id=hive.id, inspection_id=inspection.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diese Inspektion löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Inspektionen für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive.id) }}">Neue Inspektion hinzufügen</a></p>
+    <br>
+    <h2>Behandlungen (<a href="{{ url_for('main.treatments_controller.treatments_list', hive_id=hive.id) }}">Alle Behandlungen anzeigen</a>)</h2>
+    <ul>
+        {% for treatment in treatments %}
+            <li>
+                Datum: {{ treatment.treatment_date }}, Art: {{ treatment.treatment_type }}
+                (<a href="{{ url_for('main.treatments_controller.edit_treatment', hive_id=hive.id, treatment_id=treatment.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.treatments_controller.delete_treatment', hive_id=hive.id, treatment_id=treatment.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diese Behandlung löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Behandlungen für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.treatments_controller.new_treatment', hive_id=hive.id) }}">Neue Behandlung hinzufügen</a></p>
+    <br>
+    <h2>Fütterungen (<a href="{{ url_for('main.feeding_controller.feeding_list', hive_id=hive.id) }}">Alle Fütterungen anzeigen</a>)</h2>
+    <ul>
+        {% for feeding in feedings %}
+            <li>
+                Datum: {{ feeding.feeding_date }}, Art: {{ feeding.food_type }}, Menge: {{ feeding.amount }}
+                (<a href="{{ url_for('main.feeding_controller.edit_feeding', hive_id=hive.id, feeding_id=feeding.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.feeding_controller.delete_feeding', hive_id=hive.id, feeding_id=feeding.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diesen Fütterungseintrag löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Fütterungen für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.feeding_controller.new_feeding', hive_id=hive.id) }}">Neue Fütterung hinzufügen</a></p>
+    <br>
+    <h2>Honigernten (<a href="{{ url_for('main.harvests_controller.harvests_list', hive_id=hive.id) }}">Alle Honigernten anzeigen</a>)</h2>
+    <ul>
+        {% for harvest in harvests %}
+            <li>
+                Datum: {{ harvest.harvest_date }}, Menge: {{ harvest.amount_kg }} kg, Sorte: {{ harvest.honey_type }}
+                (<a href="{{ url_for('main.harvests_controller.edit_harvest', hive_id=hive.id, harvest_id=harvest.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.harvests_controller.delete_harvest', hive_id=hive.id, harvest_id=harvest.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diesen Ernteeintrag löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Honigernten für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.harvests_controller.new_harvest', hive_id=hive.id) }}">Neue Honigernte hinzufügen</a></p>
+    <br>
+    <a href="{{ url_for('main.index') }}">Zurück zur Übersicht</a>
+    <br>
+    <h2>Varroakontrollen (<a href="{{ url_for('main.varroa_controls_controller.varroa_controls_list', hive_id=hive.id) }}">Alle Varroakontrollen anzeigen</a>)</h2>
+    <ul>
+        {% for varroa_control in varroa_controls %}
+            <li>
+                Datum: {{ varroa_control.control_date }}, Milbenanzahl: {{ varroa_control.mite_count }}, Methode: {{ varroa_control.method }}
+                (<a href="{{ url_for('main.varroa_controls_controller.edit_varroa_control', hive_id=hive.id, varroa_control_id=varroa_control.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.varroa_controls_controller.delete_varroa_control', hive_id=hive.id, varroa_control_id=varroa_control.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diesen Varroakontrolleintrag löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Varroakontrollen für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.varroa_controls_controller.new_varroa_control', hive_id=hive.id) }}">Neue Varroakontrolle hinzufügen</a></p>
+    <br>
+    <h2>Ableger/Vermehrung (<a href="{{ url_for('main.splits_controller.splits_list', hive_id=hive.id) }}">Alle Ableger anzeigen</a>)</h2>
+    <ul>
+        {% for split in splits %}
+            <li>
+                Datum: {{ split.split_date }}, Methode: {{ split.method }}, Neue Stock-ID: {{ split.new_hive_id }}
+                (<a href="{{ url_for('main.splits_controller.edit_split', hive_id=hive.id, split_id=split.id) }}">Bearbeiten</a> |
+                <form action="{{ url_for('main.splits_controller.delete_split', hive_id=hive.id, split_id=split.id) }}" method="post" style="display:inline;">
+                    <input type="submit" value="Löschen" onclick="return confirm('Sind Sie sicher, dass Sie diesen Ablegereintrag löschen möchten?');">
+                </form>)
+            </li>
+        {% else %}
+            <li>Noch keine Ableger für diesen Bienenstock vorhanden.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('main.splits_controller.new_split', hive_id=hive.id) }}">Neuen Ableger hinzufügen</a></p>
+    <br>
+    <a href="{{ url_for('main.index') }}">Zurück zur Übersicht</a>
+</body>
+</html>

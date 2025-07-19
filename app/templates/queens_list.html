@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Königinnen für Bienenstock {{ hive.stocknummer }}</title>
+</head>
+<body>
+    <h1>Königinnen für Bienenstock: {{ hive.stocknummer }}</h1>
+    <p><a href="{{ url_for('main.queens_controller.new_queen', hive_id=hive.id) }}">Neue Königin hinzufügen</a></p>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Origin</th>
+                <th>Birth Date</th>
+                <th>Age (Years)</th>
+                <th>Color Mark</th>
+                <th>Breed</th>
+                <th>Introduction Date</th>
+                <th>Marked</th>
+                <th>Clipped</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for queen in queens %}
+            <tr>
+                <td>{{ queen.origin }}</td>
+                <td>{{ queen.birth_date }}</td>
+                <td>{{ queen.get_age() }}</td>
+                <td>{{ queen.color_mark }}</td>
+                <td>{{ queen.breed }}</td>
+                <td>{{ queen.introduction_date }}</td>
+                <td>{{ "Yes" if queen.marked else "No" }}</td>
+                <td>{{ "Yes" if queen.clipped else "No" }}</td>
+                <td>
+                    <a href="{{ url_for('main.queens_controller.edit_queen', hive_id=hive.id, queen_id=queen.id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ url_for('main.queens_controller.delete_queen', hive_id=hive.id, queen_id=queen.id) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this queen?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="9">Noch keine Königinnen für diesen Bienenstock vorhanden.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}">Zurück zum Bienenstock</a>
+</body>
+</html>

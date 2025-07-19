@@ -1,0 +1,26 @@
+[
+    {
+        "id": "c257b041-3879-4004-a4be-996b61853cf3",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "control_date": "2025-07-18",
+        "mite_count": "3",
+        "method": "Ameisensäure",
+        "infestation_level": "3"
+    },
+    {
+        "id": "538dc2c7-fa07-4ee9-8471-8c0d0d5906c2",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "control_date": "2025-07-18",
+        "mite_count": "1",
+        "method": "Ameisensäure",
+        "infestation_level": "3"
+    },
+    {
+        "id": "b63c63c9-f85f-4607-837f-d811582eda9d",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "control_date": "2025-07-18",
+        "mite_count": "3",
+        "method": "Michsäure",
+        "infestation_level": "2"
+    }
+]

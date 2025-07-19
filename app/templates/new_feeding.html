@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>New Feeding Record for Hive {{ hive.stocknummer }}</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="feeding_date">Feeding Date:</label>
+            <input type="date" class="form-control" id="feeding_date" name="feeding_date" required>
+        </div>
+        <div class="form-group">
+            <label for="food_type">Food Type:</label>
+            <input type="text" class="form-control" id="food_type" name="food_type" required>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount (kg/l):</label>
+            <input type="text" class="form-control" id="amount" name="amount" required>
+        </div>
+        <div class="form-group">
+            <label for="concentration">Concentration (if liquid):</label>
+            <input type="text" class="form-control" id="concentration" name="concentration">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Feeding Record</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "stocknummer": "Stock1",
+        "standort": "Garten",
+        "beutentyp": "Zander",
+        "zargen_anzahl": "2",
+        "colony_strength": null,
+        "temperament": null,
+        "swarming_tendency": null,
+        "comb_settling": null,
+        "honey_yield_rating": null
+    },
+    {
+        "id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "stocknummer": "Stock2",
+        "standort": "Garten",
+        "beutentyp": "Zander",
+        "zargen_anzahl": "2",
+        "colony_strength": "6",
+        "temperament": "3",
+        "swarming_tendency": "niedrig",
+        "comb_settling": "ruhig",
+        "honey_yield_rating": "unterdurchschnittlich"
+    },
+    {
+        "id": "ce75e94a-c632-4251-bf20-bfce58b49e40",
+        "stocknummer": "Nummer 3",
+        "standort": "Garten",
+        "beutentyp": "Zander",
+        "zargen_anzahl": "2",
+        "colony_strength": "6",
+        "temperament": "",
+        "swarming_tendency": "",
+        "comb_settling": "",
+        "honey_yield_rating": ""
+    }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "id": "8b82e5e3-f49b-430b-9b66-c256a7bb0d7d",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "treatment_date": "2025-07-17",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "Milben reduziert"
+    },
+    {
+        "id": "1c884b26-f8ba-467c-b5fc-e2945c5b80f9",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "treatment_date": "2025-07-18",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "gute Wirksamkeit"
+    },
+    {
+        "id": "ddd16bcb-c64f-4ac9-9ef8-7be01d4a5d9e",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "treatment_date": "2025-07-20",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "keine"
+    },
+    {
+        "id": "78d5186d-f1e3-4696-bca0-ff0c53d19e6a",
+        "hive_id": "d2d689ad-8f77-4a86-bc43-fd3f3a9204e7",
+        "treatment_date": "2025-07-21",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "gute"
+    },
+    {
+        "id": "5b0dd20a-e3cc-43c2-a0d5-a8e0f5e0114d",
+        "hive_id": "f389c10a-2592-4632-a63d-a5d354ce6dd3",
+        "treatment_date": "2025-07-18",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "ganz gut"
+    }
+]

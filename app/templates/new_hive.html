@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuen Bienenstock hinzufügen</title>
+</head>
+<body>
+    <h1>Neuen Bienenstock hinzufügen</h1>
+    <form method="POST">
+        <label for="stocknummer">Stocknummer:</label><br>
+        <input type="text" id="stocknummer" name="stocknummer" required><br><br>
+
+        <label for="standort">Standort:</label><br>
+        <input type="text" id="standort" name="standort" required><br><br>
+
+        <label for="beutentyp">Beutentyp:</label><br>
+        <input type="text" id="beutentyp" name="beutentyp" required><br><br>
+
+        <label for="zargen_anzahl">Anzahl Zargen:</label><br>
+        <input type="number" id="zargen_anzahl" name="zargen_anzahl" required><br><br>
+
+        <label for="colony_strength">Volksstärke (Anzahl besetzter Wabengassen):</label><br>
+        <input type="text" id="colony_strength" name="colony_strength"><br><br>
+
+        <label for="temperament">Sanftmut (Skala 1-5):</label><br>
+        <input type="number" id="temperament" name="temperament" min="1" max="5"><br><br>
+
+        <label for="swarming_tendency">Schwarmneigung (niedrig/mittel/hoch):</label><br>
+        <select id="swarming_tendency" name="swarming_tendency">
+            <option value=""></option>
+            <option value="niedrig">niedrig</option>
+            <option value="mittel">mittel</option>
+            <option value="hoch">hoch</option>
+        </select><br><br>
+
+        <label for="comb_settling">Wabensitz (ruhig/unruhig):</label><br>
+        <select id="comb_settling" name="comb_settling">
+            <option value=""></option>
+            <option value="ruhig">ruhig</option>
+            <option value="unruhig">unruhig</option>
+        </select><br><br>
+
+        <label for="honey_yield_rating">Honigertrag (unterdurchschnittlich/durchschnittlich/überdurchschnittlich):</label><br>
+        <select id="honey_yield_rating" name="honey_yield_rating">
+            <option value=""></option>
+            <option value="unterdurchschnittlich">unterdurchschnittlich</option>
+            <option value="durchschnittlich">durchschnittlich</option>
+            <option value="überdurchschnittlich">überdurchschnittlich</option>
+        </select><br><br>
+
+        <input type="submit" value="Hinzufügen">
+    </form>
+    <br>
+    <a href="{{ url_for('main.index') }}">Zurück zur Übersicht</a>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Honey Harvest Report</h1>
+    <p>Total Honey Yield: {{ total_yield }} kg</p>
+    <a href="{{ url_for('main.index') }}">Back to Home</a>
+{% endblock %}

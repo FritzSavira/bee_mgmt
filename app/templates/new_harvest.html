@@ -1,39 +1,39 @@
 {% extends 'base.html' %}
 
-{% block title %}Neue Honigernte für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('New Honey Harvest for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Neue Honigernte für Bienenstock: {{ hive.stocknummer }}</h1>
+    <h1>{{ _('New Honey Harvest for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="harvest_date" class="form-label">Erntedatum:</label>
+                    <label for="harvest_date" class="form-label">{{ _('Harvest Date') }}:</label>
                     <input type="date" id="harvest_date" name="harvest_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="amount_kg" class="form-label">Menge (kg):</label>
+                    <label for="amount_kg" class="form-label">{{ _('Amount (kg)') }}:</label>
                     <input type="number" step="0.01" id="amount_kg" name="amount_kg" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="honey_type" class="form-label">Honigsorte:</label>
+                    <label for="honey_type" class="form-label">{{ _('Honey Type') }}:</label>
                     <input type="text" id="honey_type" name="honey_type" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="water_content" class="form-label">Wassergehalt (%):</label>
+                    <label for="water_content" class="form-label">{{ _('Water Content (%)') }}:</label>
                     <input type="number" step="0.1" id="water_content" name="water_content" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="notes" class="form-label">Notizen:</label>
+                    <label for="notes" class="form-label">{{ _('Notes') }}:</label>
                     <textarea id="notes" name="notes" class="form-control"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Hinzufügen</button>
-                <a href="{{ url_for('main.harvests_controller.harvests_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+                <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>
+                <a href="{{ url_for('main.harvests_controller.harvests_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>
         </div>
     </div>

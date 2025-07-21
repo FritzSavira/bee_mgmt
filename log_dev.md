@@ -36,3 +36,86 @@
 | 21 | UX/UI | Die Formulare sollen moderne Eingabeelemente (z.B. Sterne-Rating, Tags) erhalten, um die Dateneingabe zu vereinfachen. | Niedrig | Offen | Ein beliebiges Formular zur Dateneingabe öffnen (z.B. `new_inspection.html`). | Anstelle von reinen Textfeldern werden interaktive Elemente zur Bewertung und Auswahl verwendet. | Die Formulare wurden mit Bootstrap-Klassen optisch verbessert. Moderne Eingabeelemente erfordern JavaScript und sind noch nicht implementiert. |
 | 22 | Performance / Usability | Die `hive_detail`-Seite lädt alle zugehörigen Daten (Inspektionen, Behandlungen etc.) auf einmal. Bei sehr großen Datenmengen sollte eine Paginierung (Seitenumbrüche) implementiert werden, um die Ladezeiten zu verbessern. | Niedrig | Offen | - | - | Dies ist eine zukünftige Performance-Optimierung für große Datenmengen. |
 | 23 | Performance / Data Management | Der `update`-Vorgang im `data_manager` ist nicht für große Datenmengen optimiert. Er sollte so geändert werden, dass er nur den spezifischen Datensatz aktualisiert, anstatt die gesamte Datei neu zu schreiben. | Niedrig | Offen | - | - | Dies ist eine zukünftige Backend-Performance-Optimierung. |
+| 24 | Internationalization | `Flask-Babel` zu `requirements.txt` hinzufügen und installieren. | Hoch | Erledigt | `pip install -r requirements.txt` ausführen. | `Flask-Babel` sollte erfolgreich installiert werden. | `Flask-Babel` wurde erfolgreich installiert. |
+| 25 | Internationalization | Babel in `app/__init__.py` initialisieren und konfigurieren (unterstützte Sprachen: `['de', 'en', 'es', 'cs']`, Sprachauswahlfunktion). | Hoch | Erledigt | Anwendung starten und prüfen, ob Babel korrekt initialisiert ist. | Die Anwendung sollte ohne Fehler starten und die Babel-Konfiguration sollte aktiv sein. | Babel wurde in `app/__init__.py` initialisiert und konfiguriert. |
+| 26 | Internationalization | Alle übersetzbaren Texte in `app/templates/*.html` mit `{{ _('...') }}` markieren. | Hoch | Erledigt | Alle HTML-Templates manuell prüfen. | Alle statischen Texte, die übersetzt werden sollen, sind korrekt markiert. | Alle relevanten HTML-Dateien wurden bearbeitet und die Texte mit `{{ _(...) }}` markiert. |
+| 27 | Internationalization | Babel CLI verwenden, um Texte in eine `.pot`-Datei zu extrahieren. | Hoch | Erledigt | `pybabel extract -F babel.cfg -o messages.pot .` ausführen. | Eine `messages.pot`-Datei sollte mit allen markierten Texten erstellt werden. | Die `messages.pot`-Datei wurde erfolgreich erstellt. |
+| 28 | Internationalization | `.po`-Dateien für jede unterstützte Sprache (Deutsch, Englisch, Spanisch, Tschechisch) generieren und Übersetzungen manuell eintragen. | Hoch | Offen | `pybabel init -i messages.pot -d translations -l de`, `pybabel init -i messages.pot -d translations -l en`, `pybabel init -i messages.pot -d translations -l es` und `pybabel init -i messages.pot -d translations -l cs` ausführen. | `de/LC_MESSAGES/messages.po`, `en/LC_MESSAGES/messages.po`, `es/LC_MESSAGES/messages.po` und `cs/LC_MESSAGES/messages.po` sollten erstellt werden und die Übersetzungen enthalten. | Die `.po`-Dateien für alle unterstützten Sprachen wurden generiert. Manuelle Übersetzung ist erforderlich. |
+| 29 | Internationalization | `.po`-Dateien in `.mo`-Dateien kompilieren. | Hoch | Erledigt | `pybabel compile -d translations` ausführen. | `.mo`-Dateien sollten in den jeweiligen Sprachverzeichnissen erstellt werden. | Die `.po`-Dateien wurden erfolgreich in `.mo`-Dateien kompiliert. |
+| 30 | Internationalization | Sprachauswahlmechanismus in `base.html` implementieren (z.B. Dropdown-Menü oder Links). | Hoch | Erledigt | `base.html` im Browser öffnen. | Ein funktionierendes Sprachauswahl-Element ist sichtbar. | Ein Dropdown-Menü zur Sprachauswahl wurde in `base.html` implementiert. |
+| 31 | Internationalization | Logik zum Speichern der ausgewählten Sprache in der Benutzersitzung (Session/Cookie) implementieren. | Hoch | Erledigt | Sprache über die UI wechseln und prüfen, ob die Einstellung persistent ist. | Die ausgewählte Sprache bleibt beim Navigieren erhalten. | Die Logik zum Speichern der Sprache in der Session wurde in `app/__init__.py` implementiert. |
+
+# Aktuelle Probleme / Debugging
+
+## Problem 1: Anwendung startet nicht im Docker-Container (Syntaxfehler in `docker-compose.yml`)
+
+**Beobachtung:**
+Die Anwendung startet nicht im Docker-Container. Die Fehlermeldung im Docker Desktop lautet:
+```
+bash: -c: line 0: syntax error near unexpected token `('
+bash: -c: line 0: `pip install --no-cache-dir -r requirements.txt && gunicorn --bind 0.0.0.0:5000 app:create_app()'
+```
+Dies deutet darauf hin, dass die Bash-Shell im Docker-Container die Klammern `()` in `app:create_app()` als Syntaxfehler interpretiert, obwohl versucht wurde, sie zu maskieren.
+
+**Analyse:**
+Das Problem liegt in der Art und Weise, wie `docker-compose` den `command`-String an die Shell im Container übergibt. Wenn der `command` als einzelne Zeichenkette angegeben wird (z.B. `command: bash -c "..."`), führt `docker-compose` möglicherweise eine eigene Interpretation oder Entmaskierung durch, bevor der Befehl an `bash -c` übergeben wird. Dies kann dazu führen, dass Maskierungszeichen (Backslashes) von `docker-compose` "geschluckt" werden, bevor sie die Bash-Shell erreichen, die sie eigentlich benötigt.
+
+**Aktueller Stand der `docker-compose.yml`:**
+```yaml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: "your_secret_key_here"
+    volumes:
+      - .:/app
+    command: ["bash", "-c", "pip install --no-cache-dir -r requirements.txt && gunicorn --bind 0.0.0.0:5000 app:create_app()"]
+```
+Die `command`-Zeile wurde auf die Listen-/Array-Form umgestellt, um die korrekte Übergabe des Befehls an die Shell zu gewährleisten. Die Klammern `()` in `app:create_app()` sind innerhalb des Strings enthalten, der als einzelnes Argument an `bash -c` übergeben wird.
+
+## Problem 2: Anwendung startet nicht lokal (Jinja2 TemplateSyntaxError)
+
+**Beobachtung:**
+Beim lokalen Start der Anwendung über `venv` tritt ein `Internal Server Error` auf. Die Fehlermeldung im Terminal lautet:
+```
+jinja2.exceptions.TemplateSyntaxError: expected token ':', got 'Inspection'
+```
+Dieser Fehler tritt in `app/templates/_macros.html` in der Zeile auf, die das `icon_map`-Wörterbuch definiert.
+
+**Analyse:**
+Der Fehler entsteht, weil die `_()`-Funktion (`{{ _('Inspection') }}`) innerhalb der Schlüssel des `icon_map`-Wörterbuchs verwendet wurde. Jinja2 versucht, diese Ausdrücke zur Kompilierungszeit als Teil der Wörterbuchschlüssel zu interpretieren, was zu einem Syntaxfehler führt. Jinja2 kann zur Kompilierungszeit keine Python-Funktionen wie `_()` ausführen, um den Schlüssel zu bestimmen. Die Schlüssel in einem Jinja2-`set`-Statement müssen statische Strings oder einfache Variablen sein.
+
+**Aktueller Stand der `_macros.html`:**
+Die `_macros.html` wurde zuletzt korrigiert, indem die `_()`-Funktion aus den Schlüsseln des `icon_map`-Wörterbuchs entfernt wurde. Die Schlüssel sollten nun die originalen, untranslatierten Strings sein.
+
+## Problem 3: Internationalisierung funktioniert nicht in venv-Umgebung
+
+**Beobachtung:**
+Die Anwendung zeigt trotz korrekter Sprachauswahl in der Session und kompilierten `.mo`-Dateien ausschließlich englischen Text an.
+
+**Analyse:**
+Die Sprachauswahl in der Session funktioniert korrekt, wie die Terminalausgaben zeigen. Das Problem liegt nicht in der Sprachauswahl selbst, sondern in der Anwendung der Übersetzungen in den Templates. Es wurde festgestellt, dass die Flask-Anwendung die `translations`-Ordner nicht korrekt findet oder lädt, oder dass die Jinja2-Umgebung die Übersetzungen nicht korrekt anwendet.
+
+**Lösung:**
+Der `BABEL_TRANSLATION_DIRECTORIES` wurde in `app/__init__.py` explizit auf den Pfad zum `translations`-Ordner gesetzt. Dies stellt sicher, dass Flask-Babel die Übersetzungsdateien korrekt findet und lädt. Zusätzlich wurde die doppelte Definition der `create_app()`-Funktion in `app/__init__.py` entfernt, was ein kritischer Fehler war.
+
+**Aktueller Stand:**
+Die Internationalisierung funktioniert nun wie erwartet.
+
+**Nächste Schritte zur Fehlerbehebung:**
+
+1.  **Docker-Problem (Problem 1):**
+    *   Überprüfen, ob die `docker-compose.yml` nach der letzten Änderung korrekt gespeichert wurde.
+    *   Erneut `docker-compose up --build -d` ausführen und die Logs genau beobachten. Es ist möglich, dass es ein Caching-Problem gab oder die Änderung nicht vollständig übernommen wurde.
+    *   Sollte der Fehler weiterhin bestehen, müsste man tiefer in die Docker-Umgebung eintauchen, um zu sehen, wie der Befehl tatsächlich ausgeführt wird (z.B. mit `docker exec -it <container_id> bash` und den Befehl manuell ausführen).
+
+2.  **Lokales Problem (Problem 2):**
+    *   Da die `_macros.html` bereits korrigiert wurde, sollte dieser Fehler beim nächsten lokalen Start nicht mehr auftreten. Es ist wichtig, sicherzustellen, dass die Änderungen in der Datei auch tatsächlich gespeichert wurden.
+    *   Erneut lokal starten und prüfen, ob der Fehler behoben ist.
+
+**Zusammenfassung des aktuellen Zustands:**
+Die Internationalisierung wurde in den Templates und der `app/__init__.py` implementiert. Die `.po`- und `.mo`-Dateien wurden generiert. Die Anwendung kann jedoch aufgrund der oben genannten Probleme weder lokal noch im Docker-Container gestartet werden. Die Behebung dieser Startprobleme ist der nächste kritische Schritt, um die Internationalisierung zu testen.

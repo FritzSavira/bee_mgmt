@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Inspektionen für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Inspections for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Inspektionen für Bienenstock {{ hive.stocknummer }}</h1>
-        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">Zurück zum Bienenstock</a>
+        <h1>{{ _('Inspections for Hive') }} {{ hive.stocknummer }}</h1>
+        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Back to Hive') }}</a>
     </div>
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>Alle Inspektionen</span>
-            <a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive.id) }}" class="btn btn-primary">+ Neue Inspektion</a>
+            <span>{{ _('All Inspections') }}</span>
+            <a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive.id) }}" class="btn btn-primary">{{ _('+ New Inspection') }}</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Datum</th>
-                            <th>Brutstatus</th>
-                            <th>Königin gesehen</th>
-                            <th>Schwarmzellen</th>
-                            <th>Futtervorrat</th>
-                            <th>Aktionen</th>
+                            <th>{{ _('Date') }}</th>
+                            <th>{{ _('Brood Status') }}</th>
+                            <th>{{ _('Queen Sighted') }}</th>
+                            <th>{{ _('Swarm Cells') }}</th>
+                            <th>{{ _('Food Supply') }}</th>
+                            <th>{{ _('Actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,15 +31,15 @@
                         <tr>
                             <td>{{ inspection.inspection_date }}</td>
                             <td>{{ inspection.brood_status }}</td>
-                            <td>{{ "Ja" if inspection.queen_sighted else "Nein" }}</td>
+                            <td>{{ _("Yes") if inspection.queen_sighted else _("No") }}</td>
                             <td>{{ inspection.swarm_cells }}</td>
                             <td>
                                 {% if inspection.food_supply == 'gering' %}
-                                    <span class="badge bg-danger">{{ inspection.food_supply }}</span>
+                                    <span class="badge bg-danger">{{ _('low') }}</span>
                                 {% elif inspection.food_supply == 'ausreichend' %}
-                                    <span class="badge bg-warning text-dark">{{ inspection.food_supply }}</span>
+                                    <span class="badge bg-warning text-dark">{{ _('sufficient') }}</span>
                                 {% elif inspection.food_supply == 'gut' %}
-                                    <span class="badge bg-success">{{ inspection.food_supply }}</span>
+                                    <span class="badge bg-success">{{ _('good') }}</span>
                                 {% else %}
                                     {{ inspection.food_supply }}
                                 {% endif %}
@@ -49,7 +49,7 @@
                                     <i class="bi bi-pencil"></i>
                                 </a>
                                 <form action="{{ url_for('main.inspections_controller.delete_inspection', hive_id=hive.id, inspection_id=inspection.id) }}" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Sind Sie sicher, dass Sie diese Inspektion löschen möchten?');">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('{{ _('Are you sure you want to delete this inspection?') }}');">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </form>
@@ -57,7 +57,7 @@
                         </tr>
                         {% else %}
                         <tr>
-                            <td colspan="6" class="text-center">Noch keine Inspektionen für diesen Bienenstock vorhanden.</td>
+                            <td colspan="6" class="text-center">{{ _('No inspections available for this hive yet.') }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

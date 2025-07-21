@@ -1,51 +1,51 @@
 {% extends 'base.html' %}
 {% from '_macros.html' import render_timeline_event %}
 
-{% block title %}Details für {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Details for') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
     {# Issue #16: Prominenter Header für Stammdaten #}
     <div class="card mb-4">
         <div class="card-header">
-            <h2><i class="bi bi-hexagon-fill"></i> Bienenstock: {{ hive.stocknummer }}</h2>
+            <h2><i class="bi bi-hexagon-fill"></i> {{ _('Hive') }}: {{ hive.stocknummer }}</h2>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <p><strong>Standort:</strong> {{ hive.standort }}</p>
-                    <p><strong>Beutentyp:</strong> {{ hive.beutentyp }}</p>
-                    <p><strong>Anzahl Zargen:</strong> {{ hive.zargen_anzahl }}</p>
+                    <p><strong>{{ _('Location') }}:</strong> {{ hive.standort }}</p>
+                    <p><strong>{{ _('Hive Type') }}:</strong> {{ hive.beutentyp }}</p>
+                    <p><strong>{{ _('Number of Frames') }}:</strong> {{ hive.zargen_anzahl }}</p>
                 </div>
                 <div class="col-md-6">
-                    <p><strong>Aktuelle Königin:</strong> {{ hive.queen.name if hive.queen else 'N/A' }}</p>
-                    <p><strong>Völkerstärke:</strong> {{ hive.colony_strength }}/5</p>
-                    <p><strong>Sanftmut:</strong> {{ hive.temperament }}/5</p>
+                    <p><strong>{{ _('Current Queen') }}:</strong> {{ hive.queen.name if hive.queen else _('N/A') }}</p>
+                    <p><strong>{{ _('Colony Strength') }}:</strong> {{ hive.colony_strength }}/5</p>
+                    <p><strong>{{ _('Temperament') }}:</strong> {{ hive.temperament }}/5</p>
                 </div>
             </div>
-            <a href="{{ url_for('main.edit_hive', hive_id=hive.id) }}" class="btn btn-secondary mt-2">Stammdaten bearbeiten</a>
+            <a href="{{ url_for('main.edit_hive', hive_id=hive.id) }}" class="btn btn-secondary mt-2">{{ _('Edit Master Data') }}</a>
         </div>
     </div>
 
     {# Issue #17: Button-Leiste für schnelle Aktionen #}
     <div class="card mb-4">
         <div class="card-header">
-            Aktionen
+            {{ _('Actions') }}
         </div>
         <div class="card-body text-center">
-            <a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive.id) }}" class="btn btn-primary m-1"><i class="bi bi-search"></i> + Kontrolle</a>
-            <a href="{{ url_for('main.feeding_controller.new_feeding', hive_id=hive.id) }}" class="btn btn-info m-1"><i class="bi bi-droplet-fill"></i> + Fütterung</a>
-            <a href="{{ url_for('main.treatments_controller.new_treatment', hive_id=hive.id) }}" class="btn btn-warning m-1"><i class="bi bi-eyedropper"></i> + Behandlung</a>
-            <a href="{{ url_for('main.harvests_controller.new_harvest', hive_id=hive.id) }}" class="btn btn-success m-1"><i class="bi bi-box-seam"></i> + Ernte</a>
-            <a href="{{ url_for('main.varroa_controls_controller.new_varroa_control', hive_id=hive.id) }}" class="btn btn-danger m-1"><i class="bi bi-bug-fill"></i> + Varroakontrolle</a>
-            <a href="{{ url_for('main.splits_controller.new_split', hive_id=hive.id) }}" class="btn btn-secondary m-1"><i class="bi bi-arrows-expand"></i> + Ableger</a>
-            <a href="{{ url_for('main.queens_controller.new_queen', hive_id=hive.id) }}" class="btn btn-info m-1"><i class="bi bi-person-fill"></i> + Königin</a>
+            <a href="{{ url_for('main.inspections_controller.new_inspection', hive_id=hive.id) }}" class="btn btn-primary m-1"><i class="bi bi-search"></i> {{ _('+ Inspection') }}</a>
+            <a href="{{ url_for('main.feeding_controller.new_feeding', hive_id=hive.id) }}" class="btn btn-info m-1"><i class="bi bi-droplet-fill"></i> {{ _('+ Feeding') }}</a>
+            <a href="{{ url_for('main.treatments_controller.new_treatment', hive_id=hive.id) }}" class="btn btn-warning m-1"><i class="bi bi-eyedropper"></i> {{ _('+ Treatment') }}</a>
+            <a href="{{ url_for('main.harvests_controller.new_harvest', hive_id=hive.id) }}" class="btn btn-success m-1"><i class="bi bi-box-seam"></i> {{ _('+ Harvest') }}</a>
+            <a href="{{ url_for('main.varroa_controls_controller.new_varroa_control', hive_id=hive.id) }}" class="btn btn-danger m-1"><i class="bi bi-bug-fill"></i> {{ _('+ Varroa Control') }}</a>
+            <a href="{{ url_for('main.splits_controller.new_split', hive_id=hive.id) }}" class="btn btn-secondary m-1"><i class="bi bi-arrows-expand"></i> {{ _('+ Split') }}</a>
+            <a href="{{ url_for('main.queens_controller.new_queen', hive_id=hive.id) }}" class="btn btn-info m-1"><i class="bi bi-person-fill"></i> {{ _('+ Queen') }}</a>
         </div>
     </div>
 
     {# Issue #18 & #15: Chronologischer Feed #}
     <div class="card">
         <div class="card-header">
-            Chronik
+            {{ _('Chronicle') }}
         </div>
         <div class="card-body">
             {% if timeline_events %}
@@ -53,7 +53,7 @@
                     {{ render_timeline_event(event, hive.id) }}
                 {% endfor %}
             {% else %}
-                <p class="text-muted">Für diesen Bienenstock gibt es noch keine Einträge in der Chronik.</p>
+                <p class="text-muted">{{ _('No entries in the chronicle for this hive yet.') }}</p>
             {% endif %}
         </div>
     </div>

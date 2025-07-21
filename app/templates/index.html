@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% from '_macros.html' import render_hive_card %}
 
-{% block title %}Bienenstock Übersicht{% endblock %}
+{% block title %}{{ _('Hive Overview') }}{% endblock %}
 
 {% block content %}
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Bienenstock Übersicht</h1>
-        <a href="{{ url_for('main.new_hive') }}" class="btn btn-primary">+ Neuer Bienenstock</a>
+        <h1>{{ _('Hive Overview') }}</h1>
     </div>
 
     <div class="row">
@@ -14,7 +13,7 @@
             {{ render_hive_card(hive) }}
         {% else %}
             <div class="col">
-                <div class="alert alert-info">Noch keine Bienenstöcke vorhanden.</div>
+                <div class="alert alert-info">{{ _('No hives available yet.') }}</div>
             </div>
         {% endfor %}
     </div>

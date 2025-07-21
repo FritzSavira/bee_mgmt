@@ -1,34 +1,34 @@
 {% extends 'base.html' %}
 
-{% block title %}Varroakontrolle bearbeiten für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Edit Varroa Control for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Varroakontrolle bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
+    <h1>{{ _('Edit Varroa Control for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="control_date" class="form-label">Kontrolldatum:</label>
+                    <label for="control_date" class="form-label">{{ _('Control Date') }}:</label>
                     <input type="date" id="control_date" name="control_date" class="form-control" value="{{ varroa_control.control_date }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="mite_count" class="form-label">Milbenanzahl:</label>
+                    <label for="mite_count" class="form-label">{{ _('Mite Count') }}:</label>
                     <input type="number" id="mite_count" name="mite_count" class="form-control" value="{{ varroa_control.mite_count }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="method" class="form-label">Methode:</label>
+                    <label for="method" class="form-label">{{ _('Method') }}:</label>
                     <input type="text" id="method" name="method" class="form-control" value="{{ varroa_control.method }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="infestation_level" class="form-label">Befallsgrad:</label>
+                    <label for="infestation_level" class="form-label">{{ _('Infestation Level') }}:</label>
                     <input type="text" id="infestation_level" name="infestation_level" class="form-control" value="{{ varroa_control.infestation_level }}">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Speichern</button>
-                <a href="{{ url_for('main.varroa_controls_controller.varroa_controls_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+                <button type="submit" class="btn btn-primary">{{ _('Save') }}</button>
+                <a href="{{ url_for('main.varroa_controls_controller.varroa_controls_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>
         </div>
     </div>

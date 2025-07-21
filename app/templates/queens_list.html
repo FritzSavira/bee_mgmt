@@ -1,32 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}Königinnen für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Queens for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Königinnen für Bienenstock {{ hive.stocknummer }}</h1>
-        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">Zurück zum Bienenstock</a>
+        <h1>{{ _('Queens for Hive') }} {{ hive.stocknummer }}</h1>
+        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Back to Hive') }}</a>
     </div>
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>Alle Königinnen</span>
-            <a href="{{ url_for('main.queens_controller.new_queen', hive_id=hive.id) }}" class="btn btn-primary">+ Neue Königin</a>
+            <span>{{ _('All Queens') }}</span>
+            <a href="{{ url_for('main.queens_controller.new_queen', hive_id=hive.id) }}" class="btn btn-primary">{{ _('+ New Queen') }}</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Herkunft</th>
-                            <th>Geburtsdatum</th>
-                            <th>Alter (Jahre)</th>
-                            <th>Farbmarkierung</th>
-                            <th>Rasse</th>
-                            <th>Einsetzdatum</th>
-                            <th>Markiert</th>
-                            <th>Geflügelt</th>
-                            <th>Aktionen</th>
+                            <th>{{ _('Origin') }}</th>
+                            <th>{{ _('Birth Date') }}</th>
+                            <th>{{ _('Age (Years)') }}</th>
+                            <th>{{ _('Color Mark') }}</th>
+                            <th>{{ _('Breed') }}</th>
+                            <th>{{ _('Introduction Date') }}</th>
+                            <th>{{ _('Marked') }}</th>
+                            <th>{{ _('Clipped') }}</th>
+                            <th>{{ _('Actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,14 +38,14 @@
                             <td>{{ queen.color_mark }}</td>
                             <td>{{ queen.breed }}</td>
                             <td>{{ queen.introduction_date }}</td>
-                            <td>{{ "Ja" if queen.marked else "Nein" }}</td>
-                            <td>{{ "Ja" if queen.clipped else "Nein" }}</td>
+                            <td>{{ _("Yes") if queen.marked else _("No") }}</td>
+                            <td>{{ _("Yes") if queen.clipped else _("No") }}</td>
                             <td>
                                 <a href="{{ url_for('main.queens_controller.edit_queen', hive_id=hive.id, queen_id=queen.id) }}" class="btn btn-sm btn-secondary">
                                     <i class="bi bi-pencil"></i>
                                 </a>
                                 <form action="{{ url_for('main.queens_controller.delete_queen', hive_id=hive.id, queen_id=queen.id) }}" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Sind Sie sicher, dass Sie diese Königin löschen möchten?');">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('{{ _('Are you sure you want to delete this queen?') }}');">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </form>
@@ -53,7 +53,7 @@
                         </tr>
                         {% else %}
                         <tr>
-                            <td colspan="9" class="text-center">Noch keine Königinnen für diesen Bienenstock vorhanden.</td>
+                            <td colspan="9" class="text-center">{{ _('No queens available for this hive yet.') }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

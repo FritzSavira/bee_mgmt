@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 
+{% block title %}{{ _('Treatment Report') }}{% endblock %}
+
 {% block content %}
-    <h1>Treatment Report</h1>
+    <h1>{{ _('Treatment Report') }}</h1>
     <table class="table table-striped mt-3">
         <thead>
             <tr>
-                <th>Hive ID</th>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Agent</th>
-                <th>Dosage</th>
-                <th>Duration</th>
-                <th>Efficacy Observation</th>
+                <th>{{ _('Hive ID') }}</th>
+                <th>{{ _('Date') }}</th>
+                <th>{{ _('Type') }}</th>
+                <th>{{ _('Agent') }}</th>
+                <th>{{ _('Dosage') }}</th>
+                <th>{{ _('Duration') }}</th>
+                <th>{{ _('Efficacy Observation') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,10 +29,10 @@
             </tr>
             {% else %}
             <tr>
-                <td colspan="7">No treatments found.</td>
+                <td colspan="7">{{ _('No treatments found.') }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ url_for('main.index') }}">Back to Home</a>
+    <a href="{{ url_for('main.index') }}">{{ _('Back to Home') }}</a>
 {% endblock %}

@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 
-{% block title %}Ableger bearbeiten für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Edit Split for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Ableger bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
+    <h1>{{ _('Edit Split for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="split_date" class="form-label">Datum des Ablegers:</label>
+                    <label for="split_date" class="form-label">{{ _('Split Date') }}:</label>
                     <input type="date" id="split_date" name="split_date" class="form-control" value="{{ split.split_date }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="method" class="form-label">Methode:</label>
+                    <label for="method" class="form-label">{{ _('Method') }}:</label>
                     <input type="text" id="method" name="method" class="form-control" value="{{ split.method }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="new_hive_id" class="form-label">ID des neuen Bienenstocks (optional):</label>
+                    <label for="new_hive_id" class="form-label">{{ _('New Hive ID (optional)') }}:</label>
                     <input type="text" id="new_hive_id" name="new_hive_id" class="form-control" value="{{ split.new_hive_id or '' }}">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Speichern</button>
-                <a href="{{ url_for('main.splits_controller.splits_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+                <button type="submit" class="btn btn-primary">{{ _('Save') }}</button>
+                <a href="{{ url_for('main.splits_controller.splits_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>
         </div>
     </div>

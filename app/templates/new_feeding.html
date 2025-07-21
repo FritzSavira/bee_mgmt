@@ -1,34 +1,34 @@
 {% extends 'base.html' %}
 
-{% block title %}Neue Fütterung für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('New Feeding for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Neue Fütterung für Bienenstock: {{ hive.stocknummer }}</h1>
+    <h1>{{ _('New Feeding for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="feeding_date" class="form-label">Fütterungsdatum:</label>
+                    <label for="feeding_date" class="form-label">{{ _('Feeding Date') }}:</label>
                     <input type="date" id="feeding_date" name="feeding_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="food_type" class="form-label">Futterart:</label>
+                    <label for="food_type" class="form-label">{{ _('Food Type') }}:</label>
                     <input type="text" id="food_type" name="food_type" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="amount" class="form-label">Menge (kg/l):</label>
+                    <label for="amount" class="form-label">{{ _('Amount (kg/l)') }}:</label>
                     <input type="text" id="amount" name="amount" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="concentration" class="form-label">Konzentration (falls flüssig):</label>
+                    <label for="concentration" class="form-label">{{ _('Concentration (if liquid)') }}:</label>
                     <input type="text" id="concentration" name="concentration" class="form-control">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Hinzufügen</button>
-                <a href="{{ url_for('main.feeding_controller.feeding_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+                <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>
+                <a href="{{ url_for('main.feeding_controller.feeding_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>
         </div>
     </div>

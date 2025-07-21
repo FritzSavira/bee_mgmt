@@ -1,0 +1,725 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-19 20:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: app/templates/404.html:3 app/templates/404.html:8
+msgid "Page not found"
+msgstr ""
+
+#: app/templates/404.html:9
+msgid "Oops! The page you are looking for does not exist or has been moved."
+msgstr ""
+
+#: app/templates/404.html:10 app/templates/treatments_report.html:37
+msgid "Back to Home"
+msgstr ""
+
+#: app/templates/base.html:6 app/templates/base.html:55
+msgid "Bee Management"
+msgstr ""
+
+#: app/templates/base.html:57
+msgid "Toggle navigation"
+msgstr ""
+
+#: app/templates/base.html:63
+msgid "Overview"
+msgstr ""
+
+#: app/templates/base.html:66
+msgid "+ New Hive"
+msgstr ""
+
+#: app/templates/base.html:79
+msgid "Close"
+msgstr ""
+
+#: app/templates/base.html:91
+msgid "Bee Management App"
+msgstr ""
+
+#: app/templates/edit_feeding.html:3 app/templates/edit_feeding.html:6
+msgid "Edit Feeding for Hive"
+msgstr ""
+
+#: app/templates/edit_feeding.html:11 app/templates/new_feeding.html:11
+msgid "Feeding Date"
+msgstr ""
+
+#: app/templates/edit_feeding.html:16 app/templates/feeding_list.html:22
+#: app/templates/new_feeding.html:16
+msgid "Food Type"
+msgstr ""
+
+#: app/templates/edit_feeding.html:21 app/templates/new_feeding.html:21
+msgid "Amount (kg/l)"
+msgstr ""
+
+#: app/templates/edit_feeding.html:26 app/templates/new_feeding.html:26
+msgid "Concentration (if liquid)"
+msgstr ""
+
+#: app/templates/edit_feeding.html:30 app/templates/edit_harvest.html:35
+#: app/templates/edit_hive.html:69 app/templates/edit_queen.html:45
+#: app/templates/edit_split.html:25 app/templates/edit_treatment.html:40
+#: app/templates/edit_varroa_control.html:30
+msgid "Save"
+msgstr ""
+
+#: app/templates/edit_feeding.html:31 app/templates/edit_harvest.html:36
+#: app/templates/edit_hive.html:70 app/templates/edit_inspection.html:43
+#: app/templates/edit_queen.html:46 app/templates/edit_split.html:26
+#: app/templates/edit_treatment.html:41
+#: app/templates/edit_varroa_control.html:31 app/templates/new_feeding.html:31
+#: app/templates/new_harvest.html:36 app/templates/new_hive.html:70
+#: app/templates/new_inspection.html:43 app/templates/new_queen.html:46
+#: app/templates/new_split.html:26 app/templates/new_treatment.html:41
+#: app/templates/new_varroa_control.html:31
+msgid "Cancel"
+msgstr ""
+
+#: app/templates/edit_harvest.html:3 app/templates/edit_harvest.html:6
+msgid "Edit Honey Harvest for Hive"
+msgstr ""
+
+#: app/templates/edit_harvest.html:11 app/templates/new_harvest.html:11
+msgid "Harvest Date"
+msgstr ""
+
+#: app/templates/edit_harvest.html:16 app/templates/harvests_list.html:22
+#: app/templates/new_harvest.html:16
+msgid "Amount (kg)"
+msgstr ""
+
+#: app/templates/edit_harvest.html:21 app/templates/harvests_list.html:23
+#: app/templates/new_harvest.html:21
+msgid "Honey Type"
+msgstr ""
+
+#: app/templates/edit_harvest.html:26 app/templates/new_harvest.html:26
+msgid "Water Content (%)"
+msgstr ""
+
+#: app/templates/edit_harvest.html:31 app/templates/new_harvest.html:31
+msgid "Notes"
+msgstr ""
+
+#: app/templates/edit_hive.html:3 app/templates/edit_hive.html:6
+msgid "Edit Hive"
+msgstr ""
+
+#: app/templates/edit_hive.html:11 app/templates/new_hive.html:11
+msgid "Hive Number"
+msgstr ""
+
+#: app/templates/edit_hive.html:16 app/templates/hive_detail.html:15
+#: app/templates/new_hive.html:16
+msgid "Location"
+msgstr ""
+
+#: app/templates/edit_hive.html:21 app/templates/hive_detail.html:16
+#: app/templates/new_hive.html:21
+msgid "Hive Type"
+msgstr ""
+
+#: app/templates/edit_hive.html:26 app/templates/hive_detail.html:17
+#: app/templates/new_hive.html:26
+msgid "Number of Frames"
+msgstr ""
+
+#: app/templates/edit_hive.html:31 app/templates/new_hive.html:31
+msgid "Colony Strength (number of occupied comb lanes)"
+msgstr ""
+
+#: app/templates/edit_hive.html:36 app/templates/new_hive.html:36
+msgid "Temperament (scale 1-5)"
+msgstr ""
+
+#: app/templates/edit_hive.html:41 app/templates/new_hive.html:41
+msgid "Swarming Tendency"
+msgstr ""
+
+#: app/templates/edit_hive.html:44 app/templates/edit_inspection.html:31
+#: app/templates/inspections_list.html:38 app/templates/new_hive.html:44
+#: app/templates/new_inspection.html:31
+msgid "low"
+msgstr ""
+
+#: app/templates/edit_hive.html:45 app/templates/new_hive.html:45
+msgid "medium"
+msgstr ""
+
+#: app/templates/edit_hive.html:46 app/templates/new_hive.html:46
+msgid "high"
+msgstr ""
+
+#: app/templates/edit_hive.html:51 app/templates/new_hive.html:51
+msgid "Comb Settling"
+msgstr ""
+
+#: app/templates/edit_hive.html:54 app/templates/new_hive.html:54
+msgid "calm"
+msgstr ""
+
+#: app/templates/edit_hive.html:55 app/templates/new_hive.html:55
+msgid "restless"
+msgstr ""
+
+#: app/templates/edit_hive.html:60 app/templates/new_hive.html:60
+msgid "Honey Yield Rating"
+msgstr ""
+
+#: app/templates/edit_hive.html:63 app/templates/new_hive.html:63
+msgid "below average"
+msgstr ""
+
+#: app/templates/edit_hive.html:64 app/templates/new_hive.html:64
+msgid "average"
+msgstr ""
+
+#: app/templates/edit_hive.html:65 app/templates/new_hive.html:65
+msgid "above average"
+msgstr ""
+
+#: app/templates/edit_inspection.html:3 app/templates/edit_inspection.html:6
+msgid "Edit Inspection for Hive"
+msgstr ""
+
+#: app/templates/edit_inspection.html:11 app/templates/new_inspection.html:11
+msgid "Inspection Date"
+msgstr ""
+
+#: app/templates/edit_inspection.html:15 app/templates/inspections_list.html:22
+#: app/templates/new_inspection.html:15
+msgid "Brood Status"
+msgstr ""
+
+#: app/templates/edit_inspection.html:20 app/templates/inspections_list.html:23
+#: app/templates/new_inspection.html:20
+msgid "Queen Sighted"
+msgstr ""
+
+#: app/templates/edit_inspection.html:23 app/templates/inspections_list.html:24
+#: app/templates/new_inspection.html:23
+msgid "Swarm Cells"
+msgstr ""
+
+#: app/templates/edit_inspection.html:27 app/templates/inspections_list.html:25
+#: app/templates/new_inspection.html:27
+msgid "Food Supply"
+msgstr ""
+
+#: app/templates/edit_inspection.html:29 app/templates/inspections_list.html:42
+#: app/templates/new_inspection.html:29
+msgid "good"
+msgstr ""
+
+#: app/templates/edit_inspection.html:30 app/templates/inspections_list.html:40
+#: app/templates/new_inspection.html:30
+msgid "sufficient"
+msgstr ""
+
+#: app/templates/edit_inspection.html:35 app/templates/new_inspection.html:35
+msgid "Measures Taken"
+msgstr ""
+
+#: app/templates/edit_inspection.html:39 app/templates/new_inspection.html:39
+msgid "Observations"
+msgstr ""
+
+#: app/templates/edit_inspection.html:42
+msgid "Update Inspection"
+msgstr ""
+
+#: app/templates/edit_queen.html:3 app/templates/edit_queen.html:6
+msgid "Edit Queen for Hive"
+msgstr ""
+
+#: app/templates/edit_queen.html:11 app/templates/new_queen.html:11
+#: app/templates/queens_list.html:21
+msgid "Origin"
+msgstr ""
+
+#: app/templates/edit_queen.html:16 app/templates/new_queen.html:16
+msgid "Birth Year/Hatching Date"
+msgstr ""
+
+#: app/templates/edit_queen.html:21 app/templates/new_queen.html:21
+#: app/templates/queens_list.html:24
+msgid "Color Mark"
+msgstr ""
+
+#: app/templates/edit_queen.html:26 app/templates/new_queen.html:26
+msgid "Breed/Genetics"
+msgstr ""
+
+#: app/templates/edit_queen.html:31 app/templates/new_queen.html:31
+#: app/templates/queens_list.html:26
+msgid "Introduction Date"
+msgstr ""
+
+#: app/templates/edit_queen.html:37 app/templates/new_queen.html:37
+#: app/templates/queens_list.html:27
+msgid "Marked"
+msgstr ""
+
+#: app/templates/edit_queen.html:42 app/templates/new_queen.html:42
+msgid "Clipped/Unclipped"
+msgstr ""
+
+#: app/templates/edit_split.html:3 app/templates/edit_split.html:6
+msgid "Edit Split for Hive"
+msgstr ""
+
+#: app/templates/edit_split.html:11 app/templates/new_split.html:11
+msgid "Split Date"
+msgstr ""
+
+#: app/templates/edit_split.html:16 app/templates/edit_varroa_control.html:21
+#: app/templates/new_split.html:16 app/templates/new_varroa_control.html:21
+#: app/templates/splits_list.html:22 app/templates/varroa_controls_list.html:23
+msgid "Method"
+msgstr ""
+
+#: app/templates/edit_split.html:21 app/templates/new_split.html:21
+msgid "New Hive ID (optional)"
+msgstr ""
+
+#: app/templates/edit_treatment.html:3 app/templates/edit_treatment.html:6
+msgid "Edit Treatment for Hive"
+msgstr ""
+
+#: app/templates/edit_treatment.html:11 app/templates/new_treatment.html:11
+msgid "Treatment Date"
+msgstr ""
+
+#: app/templates/edit_treatment.html:16 app/templates/new_treatment.html:16
+msgid "Treatment Type"
+msgstr ""
+
+#: app/templates/edit_treatment.html:21 app/templates/new_treatment.html:21
+msgid "Used Agent"
+msgstr ""
+
+#: app/templates/edit_treatment.html:26 app/templates/new_treatment.html:26
+#: app/templates/treatments_list.html:24
+#: app/templates/treatments_report.html:14
+msgid "Dosage"
+msgstr ""
+
+#: app/templates/edit_treatment.html:31 app/templates/new_treatment.html:31
+msgid "Duration of Treatment"
+msgstr ""
+
+#: app/templates/edit_treatment.html:36 app/templates/new_treatment.html:36
+#: app/templates/treatments_report.html:16
+msgid "Efficacy Observation"
+msgstr ""
+
+#: app/templates/edit_varroa_control.html:3
+#: app/templates/edit_varroa_control.html:6
+msgid "Edit Varroa Control for Hive"
+msgstr ""
+
+#: app/templates/edit_varroa_control.html:11
+#: app/templates/new_varroa_control.html:11
+msgid "Control Date"
+msgstr ""
+
+#: app/templates/edit_varroa_control.html:16
+#: app/templates/new_varroa_control.html:16
+#: app/templates/varroa_controls_list.html:22
+msgid "Mite Count"
+msgstr ""
+
+#: app/templates/edit_varroa_control.html:26
+#: app/templates/new_varroa_control.html:26
+#: app/templates/varroa_controls_list.html:24
+msgid "Infestation Level"
+msgstr ""
+
+#: app/templates/feeding_list.html:3 app/templates/feeding_list.html:7
+msgid "Feedings for Hive"
+msgstr ""
+
+#: app/templates/feeding_list.html:8 app/templates/harvests_list.html:8
+#: app/templates/inspections_list.html:8 app/templates/queens_list.html:8
+#: app/templates/splits_list.html:8 app/templates/treatments_list.html:8
+#: app/templates/varroa_controls_list.html:8
+msgid "Back to Hive"
+msgstr ""
+
+#: app/templates/feeding_list.html:13
+msgid "All Feedings"
+msgstr ""
+
+#: app/templates/feeding_list.html:14
+msgid "+ New Feeding"
+msgstr ""
+
+#: app/templates/feeding_list.html:21 app/templates/harvests_list.html:21
+#: app/templates/inspections_list.html:21 app/templates/splits_list.html:21
+#: app/templates/treatments_list.html:21
+#: app/templates/treatments_report.html:11
+#: app/templates/varroa_controls_list.html:21
+msgid "Date"
+msgstr ""
+
+#: app/templates/feeding_list.html:23
+msgid "Amount"
+msgstr ""
+
+#: app/templates/feeding_list.html:24
+msgid "Concentration"
+msgstr ""
+
+#: app/templates/feeding_list.html:25 app/templates/harvests_list.html:25
+#: app/templates/hive_detail.html:32 app/templates/inspections_list.html:26
+#: app/templates/queens_list.html:29 app/templates/splits_list.html:24
+#: app/templates/treatments_list.html:26
+#: app/templates/varroa_controls_list.html:25
+msgid "Actions"
+msgstr ""
+
+#: app/templates/feeding_list.html:40
+msgid "Are you sure you want to delete this feeding entry?"
+msgstr ""
+
+#: app/templates/feeding_list.html:48
+msgid "No feedings available for this hive yet."
+msgstr ""
+
+#: app/templates/harvests_list.html:3 app/templates/harvests_list.html:7
+msgid "Honey Harvests for Hive"
+msgstr ""
+
+#: app/templates/harvests_list.html:13
+msgid "All Honey Harvests"
+msgstr ""
+
+#: app/templates/harvests_list.html:14
+msgid "+ New Harvest"
+msgstr ""
+
+#: app/templates/harvests_list.html:24
+msgid "Water Content"
+msgstr ""
+
+#: app/templates/harvests_list.html:40
+msgid "Are you sure you want to delete this harvest entry?"
+msgstr ""
+
+#: app/templates/harvests_list.html:48
+msgid "No honey harvests available for this hive yet."
+msgstr ""
+
+#: app/templates/harvests_report.html:3 app/templates/harvests_report.html:6
+msgid "Honey Harvest Report"
+msgstr ""
+
+#: app/templates/harvests_report.html:10
+msgid "Total Yield"
+msgstr ""
+
+#: app/templates/harvests_report.html:13
+msgid "Total Honey Yield"
+msgstr ""
+
+#: app/templates/harvests_report.html:14
+msgid "This is the cumulative yield of all recorded honey harvests."
+msgstr ""
+
+#: app/templates/harvests_report.html:18
+msgid "Back to Overview"
+msgstr ""
+
+#: app/templates/hive_detail.html:4
+msgid "Details for"
+msgstr ""
+
+#: app/templates/hive_detail.html:10
+msgid "Hive"
+msgstr ""
+
+#: app/templates/hive_detail.html:20
+msgid "Current Queen"
+msgstr ""
+
+#: app/templates/hive_detail.html:20
+msgid "N/A"
+msgstr ""
+
+#: app/templates/hive_detail.html:21
+msgid "Colony Strength"
+msgstr ""
+
+#: app/templates/hive_detail.html:22
+msgid "Temperament"
+msgstr ""
+
+#: app/templates/hive_detail.html:25
+msgid "Edit Master Data"
+msgstr ""
+
+#: app/templates/hive_detail.html:35
+msgid "+ Inspection"
+msgstr ""
+
+#: app/templates/hive_detail.html:36
+msgid "+ Feeding"
+msgstr ""
+
+#: app/templates/hive_detail.html:37
+msgid "+ Treatment"
+msgstr ""
+
+#: app/templates/hive_detail.html:38
+msgid "+ Harvest"
+msgstr ""
+
+#: app/templates/hive_detail.html:39
+msgid "+ Varroa Control"
+msgstr ""
+
+#: app/templates/hive_detail.html:40
+msgid "+ Split"
+msgstr ""
+
+#: app/templates/hive_detail.html:41
+msgid "+ Queen"
+msgstr ""
+
+#: app/templates/hive_detail.html:48
+msgid "Chronicle"
+msgstr ""
+
+#: app/templates/hive_detail.html:56
+msgid "No entries in the chronicle for this hive yet."
+msgstr ""
+
+#: app/templates/index.html:4 app/templates/index.html:8
+msgid "Hive Overview"
+msgstr ""
+
+#: app/templates/index.html:16
+msgid "No hives available yet."
+msgstr ""
+
+#: app/templates/inspections_list.html:3 app/templates/inspections_list.html:7
+msgid "Inspections for Hive"
+msgstr ""
+
+#: app/templates/inspections_list.html:13
+msgid "All Inspections"
+msgstr ""
+
+#: app/templates/inspections_list.html:14
+msgid "+ New Inspection"
+msgstr ""
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:41
+#: app/templates/queens_list.html:42
+msgid "Yes"
+msgstr ""
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:41
+#: app/templates/queens_list.html:42
+msgid "No"
+msgstr ""
+
+#: app/templates/inspections_list.html:52
+msgid "Are you sure you want to delete this inspection?"
+msgstr ""
+
+#: app/templates/inspections_list.html:60
+msgid "No inspections available for this hive yet."
+msgstr ""
+
+#: app/templates/new_feeding.html:3 app/templates/new_feeding.html:6
+msgid "New Feeding for Hive"
+msgstr ""
+
+#: app/templates/new_feeding.html:30 app/templates/new_harvest.html:35
+#: app/templates/new_hive.html:69 app/templates/new_queen.html:45
+#: app/templates/new_split.html:25 app/templates/new_treatment.html:40
+#: app/templates/new_varroa_control.html:30
+msgid "Add"
+msgstr ""
+
+#: app/templates/new_harvest.html:3 app/templates/new_harvest.html:6
+msgid "New Honey Harvest for Hive"
+msgstr ""
+
+#: app/templates/new_hive.html:3 app/templates/new_hive.html:6
+msgid "Add New Hive"
+msgstr ""
+
+#: app/templates/new_inspection.html:3 app/templates/new_inspection.html:6
+msgid "New Inspection for Hive"
+msgstr ""
+
+#: app/templates/new_inspection.html:42
+msgid "Add Inspection"
+msgstr ""
+
+#: app/templates/new_queen.html:3 app/templates/new_queen.html:6
+msgid "New Queen for Hive"
+msgstr ""
+
+#: app/templates/new_split.html:3 app/templates/new_split.html:6
+msgid "Add New Split for Hive"
+msgstr ""
+
+#: app/templates/new_treatment.html:3 app/templates/new_treatment.html:6
+msgid "New Treatment for Hive"
+msgstr ""
+
+#: app/templates/new_varroa_control.html:3
+#: app/templates/new_varroa_control.html:6
+msgid "New Varroa Control for Hive"
+msgstr ""
+
+#: app/templates/queens_list.html:3 app/templates/queens_list.html:7
+msgid "Queens for Hive"
+msgstr ""
+
+#: app/templates/queens_list.html:13
+msgid "All Queens"
+msgstr ""
+
+#: app/templates/queens_list.html:14
+msgid "+ New Queen"
+msgstr ""
+
+#: app/templates/queens_list.html:22
+msgid "Birth Date"
+msgstr ""
+
+#: app/templates/queens_list.html:23
+msgid "Age (Years)"
+msgstr ""
+
+#: app/templates/queens_list.html:25
+msgid "Breed"
+msgstr ""
+
+#: app/templates/queens_list.html:28
+msgid "Clipped"
+msgstr ""
+
+#: app/templates/queens_list.html:48
+msgid "Are you sure you want to delete this queen?"
+msgstr ""
+
+#: app/templates/queens_list.html:56
+msgid "No queens available for this hive yet."
+msgstr ""
+
+#: app/templates/splits_list.html:3 app/templates/splits_list.html:7
+msgid "Splits for Hive"
+msgstr ""
+
+#: app/templates/splits_list.html:13
+msgid "All Splits"
+msgstr ""
+
+#: app/templates/splits_list.html:14
+msgid "+ New Split"
+msgstr ""
+
+#: app/templates/splits_list.html:23
+msgid "New Hive ID"
+msgstr ""
+
+#: app/templates/splits_list.html:38
+msgid "Are you sure you want to delete this split entry?"
+msgstr ""
+
+#: app/templates/splits_list.html:46
+msgid "No splits available for this hive yet."
+msgstr ""
+
+#: app/templates/treatments_list.html:3 app/templates/treatments_list.html:7
+msgid "Treatments for Hive"
+msgstr ""
+
+#: app/templates/treatments_list.html:13
+msgid "All Treatments"
+msgstr ""
+
+#: app/templates/treatments_list.html:14
+msgid "+ New Treatment"
+msgstr ""
+
+#: app/templates/treatments_list.html:22
+#: app/templates/treatments_report.html:12
+msgid "Type"
+msgstr ""
+
+#: app/templates/treatments_list.html:23
+#: app/templates/treatments_report.html:13
+msgid "Agent"
+msgstr ""
+
+#: app/templates/treatments_list.html:25
+#: app/templates/treatments_report.html:15
+msgid "Duration"
+msgstr ""
+
+#: app/templates/treatments_list.html:42
+msgid "Are you sure you want to delete this treatment?"
+msgstr ""
+
+#: app/templates/treatments_list.html:50
+msgid "No treatments available for this hive yet."
+msgstr ""
+
+#: app/templates/treatments_report.html:3
+#: app/templates/treatments_report.html:6
+msgid "Treatment Report"
+msgstr ""
+
+#: app/templates/treatments_report.html:10
+msgid "Hive ID"
+msgstr ""
+
+#: app/templates/treatments_report.html:32
+msgid "No treatments found."
+msgstr ""
+
+#: app/templates/varroa_controls_list.html:3
+#: app/templates/varroa_controls_list.html:7
+msgid "Varroa Controls for Hive"
+msgstr ""
+
+#: app/templates/varroa_controls_list.html:13
+msgid "All Varroa Controls"
+msgstr ""
+
+#: app/templates/varroa_controls_list.html:14
+msgid "+ New Varroa Control"
+msgstr ""
+
+#: app/templates/varroa_controls_list.html:40
+msgid "Are you sure you want to delete this varroa control entry?"
+msgstr ""
+
+#: app/templates/varroa_controls_list.html:48
+msgid "No varroa controls available for this hive yet."
+msgstr ""
+

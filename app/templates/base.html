@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Bee Management{% endblock %}</title>
+    <title>{% block title %}{{ _('Bee Management') }}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
@@ -52,18 +52,28 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('main.index') }}">
                 <i class="bi bi-hexagon-fill"></i>
-                Bee Management
+                {{ _('Bee Management') }}
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.index') }}">Übersicht</a>
+                        <a class="nav-link" href="{{ url_for('main.index') }}">{{ _('Overview') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.new_hive') }}">+ Neuer Bienenstock</a>
+                        <a class="nav-link" href="{{ url_for('main.new_hive') }}">{{ _('+ New Hive') }}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ request.accept_languages.best_match(config['LANGUAGES']) | upper }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            {% for lang in config['LANGUAGES'] %}
+                            <li><a class="dropdown-item" href="{{ url_for('set_language', lang=lang) }}">{{ lang | upper }}</a></li>
+                            {% endfor %}
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -76,7 +86,7 @@
                 {% for category, message in messages %}
                     <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
                         {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ _('Close') }}"></button>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -88,7 +98,7 @@
 
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span class="text-muted">Bee Management App &copy; 2025</span>
+            <span class="text-muted">{{ _('Bee Management App') }} &copy; 2025</span>
         </div>
     </footer>
 

@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}Honigernte-Bericht{% endblock %}
+{% block title %}{{ _('Honey Harvest Report') }}{% endblock %}
 
 {% block content %}
-    <h1>Honigernte-Bericht</h1>
+    <h1>{{ _('Honey Harvest Report') }}</h1>
 
     <div class="card mb-4">
         <div class="card-header">
-            Gesamtertrag
+            {{ _('Total Yield') }}
         </div>
         <div class="card-body">
-            <h5 class="card-title">Gesamter Honigertrag: {{ total_yield }} kg</h5>
-            <p class="card-text">Dies ist der kumulierte Ertrag aller erfassten Honigernten.</p>
+            <h5 class="card-title">{{ _('Total Honey Yield') }}: {{ total_yield }} kg</h5>
+            <p class="card-text">{{ _('This is the cumulative yield of all recorded honey harvests.') }}</p>
         </div>
     </div>
 
-    <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Zurück zur Übersicht</a>
+    <a href="{{ url_for('main.index') }}" class="btn btn-secondary">{{ _('Back to Overview') }}</a>
 {% endblock %}

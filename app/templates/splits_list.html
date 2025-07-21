@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 
-{% block title %}Ableger für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Splits for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Ableger für Bienenstock {{ hive.stocknummer }}</h1>
-        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">Zurück zum Bienenstock</a>
+        <h1>{{ _('Splits for Hive') }} {{ hive.stocknummer }}</h1>
+        <a href="{{ url_for('main.hive_detail', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Back to Hive') }}</a>
     </div>
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>Alle Ableger</span>
-            <a href="{{ url_for('main.splits_controller.new_split', hive_id=hive.id) }}" class="btn btn-primary">+ Neuer Ableger</a>
+            <span>{{ _('All Splits') }}</span>
+            <a href="{{ url_for('main.splits_controller.new_split', hive_id=hive.id) }}" class="btn btn-primary">{{ _('+ New Split') }}</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Datum</th>
-                            <th>Methode</th>
-                            <th>Neue Stock-ID</th>
-                            <th>Aktionen</th>
+                            <th>{{ _('Date') }}</th>
+                            <th>{{ _('Method') }}</th>
+                            <th>{{ _('New Hive ID') }}</th>
+                            <th>{{ _('Actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +35,7 @@
                                     <i class="bi bi-pencil"></i>
                                 </a>
                                 <form action="{{ url_for('main.splits_controller.delete_split', hive_id=hive.id, split_id=split.id) }}" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Sind Sie sicher, dass Sie diesen Ablegereintrag löschen möchten?');">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('{{ _('Are you sure you want to delete this split entry?') }}');">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </form>
@@ -43,7 +43,7 @@
                         </tr>
                         {% else %}
                         <tr>
-                            <td colspan="4" class="text-center">Noch keine Ableger für diesen Bienenstock vorhanden.</td>
+                            <td colspan="4" class="text-center">{{ _('No splits available for this hive yet.') }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

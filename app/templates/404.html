@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Seite nicht gefunden{% endblock %}
+{% block title %}{{ _('Page not found') }}{% endblock %}
 
 {% block content %}
     <div class="container text-center my-5">
         <h1 class="display-1">404</h1>
-        <h2 class="mb-4">Seite nicht gefunden</h2>
-        <p class="lead">Hoppla! Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.</p>
-        <a href="{{ url_for('main.index') }}" class="btn btn-primary mt-3">Zurück zur Startseite</a>
+        <h2 class="mb-4">{{ _('Page not found') }}</h2>
+        <p class="lead">{{ _('Oops! The page you are looking for does not exist or has been moved.') }}</p>
+        <a href="{{ url_for('main.index') }}" class="btn btn-primary mt-3">{{ _('Back to Home') }}</a>
     </div>
 {% endblock %}

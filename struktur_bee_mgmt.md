@@ -105,6 +105,40 @@ Um eine hohe Code-Qualität, Konsistenz und Wartbarkeit zu gewährleisten, sind 
 3.  **Includes für statische Sektionen:**
     *   Komplexe, aber statische HTML-Abschnitte, die auf mehreren Seiten wiederverwendet werden (z.B. eine Aktionsleiste), SOLLTEN in separate Partial-Dateien (z.B. `_action_bar.html`) ausgelagert und mit `{% include %}` eingebunden werden.
 
+### 4.2 Sprachen
+
+Um die Anwendung mehrsprachig zu gestalten und die Auswahl der Sprache über die Navbar zu ermöglichen, wird die Flask-Erweiterung `Flask-Babel` verwendet.
+
+#### Konzept: Internationalisierung (i18n) und Lokalisierung (l10n) mit Flask-Babel
+
+Das Ziel ist, alle im Browserfenster angezeigten Texte durch sprachspezifische Versionen zu ersetzen.
+
+#### Guideline zur Implementierung:
+
+1.  **Installation und Konfiguration:**
+    *   `Flask-Babel` muss in `requirements.txt` hinzugefügt und installiert werden.
+    *   Die Initialisierung und Konfiguration von Babel erfolgt in `app/__init__.py`. Dies beinhaltet die Definition der unterstützten Sprachen (z.B. `['de', 'en']`) und eine Funktion zur Ermittlung der aktuellen Sprache (z.B. über Session oder URL-Parameter).
+
+2.  **Textmarkierung in HTML-Templates:**
+    *   Alle Texte in den HTML-Dateien (`app/templates/*.html`), die übersetzt werden sollen, MÜSSEN mit der Jinja2-Syntax `{{ _('Text zum Übersetzen') }}` oder `{{ gettext('Text zum Übersetzen') }}` markiert werden.
+
+3.  **Textextraktion:**
+    *   Das Babel-CLI-Tool wird verwendet, um alle markierten Texte aus den Templates zu extrahieren. Das Ergebnis ist eine `.pot`-Datei (Portable Object Template), die als Vorlage für alle Übersetzungen dient.
+
+4.  **Übersetzungsdateien (.po) erstellen:**
+    *   Für jede unterstützte Sprache (z.B. Deutsch, Englisch) wird aus der `.pot`-Datei eine eigene `.po`-Datei (Portable Object) generiert. Diese Dateien werden im Format `[Sprachcode]/LC_MESSAGES/messages.po` (z.B. `de/LC_MESSAGES/messages.po`) gespeichert.
+    *   In den `.po`-Dateien werden die Übersetzungen für jeden Originaltext manuell eingetragen.
+
+5.  **Übersetzungen kompilieren:**
+    *   Die `.po`-Dateien MÜSSEN in `.mo`-Dateien (Machine Object) kompiliert werden. Diese kompilierten Dateien werden von Flask-Babel zur Laufzeit effizient geladen, um die Übersetzungen bereitzustellen.
+
+6.  **Sprachauswahl in der Navigation:**
+    *   In der `base.html` (oder einer anderen geeigneten Navigationskomponente) wird ein Mechanismus zur Sprachauswahl implementiert. Dies kann ein Dropdown-Menü oder eine Liste von Links sein, die es dem Benutzer ermöglichen, die gewünschte Sprache auszuwählen.
+    *   Beim Wechsel der Sprache muss die gewählte Sprache in der Benutzersitzung gespeichert werden (z.B. in der Flask-Session oder als Cookie), damit Flask-Babel die korrekte `.mo`-Datei für nachfolgende Anfragen verwenden kann.
+
+Dieser Prozess gewährleistet eine saubere Trennung von Code und Übersetzungen und ermöglicht eine einfache Erweiterung um weitere Sprachen.
+
+
 ### 5. API-Endpunkte
 - **Bienenstock-Management**:
   - `GET /`: Startseite mit Übersicht

@@ -1,46 +1,46 @@
 {% extends 'base.html' %}
 
-{% block title %}Inspektion bearbeiten für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Edit Inspection for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Inspektion bearbeiten für Bienenstock {{ hive.stocknummer }}</h1>
+    <h1>{{ _('Edit Inspection for Hive') }} {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="inspection_date" class="form-label">Inspektionsdatum:</label>
+                    <label for="inspection_date" class="form-label">{{ _('Inspection Date') }}:</label>
                     <input type="date" class="form-control" id="inspection_date" name="inspection_date" value="{{ inspection.inspection_date }}" required>
                 </div>
                 <div class="mb-3">
-                    <label for="brood_status" class="form-label">Brutstatus:</label>
+                    <label for="brood_status" class="form-label">{{ _('Brood Status') }}:</label>
                     <input type="text" class="form-control" id="brood_status" name="brood_status" value="{{ inspection.brood_status }}" required>
                 </div>
                 <div class="form-check mb-3">
                     <input type="checkbox" class="form-check-input" id="queen_sighted" name="queen_sighted" {% if inspection.queen_sighted %}checked{% endif %}>
-                    <label class="form-check-label" for="queen_sighted">Königin gesehen</label>
+                    <label class="form-check-label" for="queen_sighted">{{ _('Queen Sighted') }}</label>
                 </div>
                 <div class="mb-3">
-                    <label for="swarm_cells" class="form-label">Schwarmzellen:</label>
+                    <label for="swarm_cells" class="form-label">{{ _('Swarm Cells') }}:</label>
                     <input type="text" class="form-control" id="swarm_cells" name="swarm_cells" value="{{ inspection.swarm_cells }}">
                 </div>
                 <div class="mb-3">
-                    <label for="food_supply" class="form-label">Futtervorrat:</label>
+                    <label for="food_supply" class="form-label">{{ _('Food Supply') }}:</label>
                     <select class="form-select" id="food_supply" name="food_supply" required>
-                        <option value="gut" {% if inspection.food_supply == 'gut' %}selected{% endif %}>gut</option>
-                        <option value="ausreichend" {% if inspection.food_supply == 'ausreichend' %}selected{% endif %}>ausreichend</option>
-                        <option value="gering" {% if inspection.food_supply == 'gering' %}selected{% endif %}>gering</option>
+                        <option value="gut" {% if inspection.food_supply == 'gut' %}selected{% endif %}>{{ _('good') }}</option>
+                        <option value="ausreichend" {% if inspection.food_supply == 'ausreichend' %}selected{% endif %}>{{ _('sufficient') }}</option>
+                        <option value="gering" {% if inspection.food_supply == 'gering' %}selected{% endif %}>{{ _('low') }}</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="measures_taken" class="form-label">Durchgeführte Maßnahmen:</label>
+                    <label for="measures_taken" class="form-label">{{ _('Measures Taken') }}:</label>
                     <textarea class="form-control" id="measures_taken" name="measures_taken">{{ inspection.measures_taken }}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="observations" class="form-label">Beobachtungen:</label>
+                    <label for="observations" class="form-label">{{ _('Observations') }}:</label>
                     <textarea class="form-control" id="observations" name="observations">{{ inspection.observations }}</textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Inspektion aktualisieren</button>
-                <a href="{{ url_for('main.inspections_controller.inspections_list', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+                <button type="submit" class="btn btn-primary">{{ _('Update Inspection') }}</button>
+                <a href="{{ url_for('main.inspections_controller.inspections_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>
         </div>
     </div>

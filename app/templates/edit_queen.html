@@ -1,49 +1,49 @@
 {% extends 'base.html' %}
 
-{% block title %}Königin bearbeiten für Bienenstock {{ hive.stocknummer }}{% endblock %}
+{% block title %}{{ _('Edit Queen for Hive') }} {{ hive.stocknummer }}{% endblock %}
 
 {% block content %}
-    <h1>Königin bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
+    <h1>{{ _('Edit Queen for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="origin" class="form-label">Herkunft:</label>
+                    <label for="origin" class="form-label">{{ _('Origin') }}:</label>
                     <input type="text" id="origin" name="origin" class="form-control" value="{{ queen.origin }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="birth_date" class="form-label">Geburtsjahr/Schlupfdatum:</label>
+                    <label for="birth_date" class="form-label">{{ _('Birth Year/Hatching Date') }}:</label>
                     <input type="date" id="birth_date" name="birth_date" class="form-control" value="{{ queen.birth_date }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="color_mark" class="form-label">Farbmarkierung:</label>
+                    <label for="color_mark" class="form-label">{{ _('Color Mark') }}:</label>
                     <input type="text" id="color_mark" name="color_mark" class="form-control" value="{{ queen.color_mark or '' }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="breed" class="form-label">Rasse/Genetik:</label>
+                    <label for="breed" class="form-label">{{ _('Breed/Genetics') }}:</label>
                     <input type="text" id="breed" name="breed" class="form-control" value="{{ queen.breed or '' }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="introduction_date" class="form-label">Einweiseldatum:</label>
+                    <label for="introduction_date" class="form-label">{{ _('Introduction Date') }}:</label>
                     <input type="date" id="introduction_date" name="introduction_date" class="form-control" value="{{ queen.introduction_date or '' }}">
                 </div>
 
                 <div class="form-check mb-3">
                     <input type="checkbox" id="marked" name="marked" class="form-check-input" {% if queen.marked %}checked{% endif %}>
-                    <label class="form-check-label" for="marked">Zeichnung vorhanden</label>
+                    <label class="form-check-label" for="marked">{{ _('Marked') }}</label>
                 </div>
 
                 <div class="form-check mb-3">
                     <input type="checkbox" id="clipped" name="clipped" class="form-check-input" {% if queen.clipped %}checked{% endif %}>
-                    <label class="form-check-label" for="clipped">Geflügelt/ungeflügelt</label>
+                    <label class="form-check-label" for="clipped">{{ _('Clipped/Unclipped') }}</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Speichern</button>
-                <a href="{{ url_for('main.queens_controller.list_queens', hive_id=hive.id) }}" class="btn btn-secondary">Abbrechen</a>
+                <button type="submit" class="btn btn-primary">{{ _('Save') }}</button>
+                <a href="{{ url_for('main.queens_controller.list_queens', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>
         </div>
     </div>

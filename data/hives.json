@@ -22,5 +22,17 @@
         "swarming_tendency": "",
         "comb_settling": "",
         "honey_yield_rating": ""
+    },
+    {
+        "id": "5a511d02-b2b6-4b06-b860-4913265db23b",
+        "stocknummer": "Volk 0",
+        "standort": "Acker",
+        "beutentyp": "Zander",
+        "zargen_anzahl": "2",
+        "colony_strength": "",
+        "temperament": "",
+        "swarming_tendency": "",
+        "comb_settling": "ruhig",
+        "honey_yield_rating": ""
     }
 ]

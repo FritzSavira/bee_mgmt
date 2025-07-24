@@ -8,37 +8,37 @@
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="stocknummer" class="form-label">{{ _('Hive Number') }}:</label>
+                    <label for="stocknummer" class="form-label">{{ _(form_labels.stocknummer) }}:</label>
                     <input type="text" id="stocknummer" name="stocknummer" class="form-control" value="{{ hive.stocknummer }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="standort" class="form-label">{{ _('Location') }}:</label>
+                    <label for="standort" class="form-label">{{ _(form_labels.standort) }}:</label>
                     <input type="text" id="standort" name="standort" class="form-control" value="{{ hive.standort }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="beutentyp" class="form-label">{{ _('Hive Type') }}:</label>
+                    <label for="beutentyp" class="form-label">{{ _(form_labels.beutentyp) }}:</label>
                     <input type="text" id="beutentyp" name="beutentyp" class="form-control" value="{{ hive.beutentyp }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="zargen_anzahl" class="form-label">{{ _('Number of Frames') }}:</label>
+                    <label for="zargen_anzahl" class="form-label">{{ _(form_labels.zargen_anzahl) }}:</label>
                     <input type="number" id="zargen_anzahl" name="zargen_anzahl" class="form-control" value="{{ hive.zargen_anzahl }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="colony_strength" class="form-label">{{ _('Colony Strength (number of occupied comb lanes)') }}:</label>
+                    <label for="colony_strength" class="form-label">{{ _(form_labels.colony_strength) }}:</label>
                     <input type="text" id="colony_strength" name="colony_strength" class="form-control" value="{{ hive.colony_strength if hive.colony_strength is not none else '' }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="temperament" class="form-label">{{ _('Temperament (scale 1-5)') }}:</label>
+                    <label for="temperament" class="form-label">{{ _(form_labels.temperament) }}:</label>
                     <input type="number" id="temperament" name="temperament" min="1" max="5" class="form-control" value="{{ hive.temperament if hive.temperament is not none else '' }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="swarming_tendency" class="form-label">{{ _('Swarming Tendency') }}:</label>
+                    <label for="swarming_tendency" class="form-label">{{ _(form_labels.swarming_tendency) }}:</label>
                     <select id="swarming_tendency" name="swarming_tendency" class="form-select">
                         <option value="" {% if hive.swarming_tendency is none %}selected{% endif %}></option>
                         <option value="niedrig" {% if hive.swarming_tendency == 'niedrig' %}selected{% endif %}>{{ _('low') }}</option>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="comb_settling" class="form-label">{{ _('Comb Settling') }}:</label>
+                    <label for="comb_settling" class="form-label">{{ _(form_labels.comb_settling) }}:</label>
                     <select id="comb_settling" name="comb_settling" class="form-select">
                         <option value="" {% if hive.comb_settling is none %}selected{% endif %}></option>
                         <option value="ruhig" {% if hive.comb_settling == 'ruhig' %}selected{% endif %}>{{ _('calm') }}</option>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="honey_yield_rating" class="form-label">{{ _('Honey Yield Rating') }}:</label>
+                    <label for="honey_yield_rating" class="form-label">{{ _(form_labels.honey_yield_rating) }}:</label>
                     <select id="honey_yield_rating" name="honey_yield_rating" class="form-select">
                         <option value="" {% if hive.honey_yield_rating is none %}selected{% endif %}></option>
                         <option value="unterdurchschnittlich" {% if hive.honey_yield_rating == 'unterdurchschnittlich' %}selected{% endif %}>{{ _('below average') }}</option>

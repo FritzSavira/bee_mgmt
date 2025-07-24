@@ -1,0 +1,782 @@
+# Czech translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR , 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-23 19:03+0200\n"
+"PO-Revision-Date: 2025-07-19 20:59+0200\n"
+"Last-Translator: FULL NAME \n"
+"Language: cs\n"
+"Language-Team: cs \n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/routes.py:101
+#, fuzzy
+msgid "Inspektion"
+msgstr "+ Kontrola"
+
+#: app/routes.py:102
+#, fuzzy
+msgid "inspection"
+msgstr "+ Kontrola"
+
+#: app/routes.py:110
+msgid "Behandlung"
+msgstr ""
+
+#: app/routes.py:111
+#, fuzzy
+msgid "treatment"
+msgstr "+ Ošetření"
+
+#: app/routes.py:119
+msgid "Fütterung"
+msgstr ""
+
+#: app/routes.py:120
+#, fuzzy
+msgid "feeding"
+msgstr "+ Krmení"
+
+#: app/routes.py:128
+#, fuzzy
+msgid "Ernte"
+msgstr "Prostředek"
+
+#: app/routes.py:129
+#, fuzzy
+msgid "harvest"
+msgstr "+ Sklizeň"
+
+#: app/routes.py:137
+#, fuzzy
+msgid "Varroakontrolle"
+msgstr "+ Varroakontrola"
+
+#: app/routes.py:138
+#, fuzzy
+msgid "varroa_control"
+msgstr "+ Varroakontrola"
+
+#: app/routes.py:146
+msgid "Ableger"
+msgstr ""
+
+#: app/routes.py:147
+#, fuzzy
+msgid "split"
+msgstr "+ Rozdělení"
+
+#: app/templates/404.html:3 app/templates/404.html:8
+msgid "Page not found"
+msgstr "Stránka nenalezena"
+
+#: app/templates/404.html:9
+msgid "Oops! The page you are looking for does not exist or has been moved."
+msgstr "Jejda! Hledaná stránka neexistuje nebo byla přesunuta."
+
+#: app/templates/404.html:10 app/templates/treatments_report.html:37
+msgid "Back to Home"
+msgstr "Zpět na hlavní stránku"
+
+#: app/templates/_macros.html:7
+msgid "OK"
+msgstr ""
+
+#: app/templates/_macros.html:10 app/templates/hive_detail.html:15
+msgid "Location"
+msgstr "Umístění"
+
+#: app/templates/_macros.html:11
+msgid "Queen"
+msgstr "Matka"
+
+#: app/templates/_macros.html:11 app/templates/hive_detail.html:20
+msgid "N/A"
+msgstr "N/A"
+
+#: app/templates/_macros.html:12 app/templates/hive_detail.html:16
+msgid "Hive Type"
+msgstr "Typ úlu"
+
+#: app/templates/_macros.html:16
+#, fuzzy
+msgid "Details"
+msgstr "Detaily pro"
+
+#: app/templates/_macros.html:22
+#, fuzzy
+msgid "Are you sure you want to delete this hive?"
+msgstr "Opravdu chcete smazat tuto matku?"
+
+#: app/templates/_macros.html:56 app/templates/inspections_list.html:22
+msgid "Brood Status"
+msgstr "Stav plodu"
+
+#: app/templates/_macros.html:56 app/templates/inspections_list.html:25
+msgid "Food Supply"
+msgstr "Zásoby potravy"
+
+#: app/templates/_macros.html:58 app/templates/_macros.html:60
+#: app/templates/treatments_list.html:22
+#: app/templates/treatments_report.html:12
+msgid "Type"
+msgstr "Typ"
+
+#: app/templates/_macros.html:60 app/templates/_macros.html:62
+#: app/templates/feeding_list.html:23
+msgid "Amount"
+msgstr "Množství"
+
+#: app/templates/_macros.html:62 app/templates/harvests_list.html:23
+msgid "Honey Type"
+msgstr "Typ medu"
+
+#: app/templates/_macros.html:64 app/templates/varroa_controls_list.html:22
+msgid "Mite Count"
+msgstr "Počet roztočů"
+
+#: app/templates/_macros.html:64 app/templates/_macros.html:66
+#: app/templates/splits_list.html:22 app/templates/varroa_controls_list.html:23
+msgid "Method"
+msgstr "Metoda"
+
+#: app/templates/_macros.html:66 app/templates/splits_list.html:23
+msgid "New Hive ID"
+msgstr "ID nového úlu"
+
+#: app/templates/_macros.html:68 app/templates/edit_queen.html:11
+#: app/templates/queens_list.html:21
+msgid "Name"
+msgstr "Jméno"
+
+#: app/templates/_macros.html:68 app/templates/queens_list.html:22
+msgid "Origin"
+msgstr "Původ"
+
+#: app/templates/_macros.html:68 app/templates/queens_list.html:26
+msgid "Breed"
+msgstr "Plemeno"
+
+#: app/templates/_macros.html:78
+msgid "Event Image"
+msgstr ""
+
+#: app/templates/_macros.html:83
+#, fuzzy
+msgid "Are you sure you want to delete this image?"
+msgstr "Opravdu chcete smazat tuto matku?"
+
+#: app/templates/_macros.html:95
+msgid "Enlarged Image"
+msgstr ""
+
+#: app/templates/_macros.html:106 app/templates/inspections_list.html:52
+msgid "Are you sure you want to delete this inspection?"
+msgstr "Opravdu chcete smazat tuto kontrolu?"
+
+#: app/templates/_macros.html:111 app/templates/treatments_list.html:42
+msgid "Are you sure you want to delete this treatment?"
+msgstr "Opravdu chcete smazat toto ošetření?"
+
+#: app/templates/_macros.html:116 app/templates/feeding_list.html:40
+msgid "Are you sure you want to delete this feeding entry?"
+msgstr "Opravdu chcete smazat tento záznam krmení?"
+
+#: app/templates/_macros.html:121 app/templates/harvests_list.html:40
+msgid "Are you sure you want to delete this harvest entry?"
+msgstr "Opravdu chcete smazat tento záznam sklizně?"
+
+#: app/templates/_macros.html:126 app/templates/varroa_controls_list.html:40
+msgid "Are you sure you want to delete this varroa control entry?"
+msgstr "Opravdu chcete smazat tento záznam varroakontroly?"
+
+#: app/templates/_macros.html:131 app/templates/splits_list.html:38
+msgid "Are you sure you want to delete this split entry?"
+msgstr "Opravdu chcete smazat tento záznam o rozdělení?"
+
+#: app/templates/_macros.html:136 app/templates/queens_list.html:50
+msgid "Are you sure you want to delete this queen?"
+msgstr "Opravdu chcete smazat tuto matku?"
+
+#: app/templates/base.html:6 app/templates/base.html:16
+msgid "Bee Management"
+msgstr "Vedení včel"
+
+#: app/templates/base.html:18
+msgid "Toggle navigation"
+msgstr "Přepnout navigaci"
+
+#: app/templates/base.html:24
+msgid "Overview"
+msgstr "Přehled"
+
+#: app/templates/base.html:27
+msgid "+ New Hive"
+msgstr "+ Nový úl"
+
+#: app/templates/base.html:50
+msgid "Close"
+msgstr "Zavřít"
+
+#: app/templates/base.html:62
+msgid "Bee Management App"
+msgstr "Aplikace pro vedení včel"
+
+#: app/templates/edit_feeding.html:3 app/templates/edit_feeding.html:6
+msgid "Edit Feeding for Hive"
+msgstr "Upravit krmení pro úl"
+
+#: app/templates/edit_feeding.html:37 app/templates/edit_harvest.html:42
+#: app/templates/edit_inspection.html:49 app/templates/edit_split.html:32
+#: app/templates/edit_treatment.html:47
+#: app/templates/edit_varroa_control.html:37
+#, fuzzy
+msgid "Current Images"
+msgstr "Současná matka"
+
+#: app/templates/edit_feeding.html:48 app/templates/edit_harvest.html:53
+#: app/templates/edit_hive.html:69 app/templates/edit_queen.html:50
+#: app/templates/edit_split.html:43 app/templates/edit_treatment.html:58
+#: app/templates/edit_varroa_control.html:48
+msgid "Save"
+msgstr "Uložit"
+
+#: app/templates/edit_feeding.html:49 app/templates/edit_harvest.html:54
+#: app/templates/edit_hive.html:70 app/templates/edit_inspection.html:61
+#: app/templates/edit_queen.html:51 app/templates/edit_split.html:44
+#: app/templates/edit_treatment.html:59
+#: app/templates/edit_varroa_control.html:49 app/templates/new_feeding.html:36
+#: app/templates/new_harvest.html:41 app/templates/new_hive.html:70
+#: app/templates/new_inspection.html:47 app/templates/new_queen.html:46
+#: app/templates/new_split.html:31 app/templates/new_treatment.html:46
+#: app/templates/new_varroa_control.html:36
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: app/templates/edit_harvest.html:3 app/templates/edit_harvest.html:6
+msgid "Edit Honey Harvest for Hive"
+msgstr "Upravit sklizeň medu pro úl"
+
+#: app/templates/edit_hive.html:3 app/templates/edit_hive.html:6
+msgid "Edit Hive"
+msgstr "Upravit úl"
+
+#: app/templates/edit_hive.html:44 app/templates/edit_inspection.html:31
+#: app/templates/inspections_list.html:38 app/templates/new_hive.html:44
+#: app/templates/new_inspection.html:31
+msgid "low"
+msgstr "nízká"
+
+#: app/templates/edit_hive.html:45 app/templates/new_hive.html:45
+msgid "medium"
+msgstr "střední"
+
+#: app/templates/edit_hive.html:46 app/templates/new_hive.html:46
+msgid "high"
+msgstr "vysoká"
+
+#: app/templates/edit_hive.html:54 app/templates/new_hive.html:54
+msgid "calm"
+msgstr "klidné"
+
+#: app/templates/edit_hive.html:55 app/templates/new_hive.html:55
+msgid "restless"
+msgstr "neklidné"
+
+#: app/templates/edit_hive.html:63 app/templates/new_hive.html:63
+msgid "below average"
+msgstr "podprůměrný"
+
+#: app/templates/edit_hive.html:64 app/templates/new_hive.html:64
+msgid "average"
+msgstr "průměrný"
+
+#: app/templates/edit_hive.html:65 app/templates/new_hive.html:65
+msgid "above average"
+msgstr "nadprůměrný"
+
+#: app/templates/edit_inspection.html:3 app/templates/edit_inspection.html:6
+msgid "Edit Inspection for Hive"
+msgstr "Upravit kontrolu pro úl"
+
+#: app/templates/edit_inspection.html:29 app/templates/inspections_list.html:42
+#: app/templates/new_inspection.html:29
+msgid "good"
+msgstr "dobrá"
+
+#: app/templates/edit_inspection.html:30 app/templates/inspections_list.html:40
+#: app/templates/new_inspection.html:30
+msgid "sufficient"
+msgstr "dostatečná"
+
+#: app/templates/edit_inspection.html:60
+msgid "Update Inspection"
+msgstr "Aktualizovat kontrolu"
+
+#: app/templates/edit_queen.html:3 app/templates/edit_queen.html:6
+msgid "Edit Queen for Hive"
+msgstr "Upravit matku pro úl"
+
+#: app/templates/edit_split.html:3 app/templates/edit_split.html:6
+msgid "Edit Split for Hive"
+msgstr "Upravit rozdělení pro úl"
+
+#: app/templates/edit_treatment.html:3 app/templates/edit_treatment.html:6
+msgid "Edit Treatment for Hive"
+msgstr "Upravit ošetření pro úl"
+
+#: app/templates/edit_varroa_control.html:3
+#: app/templates/edit_varroa_control.html:6
+msgid "Edit Varroa Control for Hive"
+msgstr "Upravit kontrolu varroázy pro úl"
+
+#: app/templates/feeding_list.html:3 app/templates/feeding_list.html:7
+msgid "Feedings for Hive"
+msgstr "Krmení pro úl"
+
+#: app/templates/feeding_list.html:8 app/templates/harvests_list.html:8
+#: app/templates/inspections_list.html:8 app/templates/queens_list.html:8
+#: app/templates/splits_list.html:8 app/templates/treatments_list.html:8
+#: app/templates/varroa_controls_list.html:8
+msgid "Back to Hive"
+msgstr "Zpět k úlu"
+
+#: app/templates/feeding_list.html:13
+msgid "All Feedings"
+msgstr "Všechna krmení"
+
+#: app/templates/feeding_list.html:14
+msgid "+ New Feeding"
+msgstr "+ Nové krmení"
+
+#: app/templates/feeding_list.html:21 app/templates/harvests_list.html:21
+#: app/templates/inspections_list.html:21 app/templates/splits_list.html:21
+#: app/templates/treatments_list.html:21
+#: app/templates/treatments_report.html:11
+#: app/templates/varroa_controls_list.html:21
+msgid "Date"
+msgstr "Datum"
+
+#: app/templates/feeding_list.html:22
+msgid "Food Type"
+msgstr "Typ potravy"
+
+#: app/templates/feeding_list.html:24
+msgid "Concentration"
+msgstr "Koncentrace"
+
+#: app/templates/feeding_list.html:25 app/templates/harvests_list.html:25
+#: app/templates/hive_detail.html:32 app/templates/inspections_list.html:26
+#: app/templates/queens_list.html:30 app/templates/splits_list.html:24
+#: app/templates/treatments_list.html:26
+#: app/templates/varroa_controls_list.html:25
+msgid "Actions"
+msgstr "Akce"
+
+#: app/templates/feeding_list.html:48
+msgid "No feedings available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádné záznamy o krmení."
+
+#: app/templates/harvests_list.html:3 app/templates/harvests_list.html:7
+msgid "Honey Harvests for Hive"
+msgstr "Sklizeň medu pro úl"
+
+#: app/templates/harvests_list.html:13
+msgid "All Honey Harvests"
+msgstr "Všechny sklizně medu"
+
+#: app/templates/harvests_list.html:14
+msgid "+ New Harvest"
+msgstr "+ Nová sklizeň"
+
+#: app/templates/harvests_list.html:22
+msgid "Amount (kg)"
+msgstr "Množství (kg)"
+
+#: app/templates/harvests_list.html:24
+msgid "Water Content"
+msgstr "Obsah vody"
+
+#: app/templates/harvests_list.html:48
+msgid "No honey harvests available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádné záznamy o sklizni medu."
+
+#: app/templates/harvests_report.html:3 app/templates/harvests_report.html:6
+msgid "Honey Harvest Report"
+msgstr "Zpráva o sklizni medu"
+
+#: app/templates/harvests_report.html:10
+msgid "Total Yield"
+msgstr "Celkový výnos"
+
+#: app/templates/harvests_report.html:13
+msgid "Total Honey Yield"
+msgstr "Celkový výnos medu"
+
+#: app/templates/harvests_report.html:14
+msgid "This is the cumulative yield of all recorded honey harvests."
+msgstr "Toto je kumulativní výnos všech zaznamenaných sklizní medu."
+
+#: app/templates/harvests_report.html:18
+msgid "Back to Overview"
+msgstr "Zpět na přehled"
+
+#: app/templates/hive_detail.html:4
+msgid "Details for"
+msgstr "Detaily pro"
+
+#: app/templates/hive_detail.html:10
+msgid "Hive"
+msgstr "Úl"
+
+#: app/templates/hive_detail.html:17
+msgid "Number of Frames"
+msgstr "Počet rámků"
+
+#: app/templates/hive_detail.html:20
+msgid "Current Queen"
+msgstr "Současná matka"
+
+#: app/templates/hive_detail.html:21
+msgid "Colony Strength"
+msgstr "Síla včelstva"
+
+#: app/templates/hive_detail.html:22
+msgid "Temperament"
+msgstr "Temperament"
+
+#: app/templates/hive_detail.html:25
+msgid "Edit Master Data"
+msgstr "Upravit hlavní údaje"
+
+#: app/templates/hive_detail.html:35
+msgid "+ Inspection"
+msgstr "+ Kontrola"
+
+#: app/templates/hive_detail.html:36
+msgid "+ Feeding"
+msgstr "+ Krmení"
+
+#: app/templates/hive_detail.html:37
+msgid "+ Treatment"
+msgstr "+ Ošetření"
+
+#: app/templates/hive_detail.html:38
+msgid "+ Harvest"
+msgstr "+ Sklizeň"
+
+#: app/templates/hive_detail.html:39
+msgid "+ Varroa Control"
+msgstr "+ Varroakontrola"
+
+#: app/templates/hive_detail.html:40
+msgid "+ Split"
+msgstr "+ Rozdělení"
+
+#: app/templates/hive_detail.html:41
+msgid "+ Queen"
+msgstr "+ Matka"
+
+#: app/templates/hive_detail.html:48
+msgid "Chronicle"
+msgstr "Kronika"
+
+#: app/templates/hive_detail.html:56
+msgid "No entries in the chronicle for this hive yet."
+msgstr "Pro tento úl zatím nejsou v kronice žádné záznamy."
+
+#: app/templates/index.html:4 app/templates/index.html:8
+msgid "Hive Overview"
+msgstr "Přehled úlů"
+
+#: app/templates/index.html:16
+msgid "No hives available yet."
+msgstr "Zatím nejsou k dispozici žádné úly."
+
+#: app/templates/inspections_list.html:3 app/templates/inspections_list.html:7
+msgid "Inspections for Hive"
+msgstr "Kontroly pro úl"
+
+#: app/templates/inspections_list.html:13
+msgid "All Inspections"
+msgstr "Všechny kontroly"
+
+#: app/templates/inspections_list.html:14
+msgid "+ New Inspection"
+msgstr "+ Nová kontrola"
+
+#: app/templates/inspections_list.html:23
+msgid "Queen Sighted"
+msgstr "Matka spatřena"
+
+#: app/templates/inspections_list.html:24
+msgid "Swarm Cells"
+msgstr "Rojové matečníky"
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:43
+#: app/templates/queens_list.html:44
+msgid "Yes"
+msgstr "Ano"
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:43
+#: app/templates/queens_list.html:44
+msgid "No"
+msgstr "Ne"
+
+#: app/templates/inspections_list.html:60
+msgid "No inspections available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádné kontroly."
+
+#: app/templates/new_feeding.html:3 app/templates/new_feeding.html:6
+msgid "New Feeding for Hive"
+msgstr "Nové krmení pro úl"
+
+#: app/templates/new_feeding.html:35 app/templates/new_harvest.html:40
+#: app/templates/new_hive.html:69 app/templates/new_queen.html:45
+#: app/templates/new_split.html:30 app/templates/new_treatment.html:45
+#: app/templates/new_varroa_control.html:35
+msgid "Add"
+msgstr "Přidat"
+
+#: app/templates/new_harvest.html:3 app/templates/new_harvest.html:6
+msgid "New Honey Harvest for Hive"
+msgstr "Nová sklizeň medu pro úl"
+
+#: app/templates/new_hive.html:3 app/templates/new_hive.html:6
+msgid "Add New Hive"
+msgstr "Přidat nový úl"
+
+#: app/templates/new_inspection.html:3 app/templates/new_inspection.html:6
+msgid "New Inspection for Hive"
+msgstr "Nová kontrola pro úl"
+
+#: app/templates/new_inspection.html:46
+msgid "Add Inspection"
+msgstr "Přidat kontrolu"
+
+#: app/templates/new_queen.html:3 app/templates/new_queen.html:6
+msgid "New Queen for Hive"
+msgstr "Nová matka pro úl"
+
+#: app/templates/new_split.html:3 app/templates/new_split.html:6
+msgid "Add New Split for Hive"
+msgstr "Přidat nové rozdělení pro úl"
+
+#: app/templates/new_treatment.html:3 app/templates/new_treatment.html:6
+msgid "New Treatment for Hive"
+msgstr "Nové ošetření pro úl"
+
+#: app/templates/new_varroa_control.html:3
+#: app/templates/new_varroa_control.html:6
+msgid "New Varroa Control for Hive"
+msgstr "Nová kontrola varroázy pro úl"
+
+#: app/templates/queens_list.html:3 app/templates/queens_list.html:7
+msgid "Queens for Hive"
+msgstr "Matky pro úl"
+
+#: app/templates/queens_list.html:13
+msgid "All Queens"
+msgstr "Všechny matky"
+
+#: app/templates/queens_list.html:14
+msgid "+ New Queen"
+msgstr "+ Nová matka"
+
+#: app/templates/queens_list.html:23
+msgid "Birth Date"
+msgstr "Datum narození"
+
+#: app/templates/queens_list.html:24
+msgid "Age (Years)"
+msgstr "Věk (roky)"
+
+#: app/templates/queens_list.html:25
+msgid "Color Mark"
+msgstr "Barevné značení"
+
+#: app/templates/queens_list.html:27
+msgid "Introduction Date"
+msgstr "Datum představení"
+
+#: app/templates/queens_list.html:28
+msgid "Marked"
+msgstr "Značená"
+
+#: app/templates/queens_list.html:29
+msgid "Clipped"
+msgstr "Přistřižená"
+
+#: app/templates/queens_list.html:58
+msgid "No queens available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádné matky."
+
+#: app/templates/splits_list.html:3 app/templates/splits_list.html:7
+msgid "Splits for Hive"
+msgstr "Rozdělení pro úl"
+
+#: app/templates/splits_list.html:13
+msgid "All Splits"
+msgstr "Všechna rozdělení"
+
+#: app/templates/splits_list.html:14
+msgid "+ New Split"
+msgstr "+ Nové rozdělení"
+
+#: app/templates/splits_list.html:46
+msgid "No splits available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádná rozdělení."
+
+#: app/templates/treatments_list.html:3 app/templates/treatments_list.html:7
+msgid "Treatments for Hive"
+msgstr "Ošetření pro úl"
+
+#: app/templates/treatments_list.html:13
+msgid "All Treatments"
+msgstr "Všechna ošetření"
+
+#: app/templates/treatments_list.html:14
+msgid "+ New Treatment"
+msgstr "+ Nové ošetření"
+
+#: app/templates/treatments_list.html:23
+#: app/templates/treatments_report.html:13
+msgid "Agent"
+msgstr "Prostředek"
+
+#: app/templates/treatments_list.html:24
+#: app/templates/treatments_report.html:14
+msgid "Dosage"
+msgstr "Dávkování"
+
+#: app/templates/treatments_list.html:25
+#: app/templates/treatments_report.html:15
+msgid "Duration"
+msgstr "Doba trvání"
+
+#: app/templates/treatments_list.html:50
+msgid "No treatments available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádná ošetření."
+
+#: app/templates/treatments_report.html:3
+#: app/templates/treatments_report.html:6
+msgid "Treatment Report"
+msgstr "Zpráva o ošetření"
+
+#: app/templates/treatments_report.html:10
+msgid "Hive ID"
+msgstr "ID úlu"
+
+#: app/templates/treatments_report.html:16
+msgid "Efficacy Observation"
+msgstr "Pozorování účinnosti"
+
+#: app/templates/treatments_report.html:32
+msgid "No treatments found."
+msgstr "Nebyly nalezeny žádné ošetření."
+
+#: app/templates/varroa_controls_list.html:3
+#: app/templates/varroa_controls_list.html:7
+msgid "Varroa Controls for Hive"
+msgstr "Varroakontroly pro úl"
+
+#: app/templates/varroa_controls_list.html:13
+msgid "All Varroa Controls"
+msgstr "Všechny varroakontroly"
+
+#: app/templates/varroa_controls_list.html:14
+msgid "+ New Varroa Control"
+msgstr "+ Nová varroakontrola"
+
+#: app/templates/varroa_controls_list.html:24
+msgid "Infestation Level"
+msgstr "Úroveň napadení"
+
+#: app/templates/varroa_controls_list.html:48
+msgid "No varroa controls available for this hive yet."
+msgstr "Pro tento úl zatím nejsou k dispozici žádné varroakontroly."
+
+#~ msgid "Feeding Date"
+#~ msgstr "Datum krmení"
+
+#~ msgid "Amount (kg/l)"
+#~ msgstr "Množství (kg/l)"
+
+#~ msgid "Concentration (if liquid)"
+#~ msgstr "Koncentrace (pokud je tekutý)"
+
+#~ msgid "Harvest Date"
+#~ msgstr "Datum sklizně"
+
+#~ msgid "form_label_water_content"
+#~ msgstr "Obsah vody (%%)"
+
+#~ msgid "Notes"
+#~ msgstr "Poznámky"
+
+#~ msgid "Hive Number"
+#~ msgstr "Číslo úlu"
+
+#~ msgid "Colony Strength (number of occupied comb lanes)"
+#~ msgstr "Síla včelstva (počet obsazených uliček)"
+
+#~ msgid "Temperament (scale 1-5)"
+#~ msgstr "Temperament (škála 1-5)"
+
+#~ msgid "Swarming Tendency"
+#~ msgstr "Rojová nálada"
+
+#~ msgid "Comb Settling"
+#~ msgstr "Usídlení plástů"
+
+#~ msgid "Honey Yield Rating"
+#~ msgstr "Hodnocení medného výnosu"
+
+#~ msgid "Inspection Date"
+#~ msgstr "Datum kontroly"
+
+#~ msgid "Measures Taken"
+#~ msgstr "Přijatá opatření"
+
+#~ msgid "Observations"
+#~ msgstr "Pozorování"
+
+#~ msgid "Birth Year/Hatching Date"
+#~ msgstr "Rok narození/Datum vylíhnutí"
+
+#~ msgid "Breed/Genetics"
+#~ msgstr "Plemeno/Genetika"
+
+#~ msgid "Clipped/Unclipped"
+#~ msgstr "Přistřižená/Nepřistřižená"
+
+#~ msgid "Split Date"
+#~ msgstr "Datum rozdělení"
+
+#~ msgid "New Hive ID (optional)"
+#~ msgstr "ID nového úlu (volitelné)"
+
+#~ msgid "Treatment Date"
+#~ msgstr "Datum ošetření"
+
+#~ msgid "Treatment Type"
+#~ msgstr "Typ ošetření"
+
+#~ msgid "Used Agent"
+#~ msgstr "Použitý prostředek"
+
+#~ msgid "Duration of Treatment"
+#~ msgstr "Doba trvání ošetření"
+
+#~ msgid "Control Date"
+#~ msgstr "Datum kontroly"
+

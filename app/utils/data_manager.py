@@ -80,3 +80,14 @@ class DataManager:
     def get_all_for_hive(self, hive_id):
         all_items = self.load_all()
         return [item for item in all_items if hasattr(item, 'hive_id') and item.hive_id == hive_id]
+
+    def delete_file(self, filename):
+        file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'static', 'uploads', filename)
+        if os.path.exists(file_path):
+            try:
+                os.remove(file_path)
+                return True
+            except OSError as e:
+                print(f"Error deleting file {file_path}: {e}")
+                return False
+        return False

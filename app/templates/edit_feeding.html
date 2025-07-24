@@ -6,26 +6,44 @@
     <h1>{{ _('Edit Feeding for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="feeding_date" class="form-label">{{ _('Feeding Date') }}:</label>
+                    <label for="feeding_date" class="form-label">{{ _(form_labels.feeding_date) }}:</label>
                     <input type="date" id="feeding_date" name="feeding_date" class="form-control" value="{{ feeding.feeding_date }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="food_type" class="form-label">{{ _('Food Type') }}:</label>
+                    <label for="food_type" class="form-label">{{ _(form_labels.food_type) }}:</label>
                     <input type="text" id="food_type" name="food_type" class="form-control" value="{{ feeding.food_type }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="amount" class="form-label">{{ _('Amount (kg/l)') }}:</label>
+                    <label for="amount" class="form-label">{{ _(form_labels.amount) }}:</label>
                     <input type="text" id="amount" name="amount" class="form-control" value="{{ feeding.amount }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="concentration" class="form-label">{{ _('Concentration (if liquid)') }}:</label>
+                    <label for="concentration" class="form-label">{{ _(form_labels.concentration) }}:</label>
                     <input type="text" id="concentration" name="concentration" class="form-control" value="{{ feeding.concentration }}">
                 </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
+                </div>
+
+                {% if feeding.images %}
+                <div class="mb-3">
+                    <p>{{ _('Current Images') }}:</p>
+                    <div class="d-flex flex-wrap">
+                        {% for image_filename in feeding.images %}
+                            <div class="me-2 mb-2">
+                                <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Image" class="img-thumbnail" width="100">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
 
                 <button type="submit" class="btn btn-primary">{{ _('Save') }}</button>
                 <a href="{{ url_for('main.feeding_controller.feeding_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>

@@ -6,26 +6,44 @@
     <h1>{{ _('Edit Varroa Control for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="control_date" class="form-label">{{ _('Control Date') }}:</label>
+                    <label for="control_date" class="form-label">{{ _(form_labels.control_date) }}:</label>
                     <input type="date" id="control_date" name="control_date" class="form-control" value="{{ varroa_control.control_date }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="mite_count" class="form-label">{{ _('Mite Count') }}:</label>
+                    <label for="mite_count" class="form-label">{{ _(form_labels.mite_count) }}:</label>
                     <input type="number" id="mite_count" name="mite_count" class="form-control" value="{{ varroa_control.mite_count }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="method" class="form-label">{{ _('Method') }}:</label>
+                    <label for="method" class="form-label">{{ _(form_labels.method) }}:</label>
                     <input type="text" id="method" name="method" class="form-control" value="{{ varroa_control.method }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="infestation_level" class="form-label">{{ _('Infestation Level') }}:</label>
+                    <label for="infestation_level" class="form-label">{{ _(form_labels.infestation_level) }}:</label>
                     <input type="text" id="infestation_level" name="infestation_level" class="form-control" value="{{ varroa_control.infestation_level }}">
                 </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
+                </div>
+
+                {% if varroa_control.images %}
+                <div class="mb-3">
+                    <p>{{ _('Current Images') }}:</p>
+                    <div class="d-flex flex-wrap">
+                        {% for image_filename in varroa_control.images %}
+                            <div class="me-2 mb-2">
+                                <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Image" class="img-thumbnail" width="100">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
 
                 <button type="submit" class="btn btn-primary">{{ _('Save') }}</button>
                 <a href="{{ url_for('main.varroa_controls_controller.varroa_controls_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>

@@ -8,7 +8,8 @@
         "swarm_cells": "keine",
         "food_supply": "kein",
         "measures_taken": "",
-        "observations": "gut"
+        "observations": "gut",
+        "images": []
     },
     {
         "id": "c1425f0b-5b63-4f62-a732-c43a80f10701",
@@ -19,7 +20,8 @@
         "swarm_cells": "keine",
         "food_supply": "kein",
         "measures_taken": "keine\r\n",
-        "observations": "keine"
+        "observations": "keine",
+        "images": []
     },
     {
         "id": "51ddec33-4f2e-4cfd-857b-3df4fe87adca",
@@ -30,7 +32,8 @@
         "swarm_cells": "5",
         "food_supply": "nein",
         "measures_taken": "vergessen",
-        "observations": "ruhige Bienen"
+        "observations": "ruhige Bienen",
+        "images": []
     },
     {
         "id": "2253cde9-eb56-44d5-9751-e3c695b382bb",
@@ -41,7 +44,8 @@
         "swarm_cells": "20",
         "food_supply": "ja",
         "measures_taken": "nein",
-        "observations": "Bienen sind aufgeregt"
+        "observations": "Bienen sind aufgeregt",
+        "images": []
     },
     {
         "id": "6865d9e4-2e54-4214-879c-7c926c470363",
@@ -52,7 +56,8 @@
         "swarm_cells": "1",
         "food_supply": "nein",
         "measures_taken": "keine",
-        "observations": "viel Honig"
+        "observations": "viel Honig",
+        "images": []
     },
     {
         "id": "fabf0265-ab3d-4f4b-9592-8c5d487ce8ef",
@@ -63,7 +68,8 @@
         "swarm_cells": "4",
         "food_supply": "gut",
         "measures_taken": "keine",
-        "observations": "keine"
+        "observations": "keine",
+        "images": []
     },
     {
         "id": "345e541c-1f5a-4fb7-b016-b9f79fa057c1",
@@ -74,6 +80,35 @@
         "swarm_cells": "20",
         "food_supply": "ja",
         "measures_taken": "keine",
-        "observations": "keine"
+        "observations": "keine",
+        "images": []
+    },
+    {
+        "id": "8a74bd12-ebfd-40d2-9896-d80fad88fbf4",
+        "hive_id": "ed77c5a8-1f8e-424c-849e-89245650ca41",
+        "inspection_date": "2025-07-01",
+        "brood_status": "gut",
+        "queen_sighted": true,
+        "swarm_cells": "1",
+        "food_supply": "gut",
+        "measures_taken": "keine",
+        "observations": "alles gut",
+        "images": []
+    },
+    {
+        "id": "2884a5d8-f41e-498a-9493-5b86e3ae4d60",
+        "hive_id": "5a511d02-b2b6-4b06-b860-4913265db23b",
+        "inspection_date": "2025-06-22",
+        "brood_status": "gut",
+        "queen_sighted": true,
+        "swarm_cells": "0",
+        "food_supply": "gut",
+        "measures_taken": "keine",
+        "observations": "keine",
+        "images": [
+            "333e2857-c4fa-4b6f-a867-34e91e3c013b.jpg",
+            "9547cfec-5769-4aaa-b1a7-c9a07f0879ba.jpg",
+            "6725348c-3ea5-49d2-a529-18825454f3e4.jpg"
+        ]
     }
 ]

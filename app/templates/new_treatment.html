@@ -6,35 +6,40 @@
     <h1>{{ _('New Treatment for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="treatment_date" class="form-label">{{ _('Treatment Date') }}:</label>
+                    <label for="treatment_date" class="form-label">{{ _(form_labels.treatment_date) }}:</label>
                     <input type="date" id="treatment_date" name="treatment_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="treatment_type" class="form-label">{{ _('Treatment Type') }}:</label>
+                    <label for="treatment_type" class="form-label">{{ _(form_labels.treatment_type) }}:</label>
                     <input type="text" id="treatment_type" name="treatment_type" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="used_agent" class="form-label">{{ _('Used Agent') }}:</label>
+                    <label for="used_agent" class="form-label">{{ _(form_labels.used_agent) }}:</label>
                     <input type="text" id="used_agent" name="used_agent" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="dosage" class="form-label">{{ _('Dosage') }}:</label>
+                    <label for="dosage" class="form-label">{{ _(form_labels.dosage) }}:</label>
                     <input type="text" id="dosage" name="dosage" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="duration" class="form-label">{{ _('Duration of Treatment') }}:</label>
+                    <label for="duration" class="form-label">{{ _(form_labels.duration) }}:</label>
                     <input type="text" id="duration" name="duration" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="efficacy_observation" class="form-label">{{ _('Efficacy Observation') }}:</label>
+                    <label for="efficacy_observation" class="form-label">{{ _(form_labels.efficacy_observation) }}:</label>
                     <textarea id="efficacy_observation" name="efficacy_observation" class="form-control"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
                 </div>
 
                 <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>

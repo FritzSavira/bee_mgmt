@@ -1,13 +1,22 @@
 import uuid
 
 class Feeding:
-    def __init__(self, hive_id, feeding_date, food_type, amount, concentration, id=None):
+    FORM_LABELS = {
+        'feeding_date': 'Feeding Date',
+        'food_type': 'Food Type',
+        'amount': 'Amount',
+        'concentration': 'Concentration',
+        'images': 'Images'
+    }
+
+    def __init__(self, hive_id, feeding_date, food_type, amount, concentration, images=None, id=None):
         self.id = id if id is not None else str(uuid.uuid4())
         self.hive_id = hive_id
         self.feeding_date = feeding_date
         self.food_type = food_type
         self.amount = amount
         self.concentration = concentration
+        self.images = images if images is not None else []
 
     def to_dict(self):
         return {
@@ -16,7 +25,8 @@ class Feeding:
             "feeding_date": self.feeding_date,
             "food_type": self.food_type,
             "amount": self.amount,
-            "concentration": self.concentration
+            "concentration": self.concentration,
+            "images": self.images
         }
 
     @staticmethod
@@ -34,5 +44,6 @@ class Feeding:
             feeding_date=feeding_date,
             food_type=data.get("food_type"),
             amount=data.get("amount"),
-            concentration=data.get("concentration")
+            concentration=data.get("concentration"),
+            images=data.get("images", [])
         )

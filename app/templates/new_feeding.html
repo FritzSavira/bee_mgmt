@@ -6,25 +6,30 @@
     <h1>{{ _('New Feeding for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="feeding_date" class="form-label">{{ _('Feeding Date') }}:</label>
+                    <label for="feeding_date" class="form-label">{{ _(form_labels.feeding_date) }}:</label>
                     <input type="date" id="feeding_date" name="feeding_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="food_type" class="form-label">{{ _('Food Type') }}:</label>
+                    <label for="food_type" class="form-label">{{ _(form_labels.food_type) }}:</label>
                     <input type="text" id="food_type" name="food_type" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="amount" class="form-label">{{ _('Amount (kg/l)') }}:</label>
+                    <label for="amount" class="form-label">{{ _(form_labels.amount) }}:</label>
                     <input type="text" id="amount" name="amount" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="concentration" class="form-label">{{ _('Concentration (if liquid)') }}:</label>
+                    <label for="concentration" class="form-label">{{ _(form_labels.concentration) }}:</label>
                     <input type="text" id="concentration" name="concentration" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
                 </div>
 
                 <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>

@@ -8,38 +8,38 @@
         <div class="card-body">
             <form method="POST">
                 <div class="mb-3">
-                    <label for="origin" class="form-label">{{ _('Origin') }}:</label>
+                    <label for="origin" class="form-label">{{ _(form_labels.origin) }}:</label>
                     <input type="text" id="origin" name="origin" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="birth_date" class="form-label">{{ _('Birth Year/Hatching Date') }}:</label>
+                    <label for="birth_date" class="form-label">{{ _(form_labels.birth_date) }}:</label>
                     <input type="date" id="birth_date" name="birth_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="color_mark" class="form-label">{{ _('Color Mark') }}:</label>
+                    <label for="color_mark" class="form-label">{{ _(form_labels.color_mark) }}:</label>
                     <input type="text" id="color_mark" name="color_mark" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="breed" class="form-label">{{ _('Breed/Genetics') }}:</label>
+                    <label for="breed" class="form-label">{{ _(form_labels.breed) }}:</label>
                     <input type="text" id="breed" name="breed" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="introduction_date" class="form-label">{{ _('Introduction Date') }}:</label>
+                    <label for="introduction_date" class="form-label">{{ _(form_labels.introduction_date) }}:</label>
                     <input type="date" id="introduction_date" name="introduction_date" class="form-control">
                 </div>
 
                 <div class="form-check mb-3">
                     <input type="checkbox" id="marked" name="marked" class="form-check-input">
-                    <label class="form-check-label" for="marked">{{ _('Marked') }}</label>
+                    <label class="form-check-label" for="marked">{{ _(form_labels.marked) }}</label>
                 </div>
 
                 <div class="form-check mb-3">
                     <input type="checkbox" id="clipped" name="clipped" class="form-check-input">
-                    <label class="form-check-label" for="clipped">{{ _('Clipped/Unclipped') }}</label>
+                    <label class="form-check-label" for="clipped">{{ _(form_labels.clipped) }}</label>
                 </div>
 
                 <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>

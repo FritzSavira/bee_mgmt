@@ -13,6 +13,13 @@
 
 | ID | Bereich (Area) | Beschreibung (Description) | Priorität (Priority) | Status | Testfall (Test Case) | Erwartetes Ergebnis (Expected Result) | Tatsächliches Ergebnis (Actual Result) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 34 | Feature / UX/UI | **Tracking-Issue:** Bilder zu Chronik-Aktionen hinzufügen. <br> - [x] **Task 1 (ID 35):** Datenmodell erweitern. <br> - [x] **Task 2 (ID 36):** Bild-Speicherort einrichten. <br> - [x] **Task 3 (ID 37):** Backend-Logik für Upload implementieren. <br> - [x] **Task 4 (ID 38):** Frontend-Formulare anpassen. <br> - [x] **Task 5 (ID 39):** Bilder in Chronik anzeigen. | Hoch | Erledigt | - | - | Alle Unteraufgaben wurden erfolgreich abgeschlossen. |
+| 35 | Datenmodell / Backend | **Task 1:** Das Datenmodell für alle Aktionen (Inspektion, Fütterung etc.) muss um ein `images`-Feld (Liste von Strings) erweitert werden. Dies betrifft alle Model-Klassen in `app/models/` und deren `to_dict`-Methoden. | Hoch | Erledigt | Code-Review der Model-Klassen. | Jede Model-Klasse hat ein `images`-Attribut und berücksichtigt es in `to_dict`. | Alle Model-Klassen wurden erfolgreich erweitert. |
+| 36 | Infrastruktur / Backend | **Task 2:** Ein Verzeichnis `app/static/uploads/` muss erstellt werden, um die hochgeladenen Bilder zu speichern. | Hoch | Erledigt | Überprüfen der Verzeichnisstruktur. | Das Verzeichnis `app/static/uploads/` existiert. | Das Verzeichnis wurde erfolgreich erstellt. |
+| 37 | Backend / Controller | **Task 3:** Die Controller für das Erstellen und Bearbeiten von Aktionen müssen erweitert werden, um Bild-Uploads zu verarbeiten. Dies beinhaltet das Speichern der Dateien mit einzigartigen Namen und das Aktualisieren des `images`-Feldes im Datenmodell. | Hoch | Erledigt | Eine Aktion mit Bild-Upload erstellen/bearbeiten. | Die Bilder werden im `uploads`-Ordner gespeichert und die Dateinamen in der entsprechenden JSON-Datei vermerkt. | Alle relevanten Controller wurden angepasst. |
+| 38 | Frontend / Templates | **Task 4:** Alle `new_*`- und `edit_*`-Formulare müssen ein `<input type="file" multiple>`-Feld erhalten. Das `<form>`-Tag muss `enctype="multipart/form-data"` enthalten. | Hoch | Erledigt | Ein beliebiges Aktions-Formular öffnen. | Das Formular zeigt ein Feld für den Bildupload an. | Alle relevanten Formulare wurden angepasst. |
+| 39 | Frontend / UX/UI | **Task 5:** Das `render_timeline_event`-Makro in `_macros.html` muss so angepasst werden, dass es die Bilder einer Aktion als klickbare Thumbnails anzeigt. | Hoch | Erledigt | Eine Aktion mit Bildern in der Chronik anzeigen. | Die Bilder werden als Thumbnails auf der Ereignis-Karte angezeigt. | Das Makro wurde angepasst, um Bilder anzuzeigen. |
+
 | 1 | Usability / Error Handling | Die Fehlerseiten (z.B. 404 Not Found) sind reiner Text ohne Design oder Navigationslinks (z.B. "Zurück zur Startseite"). | Niedrig | Erledigt | Eine nicht existierende URL aufrufen. | Die Anwendung sollte eine ansprechend gestaltete 404-Seite mit Navigationsmöglichkeit anzeigen. | Die 404-Seite erbt nun von `base.html` und enthält einen "Zurück zur Startseite"-Link. Funktioniert fehlerfrei. |
 | 2 | Usability / Navigation | Mehrere Listenansichten für Bienenstock-bezogene Daten (Inspektionen, Fütterungen, Ernten, Ableger, Behandlungen, Varroakontrollen) enthielten keinen direkten Link zurück zur Detailseite des jeweiligen Bienenstocks. Dies führte zu "Sackgassen" in der Navigation. | Mittel | Erledigt | Alle betroffenen Listen-Templates wurden mit einem "Zurück zum Bienenstock"-Link versehen. | Die Links sind vorhanden und funktionieren korrekt. | Alle Listen-Templates wurden aktualisiert und enthalten nun einen "Zurück zum Bienenstock"-Link. Die Navigation ist verbessert. |
 | 3 | Missing Template | Die Vorlage `new_split.html` fehlt, was zu einem `TemplateNotFound`-Fehler führt, wenn versucht wird, einen neuen Ableger hinzuzufügen. | Hoch | Erledigt | Navigieren Sie zu `/hives/<hive_id>/splits/new`. | Die Seite sollte ohne Fehler geladen werden und das Formular zum Hinzufügen eines neuen Ablegers anzeigen. | Die Seite `new_split.html` wird jetzt ohne Fehler geladen und das Formular wird angezeigt. |
@@ -44,21 +51,28 @@
 | 29 | Internationalization | `.po`-Dateien in `.mo`-Dateien kompilieren. | Hoch | Erledigt | `pybabel compile -d translations` ausführen. | `.mo`-Dateien sollten in den jeweiligen Sprachverzeichnissen erstellt werden. | Die `.po`-Dateien wurden erfolgreich in `.mo`-Dateien kompiliert. |
 | 30 | Internationalization | Sprachauswahlmechanismus in `base.html` implementieren (z.B. Dropdown-Menü oder Links). | Hoch | Erledigt | `base.html` im Browser öffnen. | Ein funktionierendes Sprachauswahl-Element ist sichtbar. | Ein Dropdown-Menü zur Sprachauswahl wurde in `base.html` implementiert. |
 | 31 | Internationalization | Logik zum Speichern der ausgewählten Sprache in der Benutzersitzung (Session/Cookie) implementieren. | Hoch | Erledigt | Sprache über die UI wechseln und prüfen, ob die Einstellung persistent ist. | Die ausgewählte Sprache bleibt beim Navigieren erhalten. | Die Logik zum Speichern der Sprache in der Session wurde in `app/__init__.py` implementiert. |
+| 32 | UX/UI | Das Icon für die Aktion "Königin" war ein generisches Personensymbol. In der Chronik wurde für alle Ereignisse dasselbe Kalendersymbol anstelle des spezifischen Symbols für den Aktionstyp angezeigt. | Mittel | Erledigt | Die Detailseite eines Bienenstocks öffnen. Das Symbol auf dem "+ Königin"-Button und die Symbole für verschiedene Ereignistypen in der Chronik überprüfen. | Der "+ Königin"-Button sollte ein Edelstein-Symbol (`bi-gem`) haben. Die Chronik-Ereignisse sollten die gleichen Symbole wie die entsprechenden Aktions-Buttons anzeigen (z.B. Suche für Inspektion, Tropfen für Fütterung, Edelstein für Königin). | Das Symbol auf dem "+ Königin"-Button wurde in `bi-gem` geändert. Die Chronik verwendet nun einen sprachunabhängigen Schlüssel (`event_key`), um für jeden Ereignistyp das korrekte Symbol anzuzeigen, was die Funktionalität über alle Sprachen hinweg sicherstellt. |
+| 33 | Refactoring / Quality | **Tracking-Issue:** Die Bezeichner (Labels) in allen `new_*`- und `edit_*`-Formularen sollen zentralisiert werden, um Inkonsistenzen und Internationalisierungsfehler zu beheben. <br> - [x] Feeding <br> - [x] Harvest <br> - [x] Hive <br> - [x] Inspection <br> - [x] Queen <br> - [x] Split <br> - [x] Treatment <br> - [x] Varroa Control | Mittel | Offen | - | - | - |
+| 40 | Feature / Backend / Frontend | **Bild-Löschfunktion implementieren.** Benutzer sollen die Möglichkeit haben, einzelne hochgeladene Bilder von einem Datensatz zu entfernen. Dies erfordert eine UI-Option (z.B. ein Lösch-Button neben dem Thumbnail) und die entsprechende Backend-Logik, um die Datei vom Server zu löschen und den Dateipfad aus dem Datenmodell zu entfernen. | Hoch | Erledigt | 1. Ein Bild zu einer Aktion hochladen. <br> 2. Die Detailseite der Aktion aufrufen. <br> 3. Versuchen, das hochgeladene Bild zu löschen. <br> 4. Überprüfen, ob das Bild aus der Anzeige und dem Dateisystem entfernt wurde und der Datensatz aktualisiert ist. | Das Bild wird erfolgreich gelöscht und ist nicht mehr sichtbar oder im Dateisystem vorhanden. | Alle Schritte wurden erfolgreich durchgeführt. |
+| 41 | Feature / UX/UI | **Bild-Vorschau (Lightbox/Modal) implementieren.** Beim Anklicken eines Bild-Thumbnails in der Chronik oder in den Bearbeitungsformularen soll sich eine größere, interaktive Ansicht des Bildes (z.B. in einer Lightbox oder einem Modal-Fenster) öffnen. | Mittel | Erledigt | 1. Navigieren zur Detailseite eines Bienenstocks mit Bildern. <br> 2. Auf ein Bild-Thumbnail klicken. <br> 3. Auf das 'X' oder neben das Bild klicken. | Das Bild wird in einer größeren Ansicht (Lightbox/Modal) geöffnet und lässt sich korrekt wieder schließen. Die Navigation der Seite wird nicht beeinträchtigt. | Die Implementierung einer reinen CSS-Lightbox erwies sich als komplex. Mehrere Iterationen waren nötig, um einen schwerwiegenden CSS-Bug zu beheben, bei dem die Lightbox standardmäßig sichtbar war (`display: flex` statt `display: none`). Die finale Lösung nutzt eine robuste HTML-Struktur (`div` statt `a` als Container) und eine korrekte, widerspruchsfreie CSS-Logik. Die Funktion wurde durch interaktive Tests mit dem Benutzer verifiziert und ist nun stabil. |
+| 42 | Feature / Backend / Frontend / Error Handling | **Erweiterte Bild-Upload-Validierung und Fehler-Feedback.** Implementierung von client- und serverseitiger Validierung für hochgeladene Bilder (z.B. nur bestimmte Dateitypen wie JPG, PNG, GIF; maximale Dateigröße). Bei Validierungsfehlern sollen dem Benutzer klare, informative Fehlermeldungen angezeigt werden. | Hoch | Teilweise erledigt | 1. Versuchen, eine nicht-Bilddatei (z.B. `.txt`, `.pdf`) hochzuladen. <br> 2. Versuchen, eine sehr große Bilddatei (z.B. > 5MB) hochzuladen. <br> 3. Versuchen, eine ungültige oder beschädigte Bilddatei hochzuladen. | Die Anwendung lehnt den Upload ab und zeigt eine informative Fehlermeldung an, ohne abzustürzen. | **Testfall 1 (Nicht-Bilddatei):** Erfolgreich. Upload einer `.pdf`-Datei wurde mit der erwarteten Fehlermeldung "Invalid file type..." abgelehnt. <br> **Testfall 2 (Große Bilddatei):** Erfolgreich. Upload einer Datei > 5MB wurde mit "Request Entity Too Large" abgelehnt. <br> **Testfall 3 (Ungültige/beschädigte Bilddatei):** Nicht erfolgreich. Eine `.jpg`-Datei mit Textinhalt wurde akzeptiert. Die Anwendung führt derzeit keine Inhaltsprüfung durch, um die Integrität der Bilddatei zu validieren. Dies muss noch implementiert werden. |
+| 43 | Performance / Backend | **Bild-Optimierung (Größenanpassung/Komprimierung) beim Upload.** Implementierung einer automatischen Größenanpassung und Komprimierung von Bildern direkt nach dem Upload, um den Speicherplatzbedarf zu reduzieren und die Ladezeiten der Anwendung zu verbessern. | Mittel | Offen | 1. Eine große Bilddatei hochladen. <br> 2. Die Größe der gespeicherten Datei im `uploads`-Verzeichnis überprüfen. | Die hochgeladene Bilddatei wird automatisch auf eine optimierte Größe und Qualität reduziert. | |
+| 44 | Refactoring / Quality | **CSS-Struktur zentralisieren.** Um die Wartbarkeit und Konsistenz zu verbessern, wurden alle benutzerdefinierten CSS-Regeln aus den `<style>`-Tags der `base.html` in eine neue, zentrale CSS-Datei ausgelagert. | Hoch | Erledigt | Code-Review der `base.html` und der `static`-Verzeichnisstruktur. | Alle anwendungsspezifischen CSS-Regeln befinden sich in `app/static/css/style.css`. Die `base.html` enthält keine eingebetteten `<style>`-Blöcke mehr und verlinkt stattdessen auf die zentrale CSS-Datei. | Eine `style.css` wurde erstellt und alle Stile wurden erfolgreich migriert. Die `base.html` wurde entsprechend angepasst. Die CSS-Architektur ist nun sauber und zentralisiert. |
 
 # Aktuelle Probleme / Debugging
 
 ## Problem 1: Anwendung startet nicht im Docker-Container (Syntaxfehler in `docker-compose.yml`)
 
 **Beobachtung:**
-Die Anwendung startet nicht im Docker-Container. Die Fehlermeldung im Docker Desktop lautet:
+Die Anwendung startete nicht im Docker-Container. Die Fehlermeldung im Docker Desktop lautete:
 ```
 bash: -c: line 0: syntax error near unexpected token `('
 bash: -c: line 0: `pip install --no-cache-dir -r requirements.txt && gunicorn --bind 0.0.0.0:5000 app:create_app()'
 ```
-Dies deutet darauf hin, dass die Bash-Shell im Docker-Container die Klammern `()` in `app:create_app()` als Syntaxfehler interpretiert, obwohl versucht wurde, sie zu maskieren.
+Dies deutete darauf hin, dass die Bash-Shell im Docker-Container die Klammern `()` in `app:create_app()` als Syntaxfehler interpretierte, obwohl versucht wurde, sie zu maskieren.
 
 **Analyse:**
-Das Problem liegt in der Art und Weise, wie `docker-compose` den `command`-String an die Shell im Container übergibt. Wenn der `command` als einzelne Zeichenkette angegeben wird (z.B. `command: bash -c "..."`), führt `docker-compose` möglicherweise eine eigene Interpretation oder Entmaskierung durch, bevor der Befehl an `bash -c` übergeben wird. Dies kann dazu führen, dass Maskierungszeichen (Backslashes) von `docker-compose` "geschluckt" werden, bevor sie die Bash-Shell erreichen, die sie eigentlich benötigt.
+Das Problem lag in der Art und Weise, wie `docker-compose` den `command`-String an die Shell im Container übergibt. Die ursprüngliche `command`-Zeile in `docker-compose.yml` führte dazu, dass `gunicorn` die `create_app()`-Funktion mit unerwarteten Argumenten aufrief. Dies wurde durch die `TypeError: create_app() takes 0 positional arguments but 2 were given` deutlich.
 
 **Aktueller Stand der `docker-compose.yml`:**
 ```yaml
@@ -73,9 +87,10 @@ services:
       SECRET_KEY: "your_secret_key_here"
     volumes:
       - .:/app
-    command: ["bash", "-c", "pip install --no-cache-dir -r requirements.txt && gunicorn --bind 0.0.0.0:5000 app:create_app()"]
+    command: bash -c "pip install --no-cache-dir -r requirements.txt && gunicorn --bind 0.0.0.0:5000 'app:create_app()'"
 ```
-Die `command`-Zeile wurde auf die Listen-/Array-Form umgestellt, um die korrekte Übergabe des Befehls an die Shell zu gewährleisten. Die Klammern `()` in `app:create_app()` sind innerhalb des Strings enthalten, der als einzelnes Argument an `bash -c` übergeben wird.
+
+**Status:** Erledigt. Die `command`-Zeile wurde korrigiert, um `gunicorn` den korrekten Aufruf der `create_app()`-Funktion zu ermöglichen. Die Anwendung startet nun erfolgreich im Docker-Container.
 
 ## Problem 2: Anwendung startet nicht lokal (Jinja2 TemplateSyntaxError)
 
@@ -119,3 +134,17 @@ Die Internationalisierung funktioniert nun wie erwartet.
 
 **Zusammenfassung des aktuellen Zustands:**
 Die Internationalisierung wurde in den Templates und der `app/__init__.py` implementiert. Die `.po`- und `.mo`-Dateien wurden generiert. Die Anwendung kann jedoch aufgrund der oben genannten Probleme weder lokal noch im Docker-Container gestartet werden. Die Behebung dieser Startprobleme ist der nächste kritische Schritt, um die Internationalisierung zu testen.
+
+## Problem 4: "Variety:" für Honigart wird nicht übersetzt
+
+**Beobachtung:**
+Auf der Detailseite eines Bienenvolkes wird in der Anzeige für die Aktion "Ernte" die Bezeichnung für die Honigart immer als "Variety:" angezeigt, unabhängig von der eingestellten Sprache.
+
+**Analyse:**
+Die Zeichenkette "Variety:" in `app/templates/_macros.html` war nicht für die Übersetzung markiert (`_()`). Zudem wurde entschieden, die Bezeichnung aus Konsistenzgründen auf "Honey Type:" zu ändern, da diese Vokabel auch im Formular zur Erstellung eines Ernte-Datensatzes verwendet wird.
+
+**Lösung:**
+Die Zeichenkette "Variety:" in `app/templates/_macros.html` wurde durch `{{ _('Honey Type') }}` ersetzt. Anschließend wurden die Babel-Übersetzungsdateien (messages.pot, .po, .mo) aktualisiert und neu kompiliert, um die neue übersetzbare Zeichenkette zu integrieren.
+
+**Aktueller Stand:**
+Die Bezeichnung für die Honigart wird nun als "Honey Type:" angezeigt und korrekt übersetzt.

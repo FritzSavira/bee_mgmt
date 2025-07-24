@@ -1,0 +1,784 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR , 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-23 19:03+0200\n"
+"PO-Revision-Date: 2025-07-19 20:59+0200\n"
+"Last-Translator: FULL NAME \n"
+"Language: es\n"
+"Language-Team: es \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/routes.py:101
+#, fuzzy
+msgid "Inspektion"
+msgstr "+ Inspección"
+
+#: app/routes.py:102
+#, fuzzy
+msgid "inspection"
+msgstr "+ Inspección"
+
+#: app/routes.py:110
+msgid "Behandlung"
+msgstr ""
+
+#: app/routes.py:111
+#, fuzzy
+msgid "treatment"
+msgstr "+ Tratamiento"
+
+#: app/routes.py:119
+msgid "Fütterung"
+msgstr ""
+
+#: app/routes.py:120
+#, fuzzy
+msgid "feeding"
+msgstr "+ Alimentación"
+
+#: app/routes.py:128
+#, fuzzy
+msgid "Ernte"
+msgstr "Agente"
+
+#: app/routes.py:129
+#, fuzzy
+msgid "harvest"
+msgstr "+ Cosecha"
+
+#: app/routes.py:137
+#, fuzzy
+msgid "Varroakontrolle"
+msgstr "+ Control de Varroa"
+
+#: app/routes.py:138
+#, fuzzy
+msgid "varroa_control"
+msgstr "+ Control de Varroa"
+
+#: app/routes.py:146
+msgid "Ableger"
+msgstr ""
+
+#: app/routes.py:147
+#, fuzzy
+msgid "split"
+msgstr "+ División"
+
+#: app/templates/404.html:3 app/templates/404.html:8
+msgid "Page not found"
+msgstr "Página no encontrada"
+
+#: app/templates/404.html:9
+msgid "Oops! The page you are looking for does not exist or has been moved."
+msgstr "¡Ups! La página que buscas no existe o ha sido movida."
+
+#: app/templates/404.html:10 app/templates/treatments_report.html:37
+msgid "Back to Home"
+msgstr "Volver a Inicio"
+
+#: app/templates/_macros.html:7
+msgid "OK"
+msgstr ""
+
+#: app/templates/_macros.html:10 app/templates/hive_detail.html:15
+msgid "Location"
+msgstr "Ubicación"
+
+#: app/templates/_macros.html:11
+msgid "Queen"
+msgstr "Reina"
+
+#: app/templates/_macros.html:11 app/templates/hive_detail.html:20
+msgid "N/A"
+msgstr "N/D"
+
+#: app/templates/_macros.html:12 app/templates/hive_detail.html:16
+msgid "Hive Type"
+msgstr "Tipo de Colmena"
+
+#: app/templates/_macros.html:16
+#, fuzzy
+msgid "Details"
+msgstr "Detalles para"
+
+#: app/templates/_macros.html:22
+#, fuzzy
+msgid "Are you sure you want to delete this hive?"
+msgstr "¿Estás seguro de que quieres eliminar esta reina?"
+
+#: app/templates/_macros.html:56 app/templates/inspections_list.html:22
+msgid "Brood Status"
+msgstr "Estado de Cría"
+
+#: app/templates/_macros.html:56 app/templates/inspections_list.html:25
+msgid "Food Supply"
+msgstr "Suministro de Alimento"
+
+#: app/templates/_macros.html:58 app/templates/_macros.html:60
+#: app/templates/treatments_list.html:22
+#: app/templates/treatments_report.html:12
+msgid "Type"
+msgstr "Tipo"
+
+#: app/templates/_macros.html:60 app/templates/_macros.html:62
+#: app/templates/feeding_list.html:23
+msgid "Amount"
+msgstr "Cantidad"
+
+#: app/templates/_macros.html:62 app/templates/harvests_list.html:23
+msgid "Honey Type"
+msgstr "Tipo de Miel"
+
+#: app/templates/_macros.html:64 app/templates/varroa_controls_list.html:22
+msgid "Mite Count"
+msgstr "Conteo de Ácaros"
+
+#: app/templates/_macros.html:64 app/templates/_macros.html:66
+#: app/templates/splits_list.html:22 app/templates/varroa_controls_list.html:23
+msgid "Method"
+msgstr "Método"
+
+#: app/templates/_macros.html:66 app/templates/splits_list.html:23
+msgid "New Hive ID"
+msgstr "ID de Nueva Colmena"
+
+#: app/templates/_macros.html:68 app/templates/edit_queen.html:11
+#: app/templates/queens_list.html:21
+msgid "Name"
+msgstr "Nombre"
+
+#: app/templates/_macros.html:68 app/templates/queens_list.html:22
+msgid "Origin"
+msgstr "Origen"
+
+#: app/templates/_macros.html:68 app/templates/queens_list.html:26
+msgid "Breed"
+msgstr "Raza"
+
+#: app/templates/_macros.html:78
+msgid "Event Image"
+msgstr ""
+
+#: app/templates/_macros.html:83
+#, fuzzy
+msgid "Are you sure you want to delete this image?"
+msgstr "¿Estás seguro de que quieres eliminar esta reina?"
+
+#: app/templates/_macros.html:95
+msgid "Enlarged Image"
+msgstr ""
+
+#: app/templates/_macros.html:106 app/templates/inspections_list.html:52
+msgid "Are you sure you want to delete this inspection?"
+msgstr "¿Estás seguro de que quieres eliminar esta inspección?"
+
+#: app/templates/_macros.html:111 app/templates/treatments_list.html:42
+msgid "Are you sure you want to delete this treatment?"
+msgstr "¿Estás seguro de que quieres eliminar este tratamiento?"
+
+#: app/templates/_macros.html:116 app/templates/feeding_list.html:40
+msgid "Are you sure you want to delete this feeding entry?"
+msgstr "¿Estás seguro de que quieres eliminar esta entrada de alimentación?"
+
+#: app/templates/_macros.html:121 app/templates/harvests_list.html:40
+msgid "Are you sure you want to delete this harvest entry?"
+msgstr "¿Estás seguro de que quieres eliminar esta entrada de cosecha?"
+
+#: app/templates/_macros.html:126 app/templates/varroa_controls_list.html:40
+msgid "Are you sure you want to delete this varroa control entry?"
+msgstr "¿Estás seguro de que quieres eliminar esta entrada de control de varroa?"
+
+#: app/templates/_macros.html:131 app/templates/splits_list.html:38
+msgid "Are you sure you want to delete this split entry?"
+msgstr "¿Estás seguro de que quieres eliminar esta entrada de división?"
+
+#: app/templates/_macros.html:136 app/templates/queens_list.html:50
+msgid "Are you sure you want to delete this queen?"
+msgstr "¿Estás seguro de que quieres eliminar esta reina?"
+
+#: app/templates/base.html:6 app/templates/base.html:16
+msgid "Bee Management"
+msgstr "Gestión de Abejas"
+
+#: app/templates/base.html:18
+msgid "Toggle navigation"
+msgstr "Alternar navegación"
+
+#: app/templates/base.html:24
+msgid "Overview"
+msgstr "Resumen"
+
+#: app/templates/base.html:27
+msgid "+ New Hive"
+msgstr "+ Nueva Colmena"
+
+#: app/templates/base.html:50
+msgid "Close"
+msgstr "Cerrar"
+
+#: app/templates/base.html:62
+msgid "Bee Management App"
+msgstr "Aplicación de Gestión de Abejas"
+
+#: app/templates/edit_feeding.html:3 app/templates/edit_feeding.html:6
+msgid "Edit Feeding for Hive"
+msgstr "Editar Alimentación para Colmena"
+
+#: app/templates/edit_feeding.html:37 app/templates/edit_harvest.html:42
+#: app/templates/edit_inspection.html:49 app/templates/edit_split.html:32
+#: app/templates/edit_treatment.html:47
+#: app/templates/edit_varroa_control.html:37
+#, fuzzy
+msgid "Current Images"
+msgstr "Reina Actual"
+
+#: app/templates/edit_feeding.html:48 app/templates/edit_harvest.html:53
+#: app/templates/edit_hive.html:69 app/templates/edit_queen.html:50
+#: app/templates/edit_split.html:43 app/templates/edit_treatment.html:58
+#: app/templates/edit_varroa_control.html:48
+msgid "Save"
+msgstr "Guardar"
+
+#: app/templates/edit_feeding.html:49 app/templates/edit_harvest.html:54
+#: app/templates/edit_hive.html:70 app/templates/edit_inspection.html:61
+#: app/templates/edit_queen.html:51 app/templates/edit_split.html:44
+#: app/templates/edit_treatment.html:59
+#: app/templates/edit_varroa_control.html:49 app/templates/new_feeding.html:36
+#: app/templates/new_harvest.html:41 app/templates/new_hive.html:70
+#: app/templates/new_inspection.html:47 app/templates/new_queen.html:46
+#: app/templates/new_split.html:31 app/templates/new_treatment.html:46
+#: app/templates/new_varroa_control.html:36
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: app/templates/edit_harvest.html:3 app/templates/edit_harvest.html:6
+msgid "Edit Honey Harvest for Hive"
+msgstr "Editar Cosecha de Miel para Colmena"
+
+#: app/templates/edit_hive.html:3 app/templates/edit_hive.html:6
+msgid "Edit Hive"
+msgstr "Editar Colmena"
+
+#: app/templates/edit_hive.html:44 app/templates/edit_inspection.html:31
+#: app/templates/inspections_list.html:38 app/templates/new_hive.html:44
+#: app/templates/new_inspection.html:31
+msgid "low"
+msgstr "bajo"
+
+#: app/templates/edit_hive.html:45 app/templates/new_hive.html:45
+msgid "medium"
+msgstr "medio"
+
+#: app/templates/edit_hive.html:46 app/templates/new_hive.html:46
+msgid "high"
+msgstr "alto"
+
+#: app/templates/edit_hive.html:54 app/templates/new_hive.html:54
+msgid "calm"
+msgstr "calmo"
+
+#: app/templates/edit_hive.html:55 app/templates/new_hive.html:55
+msgid "restless"
+msgstr "inquieto"
+
+#: app/templates/edit_hive.html:63 app/templates/new_hive.html:63
+msgid "below average"
+msgstr "por debajo del promedio"
+
+#: app/templates/edit_hive.html:64 app/templates/new_hive.html:64
+msgid "average"
+msgstr "promedio"
+
+#: app/templates/edit_hive.html:65 app/templates/new_hive.html:65
+msgid "above average"
+msgstr "por encima del promedio"
+
+#: app/templates/edit_inspection.html:3 app/templates/edit_inspection.html:6
+msgid "Edit Inspection for Hive"
+msgstr "Editar Inspección para Colmena"
+
+#: app/templates/edit_inspection.html:29 app/templates/inspections_list.html:42
+#: app/templates/new_inspection.html:29
+msgid "good"
+msgstr "bueno"
+
+#: app/templates/edit_inspection.html:30 app/templates/inspections_list.html:40
+#: app/templates/new_inspection.html:30
+msgid "sufficient"
+msgstr "suficiente"
+
+#: app/templates/edit_inspection.html:60
+msgid "Update Inspection"
+msgstr "Actualizar Inspección"
+
+#: app/templates/edit_queen.html:3 app/templates/edit_queen.html:6
+msgid "Edit Queen for Hive"
+msgstr "Editar Reina para Colmena"
+
+#: app/templates/edit_split.html:3 app/templates/edit_split.html:6
+msgid "Edit Split for Hive"
+msgstr "Editar División para Colmena"
+
+#: app/templates/edit_treatment.html:3 app/templates/edit_treatment.html:6
+msgid "Edit Treatment for Hive"
+msgstr "Editar Tratamiento para Colmena"
+
+#: app/templates/edit_varroa_control.html:3
+#: app/templates/edit_varroa_control.html:6
+msgid "Edit Varroa Control for Hive"
+msgstr "Editar Control de Varroa para Colmena"
+
+#: app/templates/feeding_list.html:3 app/templates/feeding_list.html:7
+msgid "Feedings for Hive"
+msgstr "Alimentaciones para Colmena"
+
+#: app/templates/feeding_list.html:8 app/templates/harvests_list.html:8
+#: app/templates/inspections_list.html:8 app/templates/queens_list.html:8
+#: app/templates/splits_list.html:8 app/templates/treatments_list.html:8
+#: app/templates/varroa_controls_list.html:8
+msgid "Back to Hive"
+msgstr "Volver a la Colmena"
+
+#: app/templates/feeding_list.html:13
+msgid "All Feedings"
+msgstr "Todas las Alimentaciones"
+
+#: app/templates/feeding_list.html:14
+msgid "+ New Feeding"
+msgstr "+ Nueva Alimentación"
+
+#: app/templates/feeding_list.html:21 app/templates/harvests_list.html:21
+#: app/templates/inspections_list.html:21 app/templates/splits_list.html:21
+#: app/templates/treatments_list.html:21
+#: app/templates/treatments_report.html:11
+#: app/templates/varroa_controls_list.html:21
+msgid "Date"
+msgstr "Fecha"
+
+#: app/templates/feeding_list.html:22
+msgid "Food Type"
+msgstr "Tipo de Alimento"
+
+#: app/templates/feeding_list.html:24
+msgid "Concentration"
+msgstr "Concentración"
+
+#: app/templates/feeding_list.html:25 app/templates/harvests_list.html:25
+#: app/templates/hive_detail.html:32 app/templates/inspections_list.html:26
+#: app/templates/queens_list.html:30 app/templates/splits_list.html:24
+#: app/templates/treatments_list.html:26
+#: app/templates/varroa_controls_list.html:25
+msgid "Actions"
+msgstr "Acciones"
+
+#: app/templates/feeding_list.html:48
+msgid "No feedings available for this hive yet."
+msgstr "No hay alimentaciones disponibles para esta colmena aún."
+
+#: app/templates/harvests_list.html:3 app/templates/harvests_list.html:7
+msgid "Honey Harvests for Hive"
+msgstr "Cosechas de Miel para Colmena"
+
+#: app/templates/harvests_list.html:13
+msgid "All Honey Harvests"
+msgstr "Todas las Cosechas de Miel"
+
+#: app/templates/harvests_list.html:14
+msgid "+ New Harvest"
+msgstr "+ Nueva Cosecha"
+
+#: app/templates/harvests_list.html:22
+msgid "Amount (kg)"
+msgstr "Cantidad (kg)"
+
+#: app/templates/harvests_list.html:24
+msgid "Water Content"
+msgstr "Contenido de Agua"
+
+#: app/templates/harvests_list.html:48
+msgid "No honey harvests available for this hive yet."
+msgstr "No hay cosechas de miel disponibles para esta colmena aún."
+
+#: app/templates/harvests_report.html:3 app/templates/harvests_report.html:6
+msgid "Honey Harvest Report"
+msgstr "Informe de Cosecha de Miel"
+
+#: app/templates/harvests_report.html:10
+msgid "Total Yield"
+msgstr "Rendimiento Total"
+
+#: app/templates/harvests_report.html:13
+msgid "Total Honey Yield"
+msgstr "Rendimiento Total de Miel"
+
+#: app/templates/harvests_report.html:14
+msgid "This is the cumulative yield of all recorded honey harvests."
+msgstr ""
+"Este es el rendimiento acumulado de todas las cosechas de miel "
+"registradas."
+
+#: app/templates/harvests_report.html:18
+msgid "Back to Overview"
+msgstr "Volver a Resumen"
+
+#: app/templates/hive_detail.html:4
+msgid "Details for"
+msgstr "Detalles para"
+
+#: app/templates/hive_detail.html:10
+msgid "Hive"
+msgstr "Colmena"
+
+#: app/templates/hive_detail.html:17
+msgid "Number of Frames"
+msgstr "Número de Cuadros"
+
+#: app/templates/hive_detail.html:20
+msgid "Current Queen"
+msgstr "Reina Actual"
+
+#: app/templates/hive_detail.html:21
+msgid "Colony Strength"
+msgstr "Fuerza de la Colonia"
+
+#: app/templates/hive_detail.html:22
+msgid "Temperament"
+msgstr "Temperamento"
+
+#: app/templates/hive_detail.html:25
+msgid "Edit Master Data"
+msgstr "Editar Datos Maestros"
+
+#: app/templates/hive_detail.html:35
+msgid "+ Inspection"
+msgstr "+ Inspección"
+
+#: app/templates/hive_detail.html:36
+msgid "+ Feeding"
+msgstr "+ Alimentación"
+
+#: app/templates/hive_detail.html:37
+msgid "+ Treatment"
+msgstr "+ Tratamiento"
+
+#: app/templates/hive_detail.html:38
+msgid "+ Harvest"
+msgstr "+ Cosecha"
+
+#: app/templates/hive_detail.html:39
+msgid "+ Varroa Control"
+msgstr "+ Control de Varroa"
+
+#: app/templates/hive_detail.html:40
+msgid "+ Split"
+msgstr "+ División"
+
+#: app/templates/hive_detail.html:41
+msgid "+ Queen"
+msgstr "+ Reina"
+
+#: app/templates/hive_detail.html:48
+msgid "Chronicle"
+msgstr "Crónica"
+
+#: app/templates/hive_detail.html:56
+msgid "No entries in the chronicle for this hive yet."
+msgstr "No hay entradas en la crónica para esta colmena aún."
+
+#: app/templates/index.html:4 app/templates/index.html:8
+msgid "Hive Overview"
+msgstr "Resumen de Colmenas"
+
+#: app/templates/index.html:16
+msgid "No hives available yet."
+msgstr "No hay colmenas disponibles aún."
+
+#: app/templates/inspections_list.html:3 app/templates/inspections_list.html:7
+msgid "Inspections for Hive"
+msgstr "Inspecciones para Colmena"
+
+#: app/templates/inspections_list.html:13
+msgid "All Inspections"
+msgstr "Todas las Inspecciones"
+
+#: app/templates/inspections_list.html:14
+msgid "+ New Inspection"
+msgstr "+ Nueva Inspección"
+
+#: app/templates/inspections_list.html:23
+msgid "Queen Sighted"
+msgstr "Reina Avistada"
+
+#: app/templates/inspections_list.html:24
+msgid "Swarm Cells"
+msgstr "Celdas Reales"
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:43
+#: app/templates/queens_list.html:44
+msgid "Yes"
+msgstr "Sí"
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:43
+#: app/templates/queens_list.html:44
+msgid "No"
+msgstr "No"
+
+#: app/templates/inspections_list.html:60
+msgid "No inspections available for this hive yet."
+msgstr "No hay inspecciones disponibles para esta colmena aún."
+
+#: app/templates/new_feeding.html:3 app/templates/new_feeding.html:6
+msgid "New Feeding for Hive"
+msgstr "Nueva Alimentación para Colmena"
+
+#: app/templates/new_feeding.html:35 app/templates/new_harvest.html:40
+#: app/templates/new_hive.html:69 app/templates/new_queen.html:45
+#: app/templates/new_split.html:30 app/templates/new_treatment.html:45
+#: app/templates/new_varroa_control.html:35
+msgid "Add"
+msgstr "Añadir"
+
+#: app/templates/new_harvest.html:3 app/templates/new_harvest.html:6
+msgid "New Honey Harvest for Hive"
+msgstr "Nueva Cosecha de Miel para Colmena"
+
+#: app/templates/new_hive.html:3 app/templates/new_hive.html:6
+msgid "Add New Hive"
+msgstr "Añadir Nueva Colmena"
+
+#: app/templates/new_inspection.html:3 app/templates/new_inspection.html:6
+msgid "New Inspection for Hive"
+msgstr "Nueva Inspección para Colmena"
+
+#: app/templates/new_inspection.html:46
+msgid "Add Inspection"
+msgstr "Añadir Inspección"
+
+#: app/templates/new_queen.html:3 app/templates/new_queen.html:6
+msgid "New Queen for Hive"
+msgstr "Nueva Reina para Colmena"
+
+#: app/templates/new_split.html:3 app/templates/new_split.html:6
+msgid "Add New Split for Hive"
+msgstr "Añadir Nueva División para Colmena"
+
+#: app/templates/new_treatment.html:3 app/templates/new_treatment.html:6
+msgid "New Treatment for Hive"
+msgstr "Nuevo Tratamiento para Colmena"
+
+#: app/templates/new_varroa_control.html:3
+#: app/templates/new_varroa_control.html:6
+msgid "New Varroa Control for Hive"
+msgstr "Nuevo Control de Varroa para Colmena"
+
+#: app/templates/queens_list.html:3 app/templates/queens_list.html:7
+msgid "Queens for Hive"
+msgstr "Reinas para Colmena"
+
+#: app/templates/queens_list.html:13
+msgid "All Queens"
+msgstr "Todas las Reinas"
+
+#: app/templates/queens_list.html:14
+msgid "+ New Queen"
+msgstr "+ Nueva Reina"
+
+#: app/templates/queens_list.html:23
+msgid "Birth Date"
+msgstr "Fecha de Nacimiento"
+
+#: app/templates/queens_list.html:24
+msgid "Age (Years)"
+msgstr "Edad (Años)"
+
+#: app/templates/queens_list.html:25
+msgid "Color Mark"
+msgstr "Marca de Color"
+
+#: app/templates/queens_list.html:27
+msgid "Introduction Date"
+msgstr "Fecha de Introducción"
+
+#: app/templates/queens_list.html:28
+msgid "Marked"
+msgstr "Marcada"
+
+#: app/templates/queens_list.html:29
+msgid "Clipped"
+msgstr "Recortada"
+
+#: app/templates/queens_list.html:58
+msgid "No queens available for this hive yet."
+msgstr "No hay reinas disponibles para esta colmena aún."
+
+#: app/templates/splits_list.html:3 app/templates/splits_list.html:7
+msgid "Splits for Hive"
+msgstr "Divisiones para Colmena"
+
+#: app/templates/splits_list.html:13
+msgid "All Splits"
+msgstr "Todas las Divisiones"
+
+#: app/templates/splits_list.html:14
+msgid "+ New Split"
+msgstr "+ Nueva División"
+
+#: app/templates/splits_list.html:46
+msgid "No splits available for this hive yet."
+msgstr "No hay divisiones disponibles para esta colmena aún."
+
+#: app/templates/treatments_list.html:3 app/templates/treatments_list.html:7
+msgid "Treatments for Hive"
+msgstr "Tratamientos para Colmena"
+
+#: app/templates/treatments_list.html:13
+msgid "All Treatments"
+msgstr "Todos los Tratamientos"
+
+#: app/templates/treatments_list.html:14
+msgid "+ New Treatment"
+msgstr "+ Nuevo Tratamiento"
+
+#: app/templates/treatments_list.html:23
+#: app/templates/treatments_report.html:13
+msgid "Agent"
+msgstr "Agente"
+
+#: app/templates/treatments_list.html:24
+#: app/templates/treatments_report.html:14
+msgid "Dosage"
+msgstr "Dosis"
+
+#: app/templates/treatments_list.html:25
+#: app/templates/treatments_report.html:15
+msgid "Duration"
+msgstr "Duración"
+
+#: app/templates/treatments_list.html:50
+msgid "No treatments available for this hive yet."
+msgstr "No hay tratamientos disponibles para esta colmena aún."
+
+#: app/templates/treatments_report.html:3
+#: app/templates/treatments_report.html:6
+msgid "Treatment Report"
+msgstr "Informe de Tratamiento"
+
+#: app/templates/treatments_report.html:10
+msgid "Hive ID"
+msgstr "ID de Colmena"
+
+#: app/templates/treatments_report.html:16
+msgid "Efficacy Observation"
+msgstr "Observación de Eficacia"
+
+#: app/templates/treatments_report.html:32
+msgid "No treatments found."
+msgstr "No se encontraron tratamientos."
+
+#: app/templates/varroa_controls_list.html:3
+#: app/templates/varroa_controls_list.html:7
+msgid "Varroa Controls for Hive"
+msgstr "Controles de Varroa para Colmena"
+
+#: app/templates/varroa_controls_list.html:13
+msgid "All Varroa Controls"
+msgstr "Todos los Controles de Varroa"
+
+#: app/templates/varroa_controls_list.html:14
+msgid "+ New Varroa Control"
+msgstr "+ Nuevo Control de Varroa"
+
+#: app/templates/varroa_controls_list.html:24
+msgid "Infestation Level"
+msgstr "Nivel de Infestación"
+
+#: app/templates/varroa_controls_list.html:48
+msgid "No varroa controls available for this hive yet."
+msgstr "No hay controles de varroa disponibles para esta colmena aún."
+
+#~ msgid "Feeding Date"
+#~ msgstr "Fecha de Alimentación"
+
+#~ msgid "Amount (kg/l)"
+#~ msgstr "Cantidad (kg/l)"
+
+#~ msgid "Concentration (if liquid)"
+#~ msgstr "Concentración (si es líquido)"
+
+#~ msgid "Harvest Date"
+#~ msgstr "Fecha de Cosecha"
+
+#~ msgid "form_label_water_content"
+#~ msgstr "Contenido de Agua (%%)"
+
+#~ msgid "Notes"
+#~ msgstr "Notas"
+
+#~ msgid "Hive Number"
+#~ msgstr "Número de Colmena"
+
+#~ msgid "Colony Strength (number of occupied comb lanes)"
+#~ msgstr "Fuerza de la Colonia (número de calles ocupadas)"
+
+#~ msgid "Temperament (scale 1-5)"
+#~ msgstr "Temperamento (escala 1-5)"
+
+#~ msgid "Swarming Tendency"
+#~ msgstr "Tendencia a Enjambre"
+
+#~ msgid "Comb Settling"
+#~ msgstr "Asentamiento de Panales"
+
+#~ msgid "Honey Yield Rating"
+#~ msgstr "Calificación de Rendimiento de Miel"
+
+#~ msgid "Inspection Date"
+#~ msgstr "Fecha de Inspección"
+
+#~ msgid "Measures Taken"
+#~ msgstr "Medidas Tomadas"
+
+#~ msgid "Observations"
+#~ msgstr "Observaciones"
+
+#~ msgid "Birth Year/Hatching Date"
+#~ msgstr "Año de Nacimiento/Fecha de Eclosión"
+
+#~ msgid "Breed/Genetics"
+#~ msgstr "Raza/Genética"
+
+#~ msgid "Clipped/Unclipped"
+#~ msgstr "Recortada/Sin recortar"
+
+#~ msgid "Split Date"
+#~ msgstr "Fecha de División"
+
+#~ msgid "New Hive ID (optional)"
+#~ msgstr "ID de Nueva Colmena (opcional)"
+
+#~ msgid "Treatment Date"
+#~ msgstr "Fecha de Tratamiento"
+
+#~ msgid "Treatment Type"
+#~ msgstr "Tipo de Tratamiento"
+
+#~ msgid "Used Agent"
+#~ msgstr "Agente Utilizado"
+
+#~ msgid "Duration of Treatment"
+#~ msgstr "Duración del Tratamiento"
+
+#~ msgid "Control Date"
+#~ msgstr "Fecha de Control"
+

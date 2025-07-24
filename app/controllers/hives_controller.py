@@ -10,12 +10,63 @@ class HivesController:
         self.data_manager = DataManager('hives')
         self.inspections_data_manager = DataManager('inspections')
         self.treatments_data_manager = DataManager('treatments')
+        self.queens_data_manager = DataManager('queens')
 
     def get_all_hives(self):
-        return self.data_manager.load_all()
+        hives = self.data_manager.load_all()
+        queens = self.queens_data_manager.load_all()
+
+        queens_by_hive = {}
+        for queen in queens:
+            if not hasattr(queen, 'hive_id') or not queen.hive_id:
+                continue
+            if queen.hive_id not in queens_by_hive:
+                queens_by_hive[queen.hive_id] = []
+            queens_by_hive[queen.hive_id].append(queen)
+
+        for hive in hives:
+            hive.queen = None
+            if hive.id in queens_by_hive:
+                hive_queens = queens_by_hive[hive.id]
+                
+                valid_queens = []
+                for q in hive_queens:
+                    if hasattr(q, 'birth_date') and q.birth_date:
+                        try:
+                            q.birth_date_obj = datetime.strptime(q.birth_date, '%Y-%m-%d')
+                            valid_queens.append(q)
+                        except (ValueError, TypeError):
+                            continue
+                
+                if valid_queens:
+                    valid_queens.sort(key=lambda x: x.birth_date_obj, reverse=True)
+                    hive.queen = valid_queens[0]
+        
+        return hives
 
     def get_hive_by_id(self, hive_id):
-        return self.data_manager.load(hive_id)
+        hive = self.data_manager.load(hive_id)
+        if not hive:
+            return None
+
+        queens = self.queens_data_manager.get_all_for_hive(hive.id)
+        
+        hive.queen = None
+        if queens:
+            valid_queens = []
+            for q in queens:
+                if hasattr(q, 'birth_date') and q.birth_date:
+                    try:
+                        q.birth_date_obj = datetime.strptime(q.birth_date, '%Y-%m-%d')
+                        valid_queens.append(q)
+                    except (ValueError, TypeError):
+                        continue
+            
+            if valid_queens:
+                valid_queens.sort(key=lambda x: x.birth_date_obj, reverse=True)
+                hive.queen = valid_queens[0]
+
+        return hive
 
     def create_hive(self, hive_data):
         new_hive = Hive(

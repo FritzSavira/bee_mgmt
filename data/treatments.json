@@ -68,5 +68,25 @@
         "dosage": "3 kg",
         "duration": "5 Tage",
         "efficacy_observation": "gut"
+    },
+    {
+        "id": "320089e0-c9c5-4272-a7f9-fa6508901e54",
+        "hive_id": "ed77c5a8-1f8e-424c-849e-89245650ca41",
+        "treatment_date": "2025-04-14",
+        "treatment_type": "Varoa",
+        "used_agent": "Ameisensäure",
+        "dosage": "3 kg",
+        "duration": "5 Tage",
+        "efficacy_observation": "gut"
+    },
+    {
+        "id": "585801f7-f1fe-4372-ab53-0395a1c36495",
+        "hive_id": "5a511d02-b2b6-4b06-b860-4913265db23b",
+        "treatment_date": "2025-04-30",
+        "treatment_type": "Verdunstung",
+        "used_agent": "Ameisensäure",
+        "dosage": "",
+        "duration": "",
+        "efficacy_observation": ""
     }
 ]

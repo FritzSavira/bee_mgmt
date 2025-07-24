@@ -61,5 +61,14 @@
         "honey_type": "Löwenzahn",
         "water_content": "20",
         "notes": "gute Ernte\r\n"
+    },
+    {
+        "id": "f98546ac-cb02-4fe4-8e96-5604f8d1f41c",
+        "hive_id": "44ab9ab9-bb62-4c68-bf29-5236be67f252",
+        "harvest_date": "2025-07-21",
+        "amount_kg": "21",
+        "honey_type": "Sommertracht",
+        "water_content": "21",
+        "notes": "Test"
     }
 ]

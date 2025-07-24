@@ -3,11 +3,23 @@ from app.utils.data_manager import DataManager
 from app.models.queen import Queen
 from flask import render_template, request, redirect, url_for, Blueprint
 from app.controllers.hives_controller import HivesController
+from datetime import datetime
 
 class QueensController:
     def __init__(self):
         self.data_manager = DataManager('queens')
         self.hives_controller = HivesController()
+
+    def _generate_queen_name(self, queen_data):
+        breed = queen_data.get('breed', 'Unknown')
+        origin = queen_data.get('origin', 'Unknown')
+        birth_year = 'Unknown'
+        if queen_data.get('birth_date'):
+            try:
+                birth_year = datetime.strptime(queen_data['birth_date'], '%Y-%m-%d').year
+            except (ValueError, TypeError):
+                birth_year = 'InvalidYear'
+        return f"{breed}-{origin}-{birth_year}"
 
     def get_all_queens(self, hive_id=None):
         queens = self.data_manager.load_all()
@@ -19,9 +31,11 @@ class QueensController:
         return self.data_manager.load(queen_id)
 
     def create_queen(self, hive_id, queen_data):
+        queen_data['name'] = self._generate_queen_name(queen_data)
         new_queen = Queen(
             id=str(uuid.uuid4()),
             hive_id=hive_id,
+            name=queen_data['name'],
             origin=queen_data['origin'],
             birth_date=queen_data['birth_date'],
             color_mark=queen_data['color_mark'],
@@ -43,6 +57,10 @@ class QueensController:
             queen.introduction_date = updated_data.get('introduction_date', queen.introduction_date)
             queen.marked = updated_data.get('marked', queen.marked)
             queen.clipped = updated_data.get('clipped', queen.clipped)
+            
+            # Regenerate name based on potentially updated fields
+            queen.name = self._generate_queen_name(queen.__dict__)
+            
             self.data_manager.update(queen)
             return queen
         return None
@@ -75,7 +93,7 @@ def new_queen(hive_id):
         }
         queens_instance.create_queen(hive_id, queen_data)
         return redirect(url_for('main.queens_controller.list_queens', hive_id=hive_id))
-    return render_template('new_queen.html', hive=hive)
+    return render_template('new_queen.html', hive=hive, form_labels=Queen.FORM_LABELS)
 
 @queens_bp.route('/hives/<hive_id>/queens/<queen_id>/edit', methods=['GET', 'POST'])
 def edit_queen(hive_id, queen_id):
@@ -93,7 +111,7 @@ def edit_queen(hive_id, queen_id):
         }
         queens_instance.update_queen(queen_id, updated_data)
         return redirect(url_for('main.queens_controller.list_queens', hive_id=hive_id))
-    return render_template('edit_queen.html', hive=hive, queen=queen)
+    return render_template('edit_queen.html', hive=hive, queen=queen, form_labels=Queen.FORM_LABELS)
 
 @queens_bp.route('/hives/<hive_id>/queens/<queen_id>/delete', methods=['POST'])
 def delete_queen(hive_id, queen_id):

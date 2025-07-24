@@ -2,9 +2,20 @@ from datetime import date
 import datetime
 
 class Queen:
-    def __init__(self, hive_id, origin, birth_date, color_mark, breed, introduction_date, marked, clipped, id=None):
+    FORM_LABELS = {
+        'origin': 'Origin',
+        'birth_date': 'Birth Year/Hatching Date',
+        'color_mark': 'Color Mark',
+        'breed': 'Breed/Genetics',
+        'introduction_date': 'Introduction Date',
+        'marked': 'Marked',
+        'clipped': 'Clipped/Unclipped'
+    }
+
+    def __init__(self, hive_id, origin, birth_date, color_mark, breed, introduction_date, marked, clipped, id=None, name=None):
         self.id = id
         self.hive_id = hive_id
+        self.name = name
         self.origin = origin
         self.birth_date = birth_date # YYYY-MM-DD string
         self.color_mark = color_mark
@@ -20,20 +31,12 @@ class Queen:
         birth_date_obj = datetime.datetime.strptime(self.birth_date, '%Y-%m-%d').date()
         age = today.year - birth_date_obj.year - ((today.month, today.day) < (birth_date_obj.month, birth_date_obj.day))
         return age
-        self.id = id
-        self.hive_id = hive_id
-        self.origin = origin
-        self.birth_date = birth_date # YYYY-MM-DD string
-        self.color_mark = color_mark
-        self.breed = breed
-        self.introduction_date = introduction_date # YYYY-MM-DD string
-        self.marked = marked
-        self.clipped = clipped
 
     def to_dict(self):
         return {
             "id": self.id,
             "hive_id": self.hive_id,
+            "name": self.name,
             "origin": self.origin,
             "birth_date": self.birth_date,
             "color_mark": self.color_mark,
@@ -62,6 +65,7 @@ class Queen:
         return Queen(
             id=data.get('id'),
             hive_id=data.get('hive_id'),
+            name=data.get('name'),
             origin=data.get('origin'),
             birth_date=birth_date,
             color_mark=data.get('color_mark'),

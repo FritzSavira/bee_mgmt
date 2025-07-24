@@ -18,6 +18,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th>{{ _('Name') }}</th>
                             <th>{{ _('Origin') }}</th>
                             <th>{{ _('Birth Date') }}</th>
                             <th>{{ _('Age (Years)') }}</th>
@@ -32,6 +33,7 @@
                     <tbody>
                         {% for queen in queens %}
                         <tr>
+                            <td>{{ queen.name }}</td>
                             <td>{{ queen.origin }}</td>
                             <td>{{ queen.birth_date }}</td>
                             <td>{{ queen.get_age() }}</td>
@@ -53,7 +55,7 @@
                         </tr>
                         {% else %}
                         <tr>
-                            <td colspan="9" class="text-center">{{ _('No queens available for this hive yet.') }}</td>
+                            <td colspan="10" class="text-center">{{ _('No queens available for this hive yet.') }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

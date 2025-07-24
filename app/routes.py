@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, current_app
 from datetime import datetime
 from .utils.data_manager import DataManager
 from .controllers.hives_controller import HivesController
@@ -28,6 +28,8 @@ def index():
     overdue_treatments = hives_controller.get_overdue_treatments()
     return render_template('index.html', hives=hives, overdue_inspections=overdue_inspections, overdue_treatments=overdue_treatments)
 
+from .models.hive import Hive
+
 @bp.route('/hives/new', methods=['GET', 'POST'])
 def new_hive():
     if request.method == 'POST':
@@ -44,7 +46,7 @@ def new_hive():
         }
         hives_controller.create_hive(hive_data)
         return redirect(url_for('main.index'))
-    return render_template('new_hive.html')
+    return render_template('new_hive.html', form_labels=Hive.FORM_LABELS)
 
 @bp.route('/hives/<hive_id>/edit', methods=['GET', 'POST'])
 def edit_hive(hive_id):
@@ -66,7 +68,7 @@ def edit_hive(hive_id):
         }
         hives_controller.update_hive(hive_id, updated_data)
         return redirect(url_for('main.index'))
-    return render_template('edit_hive.html', hive=hive)
+    return render_template('edit_hive.html', hive=hive, form_labels=Hive.FORM_LABELS)
 
 @bp.route('/hives/<hive_id>/delete', methods=['POST'])
 def delete_hive(hive_id):
@@ -96,7 +98,8 @@ def hive_detail(hive_id):
     # This assumes date strings are in 'YYYY-MM-DD' format.
     for event in inspections:
         try:
-            event.type = 'Inspektion'
+            event.type = _('Inspektion')
+            event.event_key = _('inspection')
             event.date = datetime.strptime(event.inspection_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -104,7 +107,8 @@ def hive_detail(hive_id):
 
     for event in treatments:
         try:
-            event.type = 'Behandlung'
+            event.type = _('Behandlung')
+            event.event_key = _('treatment')
             event.date = datetime.strptime(event.treatment_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -112,7 +116,8 @@ def hive_detail(hive_id):
 
     for event in feedings:
         try:
-            event.type = 'Fütterung'
+            event.type = _('Fütterung')
+            event.event_key = _('feeding')
             event.date = datetime.strptime(event.feeding_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -120,7 +125,8 @@ def hive_detail(hive_id):
         
     for event in harvests:
         try:
-            event.type = 'Ernte'
+            event.type = _('Ernte')
+            event.event_key = _('harvest')
             event.date = datetime.strptime(event.harvest_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -128,7 +134,8 @@ def hive_detail(hive_id):
 
     for event in varroa_controls:
         try:
-            event.type = 'Varroakontrolle'
+            event.type = _('Varroakontrolle')
+            event.event_key = _('varroa_control')
             event.date = datetime.strptime(event.control_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -136,7 +143,8 @@ def hive_detail(hive_id):
 
     for event in splits:
         try:
-            event.type = 'Ableger'
+            event.type = _('Ableger')
+            event.event_key = _('split')
             event.date = datetime.strptime(event.split_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -145,6 +153,7 @@ def hive_detail(hive_id):
     for event in queens:
         try:
             event.type = 'Königin'
+            event.event_key = 'queen'
             if event.introduction_date:
                 event.date = datetime.strptime(event.introduction_date, '%Y-%m-%d')
             elif event.birth_date:
@@ -164,6 +173,54 @@ def hive_detail(hive_id):
 def harvests_report():
     total_yield = harvests_instance.get_total_honey_yield()
     return render_template('harvests_report.html', total_yield=total_yield)
+
+@bp.route('/hives/<hive_id>/<event_type>/<event_id>/images/<image_filename>/delete', methods=['POST'])
+def delete_image(hive_id, event_type, event_id, image_filename):
+    # Map event_type to the correct CONTROLLER instance
+    controller_map = {
+        'inspection': inspections_instance,
+        'treatment': treatments_instance,
+        'feeding': feeding_instance,
+        'harvest': harvests_instance,
+        'varroa_control': varroa_controls_instance,
+        'split': splits_instance,
+        'queen': queens_instance
+    }
+
+    controller = controller_map.get(event_type)
+    if not controller:
+        current_app.logger.error(f"Unknown event type: {event_type}")
+        return "Unknown event type", 400
+
+    # Access the DataManager instance from the controller
+    data_manager = controller.data_manager
+    if not data_manager: # Should not happen if controllers are properly initialized
+        current_app.logger.error(f"DataManager not found for controller {event_type}")
+        return "Internal Server Error", 500
+
+    # Load the event/record using the DataManager
+    event = data_manager.load(event_id)
+    if not event:
+        current_app.logger.error(f"Event {event_id} of type {event_type} not found.")
+        return f"{event_type.capitalize()} not found", 404
+
+    # Remove image from the event's image list
+    if hasattr(event, 'images') and image_filename in event.images:
+        event.images.remove(image_filename)
+        # Delete the physical file
+        dm_for_file_deletion = DataManager(event_type) # Use a generic DataManager for file deletion
+        if dm_for_file_deletion.delete_file(image_filename):
+            # Update the event in the data store
+            data_manager.update(event)
+            current_app.logger.info(f"Image {image_filename} deleted from {event_type} {event_id}.")
+        else:
+            current_app.logger.error(f"Failed to delete physical file {image_filename}.")
+            # Even if physical file deletion fails, update the record to remove the reference
+            data_manager.update(event)
+    else:
+        current_app.logger.warning(f"Image {image_filename} not found in {event_type} {event_id} or event has no images attribute.")
+
+    return redirect(url_for('main.hive_detail', hive_id=hive_id))
 
 @bp.app_errorhandler(404)
 def page_not_found(e):

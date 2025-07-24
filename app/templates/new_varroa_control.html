@@ -6,25 +6,30 @@
     <h1>{{ _('New Varroa Control for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="control_date" class="form-label">{{ _('Control Date') }}:</label>
+                    <label for="control_date" class="form-label">{{ _(form_labels.control_date) }}:</label>
                     <input type="date" id="control_date" name="control_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="mite_count" class="form-label">{{ _('Mite Count') }}:</label>
+                    <label for="mite_count" class="form-label">{{ _(form_labels.mite_count) }}:</label>
                     <input type="number" id="mite_count" name="mite_count" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="method" class="form-label">{{ _('Method') }}:</label>
+                    <label for="method" class="form-label">{{ _(form_labels.method) }}:</label>
                     <input type="text" id="method" name="method" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="infestation_level" class="form-label">{{ _('Infestation Level') }}:</label>
+                    <label for="infestation_level" class="form-label">{{ _(form_labels.infestation_level) }}:</label>
                     <input type="text" id="infestation_level" name="infestation_level" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
                 </div>
 
                 <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>

@@ -1,4 +1,16 @@
 class Hive:
+    FORM_LABELS = {
+        'stocknummer': 'Hive Number',
+        'standort': 'Location',
+        'beutentyp': 'Hive Type',
+        'zargen_anzahl': 'Number of Frames',
+        'colony_strength': 'Colony Strength (number of occupied comb lanes)',
+        'temperament': 'Temperament (scale 1-5)',
+        'swarming_tendency': 'Swarming Tendency',
+        'comb_settling': 'Comb Settling',
+        'honey_yield_rating': 'Honey Yield Rating'
+    }
+
     def __init__(self, stocknummer, standort, beutentyp, zargen_anzahl, colony_strength=None, temperament=None, swarming_tendency=None, comb_settling=None, honey_yield_rating=None, id=None):
         self.id = id
         self.stocknummer = stocknummer

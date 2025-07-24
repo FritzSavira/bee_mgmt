@@ -1,7 +1,18 @@
 import uuid
 
 class Inspection:
-    def __init__(self, hive_id, inspection_date, brood_status, queen_sighted, swarm_cells, food_supply, measures_taken, observations, id=None):
+    FORM_LABELS = {
+        'inspection_date': 'Inspection Date',
+        'brood_status': 'Brood Status',
+        'queen_sighted': 'Queen Sighted',
+        'swarm_cells': 'Swarm Cells',
+        'food_supply': 'Food Supply',
+        'measures_taken': 'Measures Taken',
+        'observations': 'Observations',
+        'images': 'Images'
+    }
+
+    def __init__(self, hive_id, inspection_date, brood_status, queen_sighted, swarm_cells, food_supply, measures_taken, observations, images=None, id=None):
         self.id = id if id is not None else str(uuid.uuid4())
         self.hive_id = hive_id
         self.inspection_date = inspection_date
@@ -11,6 +22,7 @@ class Inspection:
         self.food_supply = food_supply
         self.measures_taken = measures_taken
         self.observations = observations
+        self.images = images if images is not None else []
 
     def to_dict(self):
         return {
@@ -22,7 +34,8 @@ class Inspection:
             "swarm_cells": self.swarm_cells,
             "food_supply": self.food_supply,
             "measures_taken": self.measures_taken,
-            "observations": self.observations
+            "observations": self.observations,
+            "images": self.images
         }
 
     @staticmethod
@@ -43,5 +56,6 @@ class Inspection:
             swarm_cells=data.get("swarm_cells"),
             food_supply=data.get("food_supply"),
             measures_taken=data.get("measures_taken"),
-            observations=data.get("observations")
+            observations=data.get("observations"),
+            images=data.get("images", [])
         )

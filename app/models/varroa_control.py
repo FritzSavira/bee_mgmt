@@ -2,13 +2,22 @@
 import uuid
 
 class VarroaControl:
-    def __init__(self, hive_id, control_date, mite_count, method, infestation_level, id=None):
+    FORM_LABELS = {
+        'control_date': 'Control Date',
+        'mite_count': 'Mite Count',
+        'method': 'Method',
+        'infestation_level': 'Infestation Level',
+        'images': 'Images'
+    }
+
+    def __init__(self, hive_id, control_date, mite_count, method, infestation_level, images=None, id=None):
         self.id = id if id is not None else str(uuid.uuid4())
         self.hive_id = hive_id
         self.control_date = control_date
         self.mite_count = mite_count
         self.method = method
         self.infestation_level = infestation_level
+        self.images = images if images is not None else []
 
     def to_dict(self):
         return {
@@ -17,7 +26,8 @@ class VarroaControl:
             "control_date": self.control_date,
             "mite_count": self.mite_count,
             "method": self.method,
-            "infestation_level": self.infestation_level
+            "infestation_level": self.infestation_level,
+            "images": self.images
         }
 
     @staticmethod
@@ -35,5 +45,6 @@ class VarroaControl:
             control_date=control_date,
             mite_count=data.get("mite_count"),
             method=data.get("method"),
-            infestation_level=data.get("infestation_level")
+            infestation_level=data.get("infestation_level"),
+            images=data.get("images", [])
         )

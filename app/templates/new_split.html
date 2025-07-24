@@ -6,20 +6,25 @@
     <h1>{{ _('Add New Split for Hive') }}: {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="split_date" class="form-label">{{ _('Split Date') }}:</label>
+                    <label for="split_date" class="form-label">{{ _(form_labels.split_date) }}:</label>
                     <input type="date" id="split_date" name="split_date" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="method" class="form-label">{{ _('Method') }}:</label>
+                    <label for="method" class="form-label">{{ _(form_labels.method) }}:</label>
                     <input type="text" id="method" name="method" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="new_hive_id" class="form-label">{{ _('New Hive ID (optional)') }}:</label>
+                    <label for="new_hive_id" class="form-label">{{ _(form_labels.new_hive_id) }}:</label>
                     <input type="text" id="new_hive_id" name="new_hive_id" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
                 </div>
 
                 <button type="submit" class="btn btn-primary">{{ _('Add') }}</button>

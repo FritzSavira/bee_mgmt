@@ -6,25 +6,25 @@
     <h1>{{ _('Edit Inspection for Hive') }} {{ hive.stocknummer }}</h1>
     <div class="card">
         <div class="card-body">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="inspection_date" class="form-label">{{ _('Inspection Date') }}:</label>
+                    <label for="inspection_date" class="form-label">{{ _(form_labels.inspection_date) }}:</label>
                     <input type="date" class="form-control" id="inspection_date" name="inspection_date" value="{{ inspection.inspection_date }}" required>
                 </div>
                 <div class="mb-3">
-                    <label for="brood_status" class="form-label">{{ _('Brood Status') }}:</label>
+                    <label for="brood_status" class="form-label">{{ _(form_labels.brood_status) }}:</label>
                     <input type="text" class="form-control" id="brood_status" name="brood_status" value="{{ inspection.brood_status }}" required>
                 </div>
                 <div class="form-check mb-3">
                     <input type="checkbox" class="form-check-input" id="queen_sighted" name="queen_sighted" {% if inspection.queen_sighted %}checked{% endif %}>
-                    <label class="form-check-label" for="queen_sighted">{{ _('Queen Sighted') }}</label>
+                    <label class="form-check-label" for="queen_sighted">{{ _(form_labels.queen_sighted) }}</label>
                 </div>
                 <div class="mb-3">
-                    <label for="swarm_cells" class="form-label">{{ _('Swarm Cells') }}:</label>
+                    <label for="swarm_cells" class="form-label">{{ _(form_labels.swarm_cells) }}:</label>
                     <input type="text" class="form-control" id="swarm_cells" name="swarm_cells" value="{{ inspection.swarm_cells }}">
                 </div>
                 <div class="mb-3">
-                    <label for="food_supply" class="form-label">{{ _('Food Supply') }}:</label>
+                    <label for="food_supply" class="form-label">{{ _(form_labels.food_supply) }}:</label>
                     <select class="form-select" id="food_supply" name="food_supply" required>
                         <option value="gut" {% if inspection.food_supply == 'gut' %}selected{% endif %}>{{ _('good') }}</option>
                         <option value="ausreichend" {% if inspection.food_supply == 'ausreichend' %}selected{% endif %}>{{ _('sufficient') }}</option>
@@ -32,13 +32,31 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="measures_taken" class="form-label">{{ _('Measures Taken') }}:</label>
+                    <label for="measures_taken" class="form-label">{{ _(form_labels.measures_taken) }}:</label>
                     <textarea class="form-control" id="measures_taken" name="measures_taken">{{ inspection.measures_taken }}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="observations" class="form-label">{{ _('Observations') }}:</label>
+                    <label for="observations" class="form-label">{{ _(form_labels.observations) }}:</label>
                     <textarea class="form-control" id="observations" name="observations">{{ inspection.observations }}</textarea>
                 </div>
+                <div class="mb-3">
+                    <label for="images" class="form-label">{{ _(form_labels.images) }}:</label>
+                    <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
+                </div>
+
+                {% if inspection.images %}
+                <div class="mb-3">
+                    <p>{{ _('Current Images') }}:</p>
+                    <div class="d-flex flex-wrap">
+                        {% for image_filename in inspection.images %}
+                            <div class="me-2 mb-2">
+                                <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Image" class="img-thumbnail" width="100">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
                 <button type="submit" class="btn btn-primary">{{ _('Update Inspection') }}</button>
                 <a href="{{ url_for('main.inspections_controller.inspections_list', hive_id=hive.id) }}" class="btn btn-secondary">{{ _('Cancel') }}</a>
             </form>

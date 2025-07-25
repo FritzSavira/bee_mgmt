@@ -1,38 +1,14 @@
 [
     {
-        "id": "44ab9ab9-bb62-4c68-bf29-5236be67f252",
-        "stocknummer": "Die Nummer 1",
-        "standort": "Garten",
-        "beutentyp": "Zander",
-        "zargen_anzahl": "2",
-        "colony_strength": "3",
-        "temperament": "5",
-        "swarming_tendency": "mittel",
-        "comb_settling": "ruhig",
-        "honey_yield_rating": "durchschnittlich"
-    },
-    {
-        "id": "ed77c5a8-1f8e-424c-849e-89245650ca41",
-        "stocknummer": "2",
-        "standort": "hinten",
-        "beutentyp": "Zander",
-        "zargen_anzahl": "2",
-        "colony_strength": "5",
-        "temperament": "",
-        "swarming_tendency": "",
-        "comb_settling": "",
-        "honey_yield_rating": ""
-    },
-    {
-        "id": "5a511d02-b2b6-4b06-b860-4913265db23b",
+        "id": "10b1b265-7193-4b1d-becc-34e705cd781d",
         "stocknummer": "Volk 0",
         "standort": "Acker",
         "beutentyp": "Zander",
         "zargen_anzahl": "2",
-        "colony_strength": "",
-        "temperament": "",
-        "swarming_tendency": "",
-        "comb_settling": "ruhig",
+        "colony_strength": "6",
+        "temperament": "2",
+        "swarming_tendency": "low",
+        "comb_settling": "calm",
         "honey_yield_rating": ""
     }
 ]

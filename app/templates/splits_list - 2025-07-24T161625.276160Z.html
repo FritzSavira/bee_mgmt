@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Splits for Hive {{ hive_id }}</h1>
+    <a href="{{ url_for('splits_controller.new_split', hive_id=hive_id) }}" class="btn btn-primary">Add New Split Record</a>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Method</th>
+                <th>New Hive ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for split in splits %}
+            <tr>
+                <td>{{ split.split_date }}</td>
+                <td>{{ split.method }}</td>
+                <td>{{ split.new_hive_id }}</td>
+                <td>
+                    <a href="{{ url_for('splits_controller.edit_split', hive_id=hive_id, split_id=split.id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ url_for('splits_controller.delete_split', hive_id=hive_id, split_id=split.id) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this split record?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

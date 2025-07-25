@@ -34,11 +34,11 @@
                             <td>{{ _("Yes") if inspection.queen_sighted else _("No") }}</td>
                             <td>{{ inspection.swarm_cells }}</td>
                             <td>
-                                {% if inspection.food_supply == 'gering' %}
+                                {% if inspection.food_supply == 'low' %}
                                     <span class="badge bg-danger">{{ _('low') }}</span>
-                                {% elif inspection.food_supply == 'ausreichend' %}
+                                {% elif inspection.food_supply == 'sufficient' %}
                                     <span class="badge bg-warning text-dark">{{ _('sufficient') }}</span>
-                                {% elif inspection.food_supply == 'gut' %}
+                                {% elif inspection.food_supply == 'good' %}
                                     <span class="badge bg-success">{{ _('good') }}</span>
                                 {% else %}
                                     {{ inspection.food_supply }}

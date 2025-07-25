@@ -26,9 +26,9 @@
                 <div class="mb-3">
                     <label for="food_supply" class="form-label">{{ _(form_labels.food_supply) }}:</label>
                     <select class="form-select" id="food_supply" name="food_supply" required>
-                        <option value="gut" {% if inspection.food_supply == 'gut' %}selected{% endif %}>{{ _('good') }}</option>
-                        <option value="ausreichend" {% if inspection.food_supply == 'ausreichend' %}selected{% endif %}>{{ _('sufficient') }}</option>
-                        <option value="gering" {% if inspection.food_supply == 'gering' %}selected{% endif %}>{{ _('low') }}</option>
+                        <option value="good" {% if inspection.food_supply == 'good' %}selected{% endif %}>{{ _('good') }}</option>
+                        <option value="sufficient" {% if inspection.food_supply == 'sufficient' %}selected{% endif %}>{{ _('sufficient') }}</option>
+                        <option value="low" {% if inspection.food_supply == 'low' %}selected{% endif %}>{{ _('low') }}</option>
                     </select>
                 </div>
                 <div class="mb-3">

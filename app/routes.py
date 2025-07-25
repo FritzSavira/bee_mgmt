@@ -98,8 +98,7 @@ def hive_detail(hive_id):
     # This assumes date strings are in 'YYYY-MM-DD' format.
     for event in inspections:
         try:
-            event.type = _('Inspektion')
-            event.event_key = _('inspection')
+            event.event_key = 'inspection'
             event.date = datetime.strptime(event.inspection_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -107,8 +106,7 @@ def hive_detail(hive_id):
 
     for event in treatments:
         try:
-            event.type = _('Behandlung')
-            event.event_key = _('treatment')
+            event.event_key = 'treatment'
             event.date = datetime.strptime(event.treatment_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -116,8 +114,7 @@ def hive_detail(hive_id):
 
     for event in feedings:
         try:
-            event.type = _('Fütterung')
-            event.event_key = _('feeding')
+            event.event_key = 'feeding'
             event.date = datetime.strptime(event.feeding_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -125,8 +122,7 @@ def hive_detail(hive_id):
         
     for event in harvests:
         try:
-            event.type = _('Ernte')
-            event.event_key = _('harvest')
+            event.event_key = 'harvest'
             event.date = datetime.strptime(event.harvest_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -134,8 +130,7 @@ def hive_detail(hive_id):
 
     for event in varroa_controls:
         try:
-            event.type = _('Varroakontrolle')
-            event.event_key = _('varroa_control')
+            event.event_key = 'varroa_control'
             event.date = datetime.strptime(event.control_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -143,8 +138,7 @@ def hive_detail(hive_id):
 
     for event in splits:
         try:
-            event.type = _('Ableger')
-            event.event_key = _('split')
+            event.event_key = 'split'
             event.date = datetime.strptime(event.split_date, '%Y-%m-%d')
             timeline_events.append(event)
         except (ValueError, TypeError):
@@ -152,7 +146,6 @@ def hive_detail(hive_id):
 
     for event in queens:
         try:
-            event.type = 'Königin'
             event.event_key = 'queen'
             if event.introduction_date:
                 event.date = datetime.strptime(event.introduction_date, '%Y-%m-%d')

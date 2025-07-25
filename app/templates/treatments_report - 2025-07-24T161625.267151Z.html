@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Treatment Report</h1>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Hive ID</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Agent</th>
+                <th>Dosage</th>
+                <th>Duration</th>
+                <th>Efficacy Observation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for treatment in treatments %}
+            <tr>
+                <td>{{ treatment.hive_id }}</td>
+                <td>{{ treatment.treatment_date }}</td>
+                <td>{{ treatment.treatment_type }}</td>
+                <td>{{ treatment.used_agent }}</td>
+                <td>{{ treatment.dosage }}</td>
+                <td>{{ treatment.duration }}</td>
+                <td>{{ treatment.efficacy_observation }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7">No treatments found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('main.index') }}">Back to Home</a>
+{% endblock %}

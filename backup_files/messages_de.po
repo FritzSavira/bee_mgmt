@@ -1,0 +1,1006 @@
+# German translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR , 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-24 16:52+0200\n"
+"PO-Revision-Date: 2025-07-19 20:58+0200\n"
+"Last-Translator: FULL NAME \n"
+"Language: de\n"
+"Language-Team: de \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: app/templates/404.html:3 app/templates/404.html:8
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: app/templates/404.html:9
+msgid "Oops! The page you are looking for does not exist or has been moved."
+msgstr "Hoppla! Die gesuchte Seite existiert nicht oder wurde verschoben."
+
+#: app/templates/404.html:10 app/templates/treatments_report.html:37
+msgid "Back to Home"
+msgstr "Zurück zur Startseite"
+
+#: app/templates/_macros.html:7
+msgid "OK"
+msgstr "OK"
+
+#: app/templates/_macros.html:10 app/templates/hive_detail.html:15
+msgid "Location"
+msgstr "Standort"
+
+#: app/templates/_macros.html:11
+msgid "Queen"
+msgstr "Königin"
+
+#: app/templates/_macros.html:11 app/templates/hive_detail.html:20
+msgid "N/A"
+msgstr "N/A"
+
+#: app/templates/_macros.html:12 app/templates/hive_detail.html:16
+msgid "Hive Type"
+msgstr "Beutentyp"
+
+#: app/templates/_macros.html:16
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/_macros.html:22
+msgid "Are you sure you want to delete this hive?"
+msgstr "Sind Sie sicher, dass Sie dieses Volk löschen möchten?"
+
+#: app/templates/_macros.html:56 app/templates/inspections_list.html:22
+msgid "Brood Status"
+msgstr "Brutstatus"
+
+#: app/templates/_macros.html:56 app/templates/inspections_list.html:25
+msgid "Food Supply"
+msgstr "Futtervorrat"
+
+#: app/templates/_macros.html:58 app/templates/_macros.html:60
+#: app/templates/treatments_list.html:22
+#: app/templates/treatments_report.html:12
+msgid "Type"
+msgstr "Typ"
+
+#: app/templates/_macros.html:60 app/templates/_macros.html:62
+#: app/templates/feeding_list.html:23
+msgid "Amount"
+msgstr "Menge"
+
+#: app/templates/_macros.html:62 app/templates/harvests_list.html:23
+msgid "Honey Type"
+msgstr "Honigart"
+
+#: app/templates/_macros.html:64 app/templates/varroa_controls_list.html:22
+msgid "Mite Count"
+msgstr "Milbenzählung"
+
+#: app/templates/_macros.html:64 app/templates/_macros.html:66
+#: app/templates/splits_list.html:22 app/templates/varroa_controls_list.html:23
+msgid "Method"
+msgstr "Methode"
+
+#: app/templates/_macros.html:66 app/templates/splits_list.html:23
+msgid "New Hive ID"
+msgstr "Neue Volks-ID"
+
+#: app/templates/_macros.html:68 app/templates/edit_queen.html:11
+#: app/templates/queens_list.html:21
+msgid "Name"
+msgstr "Name"
+
+#: app/templates/_macros.html:68 app/templates/queens_list.html:22
+msgid "Origin"
+msgstr "Herkunft"
+
+#: app/templates/_macros.html:68 app/templates/queens_list.html:26
+msgid "Breed"
+msgstr "Rasse"
+
+#: app/templates/_macros.html:78
+msgid "Event Image"
+msgstr "Ereignisbild"
+
+#: app/templates/_macros.html:83
+msgid "Are you sure you want to delete this image?"
+msgstr "Sind Sie sicher, dass Sie dieses Bild löschen möchten?"
+
+#: app/templates/_macros.html:95
+msgid "Enlarged Image"
+msgstr "Vergrößertes Bild"
+
+#: app/templates/_macros.html:106 app/templates/inspections_list.html:52
+msgid "Are you sure you want to delete this inspection?"
+msgstr "Sind Sie sicher, dass Sie diese Kontrolle löschen möchten?"
+
+#: app/templates/_macros.html:111 app/templates/treatments_list.html:42
+msgid "Are you sure you want to delete this treatment?"
+msgstr "Sind Sie sicher, dass Sie diese Behandlung löschen möchten?"
+
+#: app/templates/_macros.html:116 app/templates/feeding_list.html:40
+msgid "Are you sure you want to delete this feeding entry?"
+msgstr "Sind Sie sicher, dass Sie diesen Fütterungseintrag löschen möchten?"
+
+#: app/templates/_macros.html:121 app/templates/harvests_list.html:40
+msgid "Are you sure you want to delete this harvest entry?"
+msgstr "Sind Sie sicher, dass Sie diesen Ernteeintrag löschen möchten?"
+
+#: app/templates/_macros.html:126 app/templates/varroa_controls_list.html:40
+msgid "Are you sure you want to delete this varroa control entry?"
+msgstr "Sind Sie sicher, dass Sie diesen Varroabekämpfungseintrag löschen möchten?"
+
+#: app/templates/_macros.html:131 app/templates/splits_list.html:38
+msgid "Are you sure you want to delete this split entry?"
+msgstr "Sind Sie sicher, dass Sie diesen Ablegereintrag löschen möchten?"
+
+#: app/templates/_macros.html:136 app/templates/queens_list.html:50
+msgid "Are you sure you want to delete this queen?"
+msgstr "Sind Sie sicher, dass Sie diese Königin löschen möchten?"
+
+#: app/templates/base.html:6 app/templates/base.html:16
+msgid "Bee Management"
+msgstr "Bienenverwaltung"
+
+#: app/templates/base.html:18
+msgid "Toggle navigation"
+msgstr "Navigation umschalten"
+
+#: app/templates/base.html:24
+msgid "Overview"
+msgstr "Übersicht"
+
+#: app/templates/base.html:27
+msgid "+ New Hive"
+msgstr "+ Neues Volk"
+
+#: app/templates/base.html:50
+msgid "Close"
+msgstr "Schließen"
+
+#: app/templates/base.html:62
+msgid "Bee Management App"
+msgstr "Bienenverwaltungs-App"
+
+#: app/templates/edit_feeding.html:3 app/templates/edit_feeding.html:6
+msgid "Edit Feeding for Hive"
+msgstr "Fütterung für Volk bearbeiten"
+
+#: app/templates/edit_feeding.html:37 app/templates/edit_harvest.html:42
+#: app/templates/edit_inspection.html:49 app/templates/edit_split.html:32
+#: app/templates/edit_treatment.html:47
+#: app/templates/edit_varroa_control.html:37
+msgid "Current Images"
+msgstr "Aktuelle Bilder"
+
+#: app/templates/edit_feeding.html:48 app/templates/edit_harvest.html:53
+#: app/templates/edit_hive.html:69 app/templates/edit_queen.html:50
+#: app/templates/edit_split.html:43 app/templates/edit_treatment.html:58
+#: app/templates/edit_varroa_control.html:48
+msgid "Save"
+msgstr "Speichern"
+
+#: app/templates/edit_feeding.html:49 app/templates/edit_harvest.html:54
+#: app/templates/edit_hive.html:70 app/templates/edit_inspection.html:61
+#: app/templates/edit_queen.html:51 app/templates/edit_split.html:44
+#: app/templates/edit_treatment.html:59
+#: app/templates/edit_varroa_control.html:49 app/templates/new_feeding.html:36
+#: app/templates/new_harvest.html:41 app/templates/new_hive.html:70
+#: app/templates/new_inspection.html:47 app/templates/new_queen.html:46
+#: app/templates/new_split.html:31 app/templates/new_treatment.html:46
+#: app/templates/new_varroa_control.html:36
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: app/templates/edit_harvest.html:3 app/templates/edit_harvest.html:6
+msgid "Edit Honey Harvest for Hive"
+msgstr "Honigernte für Volk bearbeiten"
+
+#: app/templates/edit_hive.html:3 app/templates/edit_hive.html:6
+msgid "Edit Hive"
+msgstr "Volk bearbeiten"
+
+#: app/templates/edit_hive.html:44 app/templates/edit_inspection.html:31
+#: app/templates/inspections_list.html:38 app/templates/new_hive.html:44
+#: app/templates/new_inspection.html:31
+msgid "low"
+msgstr "gering"
+
+#: app/templates/edit_hive.html:45 app/templates/new_hive.html:45
+msgid "medium"
+msgstr "mittel"
+
+#: app/templates/edit_hive.html:46 app/templates/new_hive.html:46
+msgid "high"
+msgstr "hoch"
+
+#: app/templates/edit_hive.html:54 app/templates/new_hive.html:54
+msgid "calm"
+msgstr "ruhig"
+
+#: app/templates/edit_hive.html:55 app/templates/new_hive.html:55
+msgid "restless"
+msgstr "unruhig"
+
+#: app/templates/edit_hive.html:63 app/templates/new_hive.html:63
+msgid "below average"
+msgstr "unterdurchschnittlich"
+
+#: app/templates/edit_hive.html:64 app/templates/new_hive.html:64
+msgid "average"
+msgstr "durchschnittlich"
+
+#: app/templates/edit_hive.html:65 app/templates/new_hive.html:65
+msgid "above average"
+msgstr "überdurchschnittlich"
+
+#: app/templates/edit_inspection.html:3 app/templates/edit_inspection.html:6
+msgid "Edit Inspection for Hive"
+msgstr "Kontrolle für Volk bearbeiten"
+
+#: app/templates/edit_inspection.html:29 app/templates/inspections_list.html:42
+#: app/templates/new_inspection.html:29
+msgid "good"
+msgstr "gut"
+
+#: app/templates/edit_inspection.html:30 app/templates/inspections_list.html:40
+#: app/templates/new_inspection.html:30
+msgid "sufficient"
+msgstr "ausreichend"
+
+#: app/templates/edit_inspection.html:60
+msgid "Update Inspection"
+msgstr "Kontrolle aktualisieren"
+
+#: app/templates/edit_queen.html:3 app/templates/edit_queen.html:6
+msgid "Edit Queen for Hive"
+msgstr "Königin für Volk bearbeiten"
+
+#: app/templates/edit_split.html:3 app/templates/edit_split.html:6
+msgid "Edit Split for Hive"
+msgstr "Ableger für Volk bearbeiten"
+
+#: app/templates/edit_treatment.html:3 app/templates/edit_treatment.html:6
+msgid "Edit Treatment for Hive"
+msgstr "Behandlung für Volk bearbeiten"
+
+#: app/templates/edit_varroa_control.html:3
+#: app/templates/edit_varroa_control.html:6
+msgid "Edit Varroa Control for Hive"
+msgstr "Varroabekämpfung für Volk bearbeiten"
+
+#: app/templates/feeding_list.html:3 app/templates/feeding_list.html:7
+msgid "Feedings for Hive"
+msgstr "Fütterungen für Volk"
+
+#: app/templates/feeding_list.html:8 app/templates/harvests_list.html:8
+#: app/templates/inspections_list.html:8 app/templates/queens_list.html:8
+#: app/templates/splits_list.html:8 app/templates/treatments_list.html:8
+#: app/templates/varroa_controls_list.html:8
+msgid "Back to Hive"
+msgstr "Zurück zum Volk"
+
+#: app/templates/feeding_list.html:13
+msgid "All Feedings"
+msgstr "Alle Fütterungen"
+
+#: app/templates/feeding_list.html:14
+msgid "+ New Feeding"
+msgstr "+ Neue Fütterung"
+
+#: app/templates/feeding_list.html:21 app/templates/harvests_list.html:21
+#: app/templates/inspections_list.html:21 app/templates/splits_list.html:21
+#: app/templates/treatments_list.html:21
+#: app/templates/treatments_report.html:11
+#: app/templates/varroa_controls_list.html:21
+msgid "Date"
+msgstr "Datum"
+
+#: app/templates/feeding_list.html:22
+msgid "Food Type"
+msgstr "Futterart"
+
+#: app/templates/feeding_list.html:24
+msgid "Concentration"
+msgstr "Konzentration"
+
+#: app/templates/feeding_list.html:25 app/templates/harvests_list.html:25
+#: app/templates/hive_detail.html:32 app/templates/inspections_list.html:26
+#: app/templates/queens_list.html:30 app/templates/splits_list.html:24
+#: app/templates/treatments_list.html:26
+#: app/templates/varroa_controls_list.html:25
+msgid "Actions"
+msgstr "Aktionen"
+
+#: app/templates/feeding_list.html:48
+msgid "No feedings available for this hive yet."
+msgstr "Noch keine Fütterungen für dieses Volk verfügbar."
+
+#: app/templates/harvests_list.html:3 app/templates/harvests_list.html:7
+msgid "Honey Harvests for Hive"
+msgstr "Honigernten für Volk"
+
+#: app/templates/harvests_list.html:13
+msgid "All Honey Harvests"
+msgstr "Alle Honigernten"
+
+#: app/templates/harvests_list.html:14
+msgid "+ New Harvest"
+msgstr "+ Neue Ernte"
+
+#: app/templates/harvests_list.html:22
+msgid "Amount (kg)"
+msgstr "Menge (kg)"
+
+#: app/templates/harvests_list.html:24
+msgid "Water Content"
+msgstr "Wassergehalt"
+
+#: app/templates/harvests_list.html:48
+msgid "No honey harvests available for this hive yet."
+msgstr "Noch keine Honigernten für dieses Volk verfügbar."
+
+#: app/templates/harvests_report.html:3 app/templates/harvests_report.html:6
+msgid "Honey Harvest Report"
+msgstr "Honigernte-Bericht"
+
+#: app/templates/harvests_report.html:10
+msgid "Total Yield"
+msgstr "Gesamtertrag"
+
+#: app/templates/harvests_report.html:13
+msgid "Total Honey Yield"
+msgstr "Gesamthonigertrag"
+
+#: app/templates/harvests_report.html:14
+msgid "This is the cumulative yield of all recorded honey harvests."
+msgstr "Dies ist der kumulative Ertrag aller erfassten Honigernten."
+
+#: app/templates/harvests_report.html:18
+msgid "Back to Overview"
+msgstr "Zurück zur Übersicht"
+
+#: app/templates/hive_detail.html:4
+msgid "Details for"
+msgstr "Details für"
+
+#: app/templates/hive_detail.html:10
+msgid "Hive"
+msgstr "Volk"
+
+#: app/templates/hive_detail.html:17
+msgid "Number of Frames"
+msgstr "Anzahl der Zargen"
+
+#: app/templates/hive_detail.html:20
+msgid "Current Queen"
+msgstr "Aktuelle Königin"
+
+#: app/templates/hive_detail.html:21
+msgid "Colony Strength"
+msgstr "Volksstärke"
+
+#: app/templates/hive_detail.html:22
+msgid "Temperament"
+msgstr "Temperament"
+
+#: app/templates/hive_detail.html:25
+msgid "Edit Master Data"
+msgstr "Stammdaten bearbeiten"
+
+#: app/templates/hive_detail.html:35
+msgid "+ Inspection"
+msgstr "+ Kontrolle"
+
+#: app/templates/hive_detail.html:36
+msgid "+ Feeding"
+msgstr "+ Fütterung"
+
+#: app/templates/hive_detail.html:37
+msgid "+ Treatment"
+msgstr "+ Behandlung"
+
+#: app/templates/hive_detail.html:38
+msgid "+ Harvest"
+msgstr "+ Ernte"
+
+#: app/templates/hive_detail.html:39
+msgid "+ Varroa Control"
+msgstr "+ Varroabekämpfung"
+
+#: app/templates/hive_detail.html:40
+msgid "+ Split"
+msgstr "+ Ableger"
+
+#: app/templates/hive_detail.html:41
+msgid "+ Queen"
+msgstr "+ Königin"
+
+#: app/templates/hive_detail.html:48
+msgid "Chronicle"
+msgstr "Chronik"
+
+#: app/templates/hive_detail.html:56
+msgid "No entries in the chronicle for this hive yet."
+msgstr "Noch keine Einträge in der Chronik für dieses Volk verfügbar."
+
+#: app/templates/index.html:4 app/templates/index.html:8
+msgid "Hive Overview"
+msgstr "Übersicht Völker"
+
+#: app/templates/index.html:16
+msgid "No hives available yet."
+msgstr "Noch keine Völker verfügbar."
+
+#: app/templates/inspections_list.html:3 app/templates/inspections_list.html:7
+msgid "Inspections for Hive"
+msgstr "Kontrollen für Volk"
+
+#: app/templates/inspections_list.html:13
+msgid "All Inspections"
+msgstr "Alle Kontrollen"
+
+#: app/templates/inspections_list.html:14
+msgid "+ New Inspection"
+msgstr "+ Neue Kontrolle"
+
+#: app/templates/inspections_list.html:23
+msgid "Queen Sighted"
+msgstr "Königin gesichtet"
+
+#: app/templates/inspections_list.html:24
+msgid "Swarm Cells"
+msgstr "Schwarmzellen"
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:43
+#: app/templates/queens_list.html:44
+msgid "Yes"
+msgstr "Ja"
+
+#: app/templates/inspections_list.html:34 app/templates/queens_list.html:43
+#: app/templates/queens_list.html:44
+msgid "No"
+msgstr "Nein"
+
+#: app/templates/inspections_list.html:60
+msgid "No inspections available for this hive yet."
+msgstr "Noch keine Kontrollen für dieses Volk verfügbar."
+
+#: app/templates/new_feeding.html:3 app/templates/new_feeding.html:6
+msgid "New Feeding for Hive"
+msgstr "Neue Fütterung für Volk"
+
+#: app/templates/new_feeding.html:35 app/templates/new_harvest.html:40
+#: app/templates/new_hive.html:69 app/templates/new_queen.html:45
+#: app/templates/new_split.html:30 app/templates/new_treatment.html:45
+#: app/templates/new_varroa_control.html:35
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: app/templates/new_harvest.html:3 app/templates/new_harvest.html:6
+msgid "New Honey Harvest for Hive"
+msgstr "Neue Honigernte für Volk"
+
+#: app/templates/new_hive.html:3 app/templates/new_hive.html:6
+msgid "Add New Hive"
+msgstr "Neues Volk hinzufügen"
+
+#: app/templates/new_inspection.html:3 app/templates/new_inspection.html:6
+msgid "New Inspection for Hive"
+msgstr "Neue Kontrolle für Volk"
+
+#: app/templates/new_inspection.html:46
+msgid "Add Inspection"
+msgstr "Kontrolle hinzufügen"
+
+#: app/templates/new_queen.html:3 app/templates/new_queen.html:6
+msgid "New Queen for Hive"
+msgstr "Neue Königin für Volk"
+
+#: app/templates/new_split.html:3 app/templates/new_split.html:6
+msgid "Add New Split for Hive"
+msgstr "Neuen Ableger für Volk hinzufügen"
+
+#: app/templates/new_treatment.html:3 app/templates/new_treatment.html:6
+msgid "New Treatment for Hive"
+msgstr "Neue Behandlung für Volk"
+
+#: app/templates/new_varroa_control.html:3
+#: app/templates/new_varroa_control.html:6
+msgid "New Varroa Control for Hive"
+msgstr "Neue Varroabekämpfung für Volk"
+
+#: app/templates/queens_list.html:3 app/templates/queens_list.html:7
+msgid "Queens for Hive"
+msgstr "Königinnen für Volk"
+
+#: app/templates/queens_list.html:13
+msgid "All Queens"
+msgstr "Alle Königinnen"
+
+#: app/templates/queens_list.html:14
+msgid "+ New Queen"
+msgstr "+ Neue Königin"
+
+#: app/templates/queens_list.html:23
+msgid "Birth Date"
+msgstr "Geburtsdatum"
+
+#: app/templates/queens_list.html:24
+msgid "Age (Years)"
+msgstr "Alter (Jahre)"
+
+#: app/templates/queens_list.html:25
+msgid "Color Mark"
+msgstr "Farbmarkierung"
+
+#: app/templates/queens_list.html:27
+msgid "Introduction Date"
+msgstr "Einweiselungsdatum"
+
+#: app/templates/queens_list.html:28
+msgid "Marked"
+msgstr "Gezeichnet"
+
+#: app/templates/queens_list.html:29
+msgid "Clipped"
+msgstr "Flügel gestutzt"
+
+#: app/templates/queens_list.html:58
+msgid "No queens available for this hive yet."
+msgstr "Noch keine Königinnen für dieses Volk verfügbar."
+
+#: app/templates/splits_list.html:3 app/templates/splits_list.html:7
+msgid "Splits for Hive"
+msgstr "Ableger für Volk"
+
+#: app/templates/splits_list.html:13
+msgid "All Splits"
+msgstr "Alle Ableger"
+
+#: app/templates/splits_list.html:14
+msgid "+ New Split"
+msgstr "+ Neuer Ableger"
+
+#: app/templates/splits_list.html:46
+msgid "No splits available for this hive yet."
+msgstr "Noch keine Ableger für dieses Volk verfügbar."
+
+#: app/templates/treatments_list.html:3 app/templates/treatments_list.html:7
+msgid "Treatments for Hive"
+msgstr "Behandlungen für Volk"
+
+#: app/templates/treatments_list.html:13
+msgid "All Treatments"
+msgstr "Alle Behandlungen"
+
+#: app/templates/treatments_list.html:14
+msgid "+ New Treatment"
+msgstr "+ Neue Behandlung"
+
+#: app/templates/treatments_list.html:23
+#: app/templates/treatments_report.html:13
+msgid "Agent"
+msgstr "Mittel"
+
+#: app/templates/treatments_list.html:24
+#: app/templates/treatments_report.html:14
+msgid "Dosage"
+msgstr "Dosierung"
+
+#: app/templates/treatments_list.html:25
+#: app/templates/treatments_report.html:15
+msgid "Duration"
+msgstr "Dauer"
+
+#: app/templates/treatments_list.html:50
+msgid "No treatments available for this hive yet."
+msgstr "Noch keine Behandlungen für dieses Volk verfügbar."
+
+#: app/templates/treatments_report.html:3
+#: app/templates/treatments_report.html:6
+msgid "Treatment Report"
+msgstr "Behandlungsbericht"
+
+#: app/templates/treatments_report.html:10
+msgid "Hive ID"
+msgstr "Volk-ID"
+
+#: app/templates/treatments_report.html:16
+msgid "Efficacy Observation"
+msgstr "Wirksamkeitsbeobachtung"
+
+#: app/templates/treatments_report.html:32
+msgid "No treatments found."
+msgstr "Keine Behandlungen gefunden."
+
+#: app/templates/varroa_controls_list.html:3
+#: app/templates/varroa_controls_list.html:7
+msgid "Varroa Controls for Hive"
+msgstr "Varroabekämpfungen für Volk"
+
+#: app/templates/varroa_controls_list.html:13
+msgid "All Varroa Controls"
+msgstr "Alle Varroabekämpfungen"
+
+#: app/templates/varroa_controls_list.html:14
+msgid "+ New Varroa Control"
+msgstr "+ Neue Varroabekämpfung"
+
+#: app/templates/varroa_controls_list.html:24
+msgid "Infestation Level"
+msgstr "Befallsstärke"
+
+#: app/templates/varroa_controls_list.html:48
+msgid "No varroa controls available for this hive yet."
+msgstr "Noch keine Varroabekämpfungen für dieses Volk verfügbar."
+
+#: venv/Lib/site-packages/click/_termui_impl.py:600
+#, fuzzy
+msgid "{editor}: Editing failed"
+msgstr "{editor}: Bearbeitung misslungen"
+
+#: venv/Lib/site-packages/click/_termui_impl.py:604
+msgid "{editor}: Editing failed: {e}"
+msgstr "{editor}: Bearbeitung misslungen: {e}"
+
+#: venv/Lib/site-packages/click/core.py:1084
+#: venv/Lib/site-packages/click/core.py:1121
+msgid "{text} {deprecated_message}"
+msgstr "{text} {deprecated_message}"
+
+#: venv/Lib/site-packages/click/core.py:1140
+#, fuzzy
+msgid "Options"
+msgstr "Optionen"
+
+#: venv/Lib/site-packages/click/core.py:1204
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/click/core.py:1220
+msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1405
+msgid "Aborted!"
+msgstr "Abgebrochen!"
+
+#: venv/Lib/site-packages/click/core.py:1779
+msgid "Commands"
+msgstr "Anweisung"
+
+#: venv/Lib/site-packages/click/core.py:1810
+msgid "Missing command."
+msgstr "Fehlende Anweisung"
+
+#: venv/Lib/site-packages/click/core.py:1888
+msgid "No such command {name!r}."
+msgstr "Ungültige Anweisung {name!r}."
+
+#: venv/Lib/site-packages/click/core.py:2303
+msgid "Value must be an iterable."
+msgstr "Der Wert muss iterierbar sein."
+
+#: venv/Lib/site-packages/click/core.py:2326
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] "Nimmt {nargs} Werte aber 1 wurde übergeben."
+msgstr[1] "Nimmt {nargs} Werte aber {len} wurde übergeben."
+
+#: venv/Lib/site-packages/click/core.py:2403
+msgid ""
+"DeprecationWarning: The {param_type} {name!r} is "
+"deprecated.{extra_message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2807
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2810
+msgid "default: {default}"
+msgstr "Standard: {default}"
+
+#: venv/Lib/site-packages/click/core.py:2814
+msgid "required"
+msgstr "erforderlich"
+
+#: venv/Lib/site-packages/click/core.py:2870
+msgid "(dynamic)"
+msgstr "(dynamisch)"
+
+#: venv/Lib/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/Lib/site-packages/click/decorators.py:522
+msgid "Show the version and exit."
+msgstr "Version anzeigen und beenden."
+
+#: venv/Lib/site-packages/click/decorators.py:548
+msgid "Show this message and exit."
+msgstr "Diese Meldung anzeigen und beenden."
+
+#: venv/Lib/site-packages/click/exceptions.py:50
+#: venv/Lib/site-packages/click/exceptions.py:89
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:81
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:130
+msgid "Invalid value: {message}"
+msgstr "Ungültiger Wert: {message}"
+
+#: venv/Lib/site-packages/click/exceptions.py:132
+msgid "Invalid value for {param_hint}: {message}"
+msgstr "Ungültiger Wert für {param_hint}: {message}"
+
+#: venv/Lib/site-packages/click/exceptions.py:190
+msgid "Missing argument"
+msgstr "Fehlendes Argument"
+
+#: venv/Lib/site-packages/click/exceptions.py:192
+msgid "Missing option"
+msgstr "Fehlende Option"
+
+#: venv/Lib/site-packages/click/exceptions.py:194
+msgid "Missing parameter"
+msgstr "Fehlender Parameter"
+
+#: venv/Lib/site-packages/click/exceptions.py:196
+msgid "Missing {param_type}"
+msgstr "Fehlt: {param_type}"
+
+#: venv/Lib/site-packages/click/exceptions.py:203
+msgid "Missing parameter: {param_name}"
+msgstr "Fehlender Parameter: {param_name}"
+
+#: venv/Lib/site-packages/click/exceptions.py:223
+msgid "No such option: {name}"
+msgstr "Keine solche Option: {name}"
+
+#: venv/Lib/site-packages/click/exceptions.py:237
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/click/exceptions.py:282
+msgid "unknown error"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:289
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/parser.py:200
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/Lib/site-packages/click/parser.py:383
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/Lib/site-packages/click/parser.py:443
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/click/shell_completion.py:325
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/Lib/site-packages/click/shell_completion.py:333
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:162
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:178
+msgid "Error: The value you entered was invalid."
+msgstr "Fehler: Der eingegebene Wert ist ungültig."
+
+#: venv/Lib/site-packages/click/termui.py:180
+msgid "Error: {e.message}"
+msgstr "Fehler: {e.message}"
+
+#: venv/Lib/site-packages/click/termui.py:191
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:247
+msgid "Error: invalid input"
+msgstr "Fehler: Ungültige Eingabe"
+
+#: venv/Lib/site-packages/click/termui.py:866
+msgid "Press any key to continue..."
+msgstr "Drücken Sie eine beliebige Taste, um fortzufahren..."
+
+#: venv/Lib/site-packages/click/types.py:332
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:371
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/click/types.py:462
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/Lib/site-packages/click/types.py:482
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:538
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:679
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:703
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:893
+msgid "file"
+msgstr "Datei"
+
+#: venv/Lib/site-packages/click/types.py:895
+msgid "directory"
+msgstr "Verzeichnis"
+
+#: venv/Lib/site-packages/click/types.py:897
+msgid "path"
+msgstr "Pfad"
+
+#: venv/Lib/site-packages/click/types.py:944
+msgid "{name} {filename!r} does not exist."
+msgstr "{name} {filename!r} existiert nicht."
+
+#: venv/Lib/site-packages/click/types.py:953
+msgid "{name} {filename!r} is a file."
+msgstr "{name} {filename!r} ist eine Datei"
+
+#: venv/Lib/site-packages/click/types.py:961
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:970
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:979
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:988
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:1054
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Feeding Date"
+msgstr "Fütterungsdatum"
+
+msgid "Amount (kg/l)"
+msgstr "Menge (kg/l)"
+
+msgid "Concentration (if liquid)"
+msgstr "Konzentration (falls flüssig)"
+
+msgid "Harvest Date"
+msgstr "Erntedatum"
+
+msgid "form_label_water_content"
+msgstr "Wassergehalt (%%)"
+
+msgid "Notes"
+msgstr "Notizen"
+
+msgid "Hive Number"
+msgstr "Volksnummer"
+
+msgid "Colony Strength (number of occupied comb lanes)"
+msgstr "Volksstärke (Anzahl belegter Wabengassen)"
+
+msgid "Temperament (scale 1-5)"
+msgstr "Temperament (Skala 1-5)"
+
+msgid "Swarming Tendency"
+msgstr "Schwarmneigung"
+
+msgid "Comb Settling"
+msgstr "Wabensitz"
+
+msgid "Honey Yield Rating"
+msgstr "Honigertragsbewertung"
+
+msgid "Inspection Date"
+msgstr "Kontrolldatum"
+
+msgid "Measures Taken"
+msgstr "Ergriffene Maßnahmen"
+
+msgid "Observations"
+msgstr "Beobachtungen"
+
+msgid "Birth Year/Hatching Date"
+msgstr "Geburtsjahr/Schlupfdatum"
+
+msgid "Breed/Genetics"
+msgstr "Rasse/Genetik"
+
+msgid "Clipped/Unclipped"
+msgstr "Flügel gestutzt/nicht gestutzt"
+
+msgid "Split Date"
+msgstr "Ablegerdatum"
+
+msgid "New Hive ID (optional)"
+msgstr "Neue Volks-ID (optional)"
+
+msgid "Treatment Date"
+msgstr "Behandlungsdatum"
+
+msgid "Treatment Type"
+msgstr "Behandlungsart"
+
+msgid "Used Agent"
+msgstr "Verwendetes Mittel"
+
+msgid "Duration of Treatment"
+msgstr "Behandlungsdauer"
+
+msgid "Control Date"
+msgstr "Kontrolldatum"
+
+msgid "inspection"
+msgstr "+ Kontrolle"
+
+msgid "treatment"
+msgstr "+ Behandlung"
+
+msgid "feeding"
+msgstr "+ Fütterung"
+
+msgid "harvest"
+msgstr "+ Ernte"
+
+msgid "varroa_control"
+msgstr "+ Varroabekämpfung"
+
+msgid "split"
+msgstr "+ Ableger"
+

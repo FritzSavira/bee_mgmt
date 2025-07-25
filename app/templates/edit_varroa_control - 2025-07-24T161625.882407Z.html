@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Edit Varroa Control Record for Hive {{ hive_id }}</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="control_date">Control Date:</label>
+            <input type="date" class="form-control" id="control_date" name="control_date" value="{{ varroa_control.control_date }}" required>
+        </div>
+        <div class="form-group">
+            <label for="mite_count">Mite Count:</label>
+            <input type="number" class="form-control" id="mite_count" name="mite_count" value="{{ varroa_control.mite_count }}" required>
+        </div>
+        <div class="form-group">
+            <label for="method">Method:</label>
+            <input type="text" class="form-control" id="method" name="method" value="{{ varroa_control.method }}">
+        </div>
+        <div class="form-group">
+            <label for="infestation_level">Infestation Level:</label>
+            <input type="text" class="form-control" id="infestation_level" name="infestation_level" value="{{ varroa_control.infestation_level }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Varroa Control Record</button>
+    </form>
+{% endblock %}

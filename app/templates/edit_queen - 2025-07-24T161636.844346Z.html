@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Königin bearbeiten für Bienenstock {{ hive.stocknummer }}</title>
+</head>
+<body>
+    <h1>Königin bearbeiten für Bienenstock: {{ hive.stocknummer }}</h1>
+    <form method="POST">
+        <label for="origin">Herkunft:</label><br>
+        <input type="text" id="origin" name="origin" value="{{ queen.origin }}" required><br><br>
+
+        <label for="birth_date">Geburtsjahr/Schlupfdatum:</label><br>
+        <input type="date" id="birth_date" name="birth_date" value="{{ queen.birth_date }}" required><br><br>
+
+        <label for="color_mark">Farbmarkierung:</label><br>
+        <input type="text" id="color_mark" name="color_mark" value="{{ queen.color_mark or '' }}"><br><br>
+
+        <label for="breed">Rasse/Genetik:</label><br>
+        <input type="text" id="breed" name="breed" value="{{ queen.breed or '' }}"><br><br>
+
+        <label for="introduction_date">Einweiseldatum:</label><br>
+        <input type="date" id="introduction_date" name="introduction_date" value="{{ queen.introduction_date or '' }}"><br><br>
+
+        <input type="checkbox" id="marked" name="marked" {% if queen.marked %}checked{% endif %}>
+        <label for="marked">Zeichnung vorhanden</label><br><br>
+
+        <input type="checkbox" id="clipped" name="clipped" {% if queen.clipped %}checked{% endif %}>
+        <label for="clipped">Geflügelt/ungeflügelt</label><br><br>
+
+        <input type="submit" value="Speichern">
+    </form>
+    <br>
+    <a href="{{ url_for('main.list_queens', hive_id=hive.id) }}">Zurück zur Königinnen-Liste</a>
+</body>
+</html>

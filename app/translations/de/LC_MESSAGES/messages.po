@@ -912,3 +912,113 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] "{len_type} Werte sind erforderlich, aber {len_value} wurde gegeben."
 msgstr[1] "{len_type} Werte sind erforderlich, aber {len_value} wurden gegeben."
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Inspection Date"
+msgstr "Datum der Durchsicht"
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Measures Taken"
+msgstr "Durchgeführte Maßnahmen"
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Observations"
+msgstr "Beobachtungen"
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Images"
+msgstr "Bilder"
+
+msgid "Feeding Date"
+msgstr "Datum der Fütterung"
+
+msgid "Amount (kg/l)"
+msgstr "Menge (kg/l)"
+
+msgid "Concentration (if liquid)"
+msgstr "Konzentration (wenn flüssig)"
+
+msgid "Harvest Date"
+msgstr "Datum Ernte"
+
+msgid "form_label_water_content"
+msgstr "Wassergehalt (%%)"
+
+msgid "Notes"
+msgstr "Bemerkung"
+
+msgid "Hive Number"
+msgstr "Volknummer"
+
+msgid "Colony Strength (number of occupied comb lanes)"
+msgstr "Volkstärke (Anzahl besetzter Wabengassen)"
+
+msgid "Temperament (scale 1-5)"
+msgstr "Temperament (Skala 1-5)"
+
+msgid "Swarming Tendency"
+msgstr "Schwarmneigung"
+
+msgid "Comb Settling"
+msgstr "Wabensitz"
+
+msgid "Honey Yield Rating"
+msgstr "Honig Ausbeute"
+
+msgid "Measures Taken"
+msgstr "Durchgeführte Maßnahmen"
+
+msgid "Observations"
+msgstr "Beobachtungen"
+
+msgid "Birth Year/Hatching Date"
+msgstr "Geburtsjahr/Schlüpfdatum"
+
+msgid "Breed/Genetics"
+msgstr "Rasse"
+
+msgid "Clipped/Unclipped"
+msgstr "Beschnitten/Nicht beschnitten"
+
+msgid "Split Date"
+msgstr "Datum Ableger"
+
+msgid "New Hive ID (optional)"
+msgstr "Neue Volk Nummer"
+
+msgid "Treatment Date"
+msgstr "Datum der Behandlung"
+
+msgid "Treatment Type"
+msgstr "Art der Behandlung"
+
+msgid "Used Agent"
+msgstr "Verwendetes Mittel"
+
+msgid "Duration of Treatment"
+msgstr "Behandlungsdauer"
+
+msgid "Control Date"
+msgstr "Datum der Kontrolle"
+
+msgid "inspection"
+msgstr "Durchsicht"
+
+msgid "treatment"
+msgstr "Behandlung"
+
+msgid "feeding"
+msgstr "Fütterung"
+
+msgid "harvest"
+msgstr "Ernte"
+
+msgid "varroa_control"
+msgstr "Varroa Kontrolle"
+
+msgid "split"
+msgstr "Ableger"

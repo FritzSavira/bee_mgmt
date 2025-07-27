@@ -909,3 +909,23 @@ msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
 
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Inspection Date"
+msgstr ""
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Measures Taken"
+msgstr ""
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Observations"
+msgstr ""
+
+#: app/templates/new_inspection.html
+# added by hand
+msgid "Images"
+msgstr ""

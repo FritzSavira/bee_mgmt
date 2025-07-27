@@ -919,114 +919,102 @@ msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-#~ msgid "Feeding Date"
-#~ msgstr "Fecha de Alimentación"
+msgid "Feeding Date"
+msgstr "Fecha de Alimentación"
 
-#~ msgid "Amount (kg/l)"
-#~ msgstr "Cantidad (kg/l)"
+msgid "Amount (kg/l)"
+msgstr "Cantidad (kg/l)"
 
-#~ msgid "Concentration (if liquid)"
-#~ msgstr "Concentración (si es líquido)"
+msgid "Concentration (if liquid)"
+msgstr "Concentración (si es líquido)"
 
-#~ msgid "Harvest Date"
-#~ msgstr "Fecha de Cosecha"
+msgid "Harvest Date"
+msgstr "Fecha de Cosecha"
 
-#~ msgid "form_label_water_content"
-#~ msgstr "Contenido de Agua (%%)"
+msgid "form_label_water_content"
+msgstr "Contenido de Agua (%%)"
 
-#~ msgid "Notes"
-#~ msgstr "Notas"
+msgid "Notes"
+msgstr "Notas"
 
-#~ msgid "Hive Number"
-#~ msgstr "Número de Colmena"
+msgid "Hive Number"
+msgstr "Número de Colmena"
 
-#~ msgid "Colony Strength (number of occupied comb lanes)"
-#~ msgstr "Fuerza de la Colonia (número de calles ocupadas)"
+msgid "Colony Strength (number of occupied comb lanes)"
+msgstr "Fuerza de la Colonia (número de calles ocupadas)"
 
-#~ msgid "Temperament (scale 1-5)"
-#~ msgstr "Temperamento (escala 1-5)"
+msgid "Temperament (scale 1-5)"
+msgstr "Temperamento (escala 1-5)"
 
-#~ msgid "Swarming Tendency"
-#~ msgstr "Tendencia a Enjambre"
+msgid "Swarming Tendency"
+msgstr "Tendencia a Enjambre"
 
-#~ msgid "Comb Settling"
-#~ msgstr "Asentamiento de Panales"
+msgid "Comb Settling"
+msgstr "Asentamiento de Panales"
 
-#~ msgid "Honey Yield Rating"
-#~ msgstr "Calificación de Rendimiento de Miel"
+msgid "Honey Yield Rating"
+msgstr "Calificación de Rendimiento de Miel"
 
-#~ msgid "Inspection Date"
-#~ msgstr "Fecha de Inspección"
+msgid "Inspection Date"
+msgstr "Fecha de Inspección"
 
-#~ msgid "Measures Taken"
-#~ msgstr "Medidas Tomadas"
+msgid "Measures Taken"
+msgstr "Medidas Tomadas"
 
-#~ msgid "Observations"
-#~ msgstr "Observaciones"
+msgid "Observations"
+msgstr "Observaciones"
 
-#~ msgid "Birth Year/Hatching Date"
-#~ msgstr "Año de Nacimiento/Fecha de Eclosión"
+msgid "Birth Year/Hatching Date"
+msgstr "Año de Nacimiento/Fecha de Eclosión"
 
-#~ msgid "Breed/Genetics"
-#~ msgstr "Raza/Genética"
+msgid "Breed/Genetics"
+msgstr "Raza/Genética"
 
-#~ msgid "Clipped/Unclipped"
-#~ msgstr "Recortada/Sin recortar"
+msgid "Clipped/Unclipped"
+msgstr "Recortada/Sin recortar"
 
-#~ msgid "Split Date"
-#~ msgstr "Fecha de División"
+msgid "Split Date"
+msgstr "Fecha de División"
 
-#~ msgid "New Hive ID (optional)"
-#~ msgstr "ID de Nueva Colmena (opcional)"
+msgid "New Hive ID (optional)"
+msgstr "ID de Nueva Colmena (opcional)"
 
-#~ msgid "Treatment Date"
-#~ msgstr "Fecha de Tratamiento"
+msgid "Treatment Date"
+msgstr "Fecha de Tratamiento"
 
-#~ msgid "Treatment Type"
-#~ msgstr "Tipo de Tratamiento"
+msgid "Treatment Type"
+msgstr "Tipo de Tratamiento"
 
-#~ msgid "Used Agent"
-#~ msgstr "Agente Utilizado"
+msgid "Used Agent"
+msgstr "Agente Utilizado"
 
-#~ msgid "Duration of Treatment"
-#~ msgstr "Duración del Tratamiento"
+msgid "Duration of Treatment"
+msgstr "Duración del Tratamiento"
 
-#~ msgid "Control Date"
-#~ msgstr "Fecha de Control"
+msgid "Control Date"
+msgstr "Fecha de Control"
 
-#~ msgid "Inspektion"
-#~ msgstr "+ Inspección"
+msgid "Inspektion"
+msgstr "+ Inspección"
 
-#~ msgid "inspection"
-#~ msgstr "+ Inspección"
+msgid "inspection"
+msgstr "+ Inspección"
 
-#~ msgid "Behandlung"
-#~ msgstr ""
+msgid "Behandlung"
+msgstr ""
 
-#~ msgid "treatment"
-#~ msgstr "+ Tratamiento"
+msgid "treatment"
+msgstr "+ Tratamiento"
 
-#~ msgid "Fütterung"
-#~ msgstr ""
+msgid "feeding"
+msgstr "+ Alimentación"
 
-#~ msgid "feeding"
-#~ msgstr "+ Alimentación"
+msgid "harvest"
+msgstr "+ Cosecha"
 
-#~ msgid "Ernte"
-#~ msgstr "Agente"
+msgid "varroa_control"
+msgstr "+ Control de Varroa"
 
-#~ msgid "harvest"
-#~ msgstr "+ Cosecha"
-
-#~ msgid "Varroakontrolle"
-#~ msgstr "+ Control de Varroa"
-
-#~ msgid "varroa_control"
-#~ msgstr "+ Control de Varroa"
-
-#~ msgid "Ableger"
-#~ msgstr ""
-
-#~ msgid "split"
-#~ msgstr "+ División"
+msgid "split"
+msgstr "+ División"
 

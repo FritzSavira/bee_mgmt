@@ -924,114 +924,114 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#~ msgid "Feeding Date"
-#~ msgstr "Datum krmení"
+msgid "Feeding Date"
+msgstr "Datum krmení"
 
-#~ msgid "Amount (kg/l)"
-#~ msgstr "Množství (kg/l)"
+msgid "Amount (kg/l)"
+msgstr "Množství (kg/l)"
 
-#~ msgid "Concentration (if liquid)"
-#~ msgstr "Koncentrace (pokud je tekutý)"
+msgid "Concentration (if liquid)"
+msgstr "Koncentrace (pokud je tekutý)"
 
-#~ msgid "Harvest Date"
-#~ msgstr "Datum sklizně"
+msgid "Harvest Date"
+msgstr "Datum sklizně"
 
-#~ msgid "form_label_water_content"
-#~ msgstr "Obsah vody (%%)"
+msgid "form_label_water_content"
+msgstr "Obsah vody (%%)"
 
-#~ msgid "Notes"
-#~ msgstr "Poznámky"
+msgid "Notes"
+msgstr "Poznámky"
 
-#~ msgid "Hive Number"
-#~ msgstr "Číslo úlu"
+msgid "Hive Number"
+msgstr "Číslo úlu"
 
-#~ msgid "Colony Strength (number of occupied comb lanes)"
-#~ msgstr "Síla včelstva (počet obsazených uliček)"
+msgid "Colony Strength (number of occupied comb lanes)"
+msgstr "Síla včelstva (počet obsazených uliček)"
 
-#~ msgid "Temperament (scale 1-5)"
-#~ msgstr "Temperament (škála 1-5)"
+msgid "Temperament (scale 1-5)"
+msgstr "Temperament (škála 1-5)"
 
-#~ msgid "Swarming Tendency"
-#~ msgstr "Rojová nálada"
+msgid "Swarming Tendency"
+msgstr "Rojová nálada"
 
-#~ msgid "Comb Settling"
-#~ msgstr "Usídlení plástů"
+msgid "Comb Settling"
+msgstr "Usídlení plástů"
 
-#~ msgid "Honey Yield Rating"
-#~ msgstr "Hodnocení medného výnosu"
+msgid "Honey Yield Rating"
+msgstr "Hodnocení medného výnosu"
 
-#~ msgid "Inspection Date"
-#~ msgstr "Datum kontroly"
+msgid "Inspection Date"
+msgstr "Datum kontroly"
 
-#~ msgid "Measures Taken"
-#~ msgstr "Přijatá opatření"
+msgid "Measures Taken"
+msgstr "Přijatá opatření"
 
-#~ msgid "Observations"
-#~ msgstr "Pozorování"
+msgid "Observations"
+msgstr "Pozorování"
 
-#~ msgid "Birth Year/Hatching Date"
-#~ msgstr "Rok narození/Datum vylíhnutí"
+msgid "Birth Year/Hatching Date"
+msgstr "Rok narození/Datum vylíhnutí"
 
-#~ msgid "Breed/Genetics"
-#~ msgstr "Plemeno/Genetika"
+msgid "Breed/Genetics"
+msgstr "Plemeno/Genetika"
 
-#~ msgid "Clipped/Unclipped"
-#~ msgstr "Přistřižená/Nepřistřižená"
+msgid "Clipped/Unclipped"
+msgstr "Přistřižená/Nepřistřižená"
 
-#~ msgid "Split Date"
-#~ msgstr "Datum rozdělení"
+msgid "Split Date"
+msgstr "Datum rozdělení"
 
-#~ msgid "New Hive ID (optional)"
-#~ msgstr "ID nového úlu (volitelné)"
+msgid "New Hive ID (optional)"
+msgstr "ID nového úlu (volitelné)"
 
-#~ msgid "Treatment Date"
-#~ msgstr "Datum ošetření"
+msgid "Treatment Date"
+msgstr "Datum ošetření"
 
-#~ msgid "Treatment Type"
-#~ msgstr "Typ ošetření"
+msgid "Treatment Type"
+msgstr "Typ ošetření"
 
-#~ msgid "Used Agent"
-#~ msgstr "Použitý prostředek"
+msgid "Used Agent"
+msgstr "Použitý prostředek"
 
-#~ msgid "Duration of Treatment"
-#~ msgstr "Doba trvání ošetření"
+msgid "Duration of Treatment"
+msgstr "Doba trvání ošetření"
 
-#~ msgid "Control Date"
-#~ msgstr "Datum kontroly"
+msgid "Control Date"
+msgstr "Datum kontroly"
 
-#~ msgid "Inspektion"
-#~ msgstr "+ Kontrola"
+msgid "Inspektion"
+msgstr "+ Kontrola"
 
-#~ msgid "inspection"
-#~ msgstr "+ Kontrola"
+msgid "inspection"
+msgstr "+ Kontrola"
 
-#~ msgid "Behandlung"
-#~ msgstr ""
+msgid "Behandlung"
+msgstr ""
 
-#~ msgid "treatment"
-#~ msgstr "+ Ošetření"
+msgid "treatment"
+msgstr "+ Ošetření"
 
-#~ msgid "Fütterung"
-#~ msgstr ""
+msgid "Fütterung"
+msgstr ""
 
-#~ msgid "feeding"
-#~ msgstr "+ Krmení"
+msgid "feeding"
+msgstr "+ Krmení"
 
-#~ msgid "Ernte"
-#~ msgstr "Prostředek"
+msgid "Ernte"
+msgstr "Prostředek"
 
-#~ msgid "harvest"
-#~ msgstr "+ Sklizeň"
+msgid "harvest"
+msgstr "+ Sklizeň"
 
-#~ msgid "Varroakontrolle"
-#~ msgstr "+ Varroakontrola"
+msgid "Varroakontrolle"
+msgstr "+ Varroakontrola"
 
-#~ msgid "varroa_control"
-#~ msgstr "+ Varroakontrola"
+msgid "varroa_control"
+msgstr "+ Varroakontrola"
 
-#~ msgid "Ableger"
-#~ msgstr ""
+msgid "Ableger"
+msgstr ""
 
-#~ msgid "split"
-#~ msgstr "+ Rozdělení"
+msgid "split"
+msgstr "+ Rozdělení"
 

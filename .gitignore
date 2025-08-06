@@ -1,17 +1,17 @@
 # Operating System Files
 Thumbs.db           # Windows thumbnail cache
 *.swp               # Vim swap files
+.DS_Store           # macOS system files
+.AppleDouble        # macOS resource forks
+.LSOverride         # macOS folder settings
 
 # Dependency Directories
-node_modules/       # Node.js dependencies
-bower_components/   # Bower package dependencies
-vendor/             # Composer dependencies (PHP)
+venv/               # Python virtual environment
 
 # Build and Compiled Outputs
 dist/               # Compiled distribution files
 build/              # Build output directory
 *.compiled          # Compiled source files
-*.min.js            # Minified JavaScript files
 
 # Environment and Configuration Files
 .env                # Environment variables
@@ -27,8 +27,6 @@ build/              # Build output directory
 
 # Logs and Debugging
 *.log               # Log files
-npm-debug.log*      # npm debug logs
-yarn-debug.log*     # Yarn debug logs
 error.log           # General error logs
 
 # Temporary Files
@@ -37,48 +35,20 @@ temp/               # Alternative temp directory
 *.tmp               # Temporary files
 *.bak               # Backup files
 
-# Compiled Source Code
-*.class             # Java compiled classes
-*.dll               # Windows dynamic libraries
-*.exe               # Executable files
-*.o                 # Object files
-*.so                # Shared libraries
-
-# Frontend Build Artifacts
-.next/              # Next.js build output
-.nuxt/              # Nuxt.js build output
-.svelte-kit/        # Svelte Kit build output
-.angular/           # Angular build cache
-
-# Package Managers
-package-lock.json   # npm exact dependency versions
-yarn.lock           # Yarn exact dependency versions
-pnpm-lock.yaml      # PNPM lock file
-
-# Testing Artifacts
-coverage/           # Test coverage reports
-*.test.js           # Test files
-.nyc_output/        # NYC test coverage output
+# Python Specific
+__pycache__/        # Python bytecode cache
+*.py[cod]           # Python compiled files
+.pytest_cache/      # pytest cache directory
+*.mo                # Compiled translation files
 
 # Database and Cache
 *.sqlite            # SQLite database files
 *.db                # Generic database files
 .cache/             # Cache directories
 
-# Miscellaneous
-.DS_Store           # macOS system files
-.AppleDouble        # macOS resource forks
-.LSOverride         # macOS folder settings
-
 # Security and Credentials
 *.pem               # Private key files
 *.key               # Cryptographic keys
 secrets.json        # Sensitive configuration
+# test
 
-# Python Specific
-__pycache__/        # Python bytecode cache
-*.py[cod]           # Python compiled files
-.pytest_cache/      # pytest cache directory
-
-# TypeScript
-*.tsbuildinfo       # TypeScript build info

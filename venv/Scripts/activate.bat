@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Fried\OneDrive\Dokumente\PycharmProjects_sync\bee_mgmt\venv
+set VIRTUAL_ENV=C:\Users\Fried\onedrive\dokumente\pycharmprojects_sync\bee_mgmt\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

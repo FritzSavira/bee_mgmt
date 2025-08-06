@@ -50,5 +50,4 @@ __pycache__/        # Python bytecode cache
 *.pem               # Private key files
 *.key               # Cryptographic keys
 secrets.json        # Sensitive configuration
-# test
 

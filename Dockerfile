@@ -10,4 +10,4 @@ COPY . .
 #CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:create_app()"]
 
 # Start the Gunicorn server
-CMD ["gunicorn", "app.main:app", "--bind", "0.0.0.0:8000", "--workers", "4", "--threads", "2"]
+CMD ["gunicorn", "app.main:app", "--bind", "0.0.0.0:8000"]

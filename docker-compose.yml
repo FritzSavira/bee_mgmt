@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   web:
     build: .
@@ -7,4 +9,3 @@ services:
       SECRET_KEY: "your_secret_key_here"
     volumes:
       - .:/app
-    command: bash -c "pip install --no-cache-dir -r requirements.txt && gunicorn --bind 0.0.0.0:8000 'app:create_app()'"
